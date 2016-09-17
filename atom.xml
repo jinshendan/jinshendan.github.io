@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jinshendan.github.com/"/>
-  <updated>2016-09-17T11:41:55.000Z</updated>
+  <updated>2016-09-17T12:06:12.000Z</updated>
   <id>http://jinshendan.github.com/</id>
   
   <author>
@@ -20,12 +20,13 @@
     <link href="http://jinshendan.github.com/2016/09/16/open-credit-system/"/>
     <id>http://jinshendan.github.com/2016/09/16/open-credit-system/</id>
     <published>2016-09-15T22:00:00.000Z</published>
-    <updated>2016-09-17T11:41:55.000Z</updated>
+    <updated>2016-09-17T12:06:12.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p><a href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;page=show_problem&amp;problem=2019" target="_blank" rel="external">Here</a>.</p>
 <h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><ul>
 <li>Given a list A, find the max(a[i]-a[j]) with i &lt; j.</li>
 </ul>
+<a id="more"></a>
 <h2 id="Analyse"><a href="#Analyse" class="headerlink" title="Analyse"></a>Analyse</h2><ul>
 <li>max(a[i]-a[j]) = max(max(a[1..j-1]) - a[j]).</li>
 <li>Complexity: O(n).</li>
@@ -35,7 +36,10 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://uva.onlinejudge.org/index.php?opt
+      &lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;amp;Itemid=8&amp;amp;page=show_problem&amp;amp;problem=2019&quot;&gt;Here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;Summary&quot;&gt;&lt;a href=&quot;#Summary&quot; class=&quot;headerlink&quot; title=&quot;Summary&quot;&gt;&lt;/a&gt;Summary&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Given a list A, find the max(a[i]-a[j]) with i &amp;lt; j.&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     
@@ -51,12 +55,13 @@
     <link href="http://jinshendan.github.com/2016/09/10/Age-sort/"/>
     <id>http://jinshendan.github.com/2016/09/10/Age-sort/</id>
     <published>2016-09-09T22:00:00.000Z</published>
-    <updated>2016-09-17T11:44:29.000Z</updated>
+    <updated>2016-09-17T12:06:05.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p><a href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;category=26&amp;page=show_problem&amp;problem=2457" target="_blank" rel="external">Here</a>.</p>
 <h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><ul>
 <li>Sort 2,000,000 integers between 1 and 100. </li>
 </ul>
+<a id="more"></a>
 <h2 id="Analyse"><a href="#Analyse" class="headerlink" title="Analyse"></a>Analyse</h2><ul>
 <li>First idea: fast sort, merge sort O(nlogn), TIMELIMIT!</li>
 <li>Use the counting sort algorithm!  </li>
@@ -67,7 +72,10 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://uva.onlinejudge.org/index.php?opt
+      &lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;amp;Itemid=8&amp;amp;category=26&amp;amp;page=show_problem&amp;amp;problem=2457&quot;&gt;Here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;Summary&quot;&gt;&lt;a href=&quot;#Summary&quot; class=&quot;headerlink&quot; title=&quot;Summary&quot;&gt;&lt;/a&gt;Summary&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Sort 2,000,000 integers between 1 and 100. &lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     
