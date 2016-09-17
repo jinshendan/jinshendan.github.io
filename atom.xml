@@ -4,9 +4,9 @@
   <subtitle>Code Accepted</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://jinshendan.github.com/"/>
+  <link href="http://jinshendan.github.io/"/>
   <updated>2016-09-17T12:10:32.000Z</updated>
-  <id>http://jinshendan.github.com/</id>
+  <id>http://jinshendan.github.io/</id>
   
   <author>
     <name>Shendan JIN</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>Open Credit System - UVA 11078</title>
-    <link href="http://jinshendan.github.com/2016/09/16/open-credit-system/"/>
-    <id>http://jinshendan.github.com/2016/09/16/open-credit-system/</id>
+    <link href="http://jinshendan.github.io/2016/09/16/open-credit-system/"/>
+    <id>http://jinshendan.github.io/2016/09/16/open-credit-system/</id>
     <published>2016-09-15T22:00:00.000Z</published>
     <updated>2016-09-17T12:10:32.000Z</updated>
     
@@ -47,17 +47,17 @@
     
     </summary>
     
-      <category term="UVA" scheme="http://jinshendan.github.com/categories/UVA/"/>
+      <category term="UVA" scheme="http://jinshendan.github.io/categories/UVA/"/>
     
     
-      <category term="DP" scheme="http://jinshendan.github.com/tags/DP/"/>
+      <category term="DP" scheme="http://jinshendan.github.io/tags/DP/"/>
     
   </entry>
   
   <entry>
     <title>Age Sort - UVA 11462</title>
-    <link href="http://jinshendan.github.com/2016/09/10/Age-sort/"/>
-    <id>http://jinshendan.github.com/2016/09/10/Age-sort/</id>
+    <link href="http://jinshendan.github.io/2016/09/10/Age-sort/"/>
+    <id>http://jinshendan.github.io/2016/09/10/Age-sort/</id>
     <published>2016-09-09T22:00:00.000Z</published>
     <updated>2016-09-17T12:10:33.000Z</updated>
     
@@ -88,19 +88,19 @@
     
     </summary>
     
-      <category term="UVA" scheme="http://jinshendan.github.com/categories/UVA/"/>
+      <category term="UVA" scheme="http://jinshendan.github.io/categories/UVA/"/>
     
     
-      <category term="Sort" scheme="http://jinshendan.github.com/tags/Sort/"/>
+      <category term="Sort" scheme="http://jinshendan.github.io/tags/Sort/"/>
     
-      <category term="Greedy" scheme="http://jinshendan.github.com/tags/Greedy/"/>
+      <category term="Greedy" scheme="http://jinshendan.github.io/tags/Greedy/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://jinshendan.github.com/2016/09/09/hello-world/"/>
-    <id>http://jinshendan.github.com/2016/09/09/hello-world/</id>
+    <link href="http://jinshendan.github.io/2016/09/09/hello-world/"/>
+    <id>http://jinshendan.github.io/2016/09/09/hello-world/</id>
     <published>2016-09-08T22:16:02.000Z</published>
     <updated>2016-09-16T09:53:48.000Z</updated>
     
