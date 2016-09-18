@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>SWERC and Cachan</title>
-  <subtitle>Code in C++</subtitle>
+  <title>ACM Notebook</title>
+  <subtitle>ACM-ICPC, SWERC</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jinshendan.github.io/"/>
