@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jinshendan.github.io/"/>
-  <updated>2016-09-18T19:37:54.000Z</updated>
+  <updated>2016-09-18T19:39:25.000Z</updated>
   <id>http://jinshendan.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://jinshendan.github.io/calculator-conundrum.html"/>
     <id>http://jinshendan.github.io/calculator-conundrum.html</id>
     <published>2016-09-17T22:00:00.000Z</published>
-    <updated>2016-09-18T19:37:54.000Z</updated>
+    <updated>2016-09-18T19:39:25.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p><a href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;page=show_problem&amp;problem=2544" target="_blank" rel="external">Here</a>.</p>
 <h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><ul>
@@ -48,9 +48,7 @@
       <category term="UVA" scheme="http://jinshendan.github.io/categories/UVA/"/>
     
     
-      <category term="Floyd" scheme="http://jinshendan.github.io/tags/Floyd/"/>
-    
-      <category term="Greedy" scheme="http://jinshendan.github.io/tags/Greedy/"/>
+      <category term="Floyd cycle detection" scheme="http://jinshendan.github.io/tags/Floyd-cycle-detection/"/>
     
   </entry>
   
@@ -130,9 +128,9 @@
       <category term="UVA" scheme="http://jinshendan.github.io/categories/UVA/"/>
     
     
-      <category term="Greedy" scheme="http://jinshendan.github.io/tags/Greedy/"/>
-    
       <category term="Sort" scheme="http://jinshendan.github.io/tags/Sort/"/>
+    
+      <category term="Greedy" scheme="http://jinshendan.github.io/tags/Greedy/"/>
     
   </entry>
   

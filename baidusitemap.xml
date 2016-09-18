@@ -5,15 +5,13 @@
     
   <url>
     <loc>http://jinshendan.github.io/calculator-conundrum.html</loc>
-    <lastmod>2016-09-18T19:37:54.000Z</lastmod>
+    <lastmod>2016-09-18T19:39:25.000Z</lastmod>
     <data>
         <display>
         <title>Calculator Conundrum - UVA 11549</title>
         <pubTime>2016-09-17T22:00:00.000Z</pubTime>
         
-        <tag>Floyd</tag>
-         
-        <tag>Greedy</tag>
+        <tag>Floyd cycle detection</tag>
          
          
            
@@ -33,9 +31,9 @@
         <title>Age Sort - UVA 11462</title>
         <pubTime>2016-09-09T22:00:00.000Z</pubTime>
         
-        <tag>Greedy</tag>
-         
         <tag>Sort</tag>
+         
+        <tag>Greedy</tag>
          
          
            
