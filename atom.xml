@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jinshendan.github.io/"/>
-  <updated>2016-09-18T19:35:16.000Z</updated>
+  <updated>2016-09-18T19:37:54.000Z</updated>
   <id>http://jinshendan.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://jinshendan.github.io/calculator-conundrum.html"/>
     <id>http://jinshendan.github.io/calculator-conundrum.html</id>
     <published>2016-09-17T22:00:00.000Z</published>
-    <updated>2016-09-18T19:35:16.000Z</updated>
+    <updated>2016-09-18T19:37:54.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p><a href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;page=show_problem&amp;problem=2544" target="_blank" rel="external">Here</a>.</p>
 <h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><ul>
@@ -30,16 +30,7 @@
 <li>Floyd Cycle Detection Algorithm !</li>
 </ul>
 <a id="more"></a>
-<h2 id="Code-in-C"><a href="#Code-in-C" class="headerlink" title="Code in C++"></a>Code in C++</h2><p>#include <iostream><br>using namespace std;<br>int buffer[100];</iostream></p>
-<p>int floyd(int n, int p) {<br>    if (!p) return 0;<br>    long long q = (long long) p * p;<br>    int tmp = 0;<br>    while (q &gt; 0) {<br>        buffer[tmp++] = q % 10;<br>        q /= 10;<br>    }</p>
-<pre><code>if (n &gt; tmp) n = tmp;
-int ans = 0;
-for (int i = 0; i &lt; n; i++)
-    ans = ans * 10 + buffer[--tmp];
-return ans;
-</code></pre><p>}</p>
-<p>//floyd<br>int main() {<br>    int T;<br>    int n, k;<br>    cin &gt;&gt; T;<br>    while (T–) {<br>        cin &gt;&gt; n &gt;&gt; k;<br>        int ans = k;<br>        int p1 = k, p2 = k;<br>        do {<br>            p1 = floyd(n, p1);<br>            p2 = floyd(n, p2); if (p2 &gt; ans) ans = p2;<br>            p2 = floyd(n, p2); if (p2 &gt; ans) ans = p2;<br>        } while (p1 != p2);<br>        cout &lt;&lt; ans &lt;&lt; endl;<br>    }<br>    return 0;<br>}</p>
-<p>```</p>
+<h2 id="Code-in-C"><a href="#Code-in-C" class="headerlink" title="Code in C++"></a>Code in C++</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> buffer[<span class="number">100</span>];</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">floyd</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> p)</span> </span>&#123;	</div><div class="line">	<span class="keyword">if</span> (!p) <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">	<span class="keyword">long</span> <span class="keyword">long</span> q = (<span class="keyword">long</span> <span class="keyword">long</span>) p * p;</div><div class="line">	<span class="keyword">int</span> tmp = <span class="number">0</span>;</div><div class="line">	<span class="keyword">while</span> (q &gt; <span class="number">0</span>) &#123;</div><div class="line">		buffer[tmp++] = q % <span class="number">10</span>;</div><div class="line">		q /= <span class="number">10</span>;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">if</span> (n &gt; tmp) n = tmp;</div><div class="line">	<span class="keyword">int</span> ans = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</div><div class="line">		ans = ans * <span class="number">10</span> + buffer[--tmp];</div><div class="line">	<span class="keyword">return</span> ans;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//floyd  </span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> T;</div><div class="line">	<span class="keyword">int</span> n, k;</div><div class="line">	<span class="built_in">cin</span> &gt;&gt; T;</div><div class="line">	<span class="keyword">while</span> (T--) &#123;</div><div class="line">		<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; k;</div><div class="line">		<span class="keyword">int</span> ans = k;</div><div class="line">		<span class="keyword">int</span> p1 = k, p2 = k;</div><div class="line">		<span class="keyword">do</span> &#123;</div><div class="line">			p1 = floyd(n, p1);</div><div class="line">			p2 = floyd(n, p2); <span class="keyword">if</span> (p2 &gt; ans) ans = p2;</div><div class="line">			p2 = floyd(n, p2); <span class="keyword">if</span> (p2 &gt; ans) ans = p2;</div><div class="line">		&#125; <span class="keyword">while</span> (p1 != p2);</div><div class="line">		<span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 ]]></content>
     
     <summary type="html">
