@@ -69,7 +69,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="SWERC" />
+  <meta name="keywords" content="Greedy,Floyd," />
 
 
 
@@ -87,12 +87,22 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="SWERC and Cachan">
-<meta property="og:url" content="http://jinshendan.github.io/tags/DP/index.html">
+<meta name="description" content="ProblemHere.
+Summary
+Given n(1 &amp;lt;= n &amp;lt;= 9) and k (0 &amp;lt;= k &amp;lt; 10^n) where n is the number of digits the calculator can display, k is the starting number. Compute the maximum number that we can">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Calculator Conundrum - UVA 11549">
+<meta property="og:url" content="http://jinshendan.github.io/calculator-conundrum.html">
 <meta property="og:site_name" content="SWERC and Cachan">
+<meta property="og:description" content="ProblemHere.
+Summary
+Given n(1 &amp;lt;= n &amp;lt;= 9) and k (0 &amp;lt;= k &amp;lt; 10^n) where n is the number of digits the calculator can display, k is the starting number. Compute the maximum number that we can">
+<meta property="og:updated_time" content="2016-09-18T19:35:16.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SWERC and Cachan">
+<meta name="twitter:title" content="Calculator Conundrum - UVA 11549">
+<meta name="twitter:description" content="ProblemHere.
+Summary
+Given n(1 &amp;lt;= n &amp;lt;= 9) and k (0 &amp;lt;= k &amp;lt; 10^n) where n is the number of digits the calculator can display, k is the starting number. Compute the maximum number that we can">
 
 
 
@@ -113,10 +123,10 @@
 
 
 
-  <link rel="canonical" href="http://jinshendan.github.io/tags/DP/"/>
+  <link rel="canonical" href="http://jinshendan.github.io/calculator-conundrum.html"/>
 
 
-  <title> Tag: DP | SWERC and Cachan </title>
+  <title> Calculator Conundrum - UVA 11549 | SWERC and Cachan </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
@@ -137,7 +147,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -245,46 +255,171 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        DP
-        <small>Tag</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Calculator Conundrum - UVA 11549
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-09-18T00:00:00+02:00" content="2016-09-18">
+              2016-09-18
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/UVA/" itemprop="url" rel="index">
+                    <span itemprop="name">UVA</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+		       <span id="busuanzi_container_page_pv">
+			          &nbsp; | &nbsp; Heat &nbsp; <span id="busuanzi_value_page_pv"></span>°C
+					         </span>
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/calculator-conundrum.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="calculator-conundrum.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p><a href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;page=show_problem&amp;problem=2544" target="_blank" rel="external">Here</a>.</p>
+<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><ul>
+<li>Given n(1 &lt;= n &lt;= 9) and k (0 &lt;= k &lt; 10^n) where n is the number of digits the calculator can display, k is the starting number. Compute the maximum number that we can get by repeatedly squaring the starting number.</li>
+</ul>
+<h2 id="Analyse"><a href="#Analyse" class="headerlink" title="Analyse"></a>Analyse</h2><ul>
+<li>Floyd Cycle Detection Algorithm !</li>
+</ul>
+<a id="more"></a>
+<h2 id="Code-in-C"><a href="#Code-in-C" class="headerlink" title="Code in C++"></a>Code in C++</h2><p>#include <iostream><br>using namespace std;<br>int buffer[100];</iostream></p>
+<p>int floyd(int n, int p) {<br>    if (!p) return 0;<br>    long long q = (long long) p * p;<br>    int tmp = 0;<br>    while (q &gt; 0) {<br>        buffer[tmp++] = q % 10;<br>        q /= 10;<br>    }</p>
+<pre><code>if (n &gt; tmp) n = tmp;
+int ans = 0;
+for (int i = 0; i &lt; n; i++)
+    ans = ans * 10 + buffer[--tmp];
+return ans;
+</code></pre><p>}</p>
+<p>//floyd<br>int main() {<br>    int T;<br>    int n, k;<br>    cin &gt;&gt; T;<br>    while (T–) {<br>        cin &gt;&gt; n &gt;&gt; k;<br>        int ans = k;<br>        int p1 = k, p2 = k;<br>        do {<br>            p1 = floyd(n, p1);<br>            p2 = floyd(n, p2); if (p2 &gt; ans) ans = p2;<br>            p2 = floyd(n, p2); if (p2 &gt; ans) ans = p2;<br>        } while (p1 != p2);<br>        cout &lt;&lt; ans &lt;&lt; endl;<br>    }<br>    return 0;<br>}</p>
+<p>```</p>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/open-credit-system.html" itemprop="url">
-              
-                <span itemprop="name">Open Credit System - UVA 11078</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-09-16T00:00:00+02:00"
-              content="2016-09-16" >
-          09-16
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Greedy/" rel="tag">#Greedy</a>
+          
+            <a href="/tags/Floyd/" rel="tag">#Floyd</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/open-credit-system.html" rel="next" title="Open Credit System - UVA 11078">
+                <i class="fa fa-chevron-left"></i> Open Credit System - UVA 11078
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -292,6 +427,17 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -311,8 +457,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -369,6 +524,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem"><span class="nav-number">1.</span> <span class="nav-text">Problem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Summary"><span class="nav-number">2.</span> <span class="nav-text">Summary</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Analyse"><span class="nav-number">3.</span> <span class="nav-text">Analyse</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Code-in-C"><span class="nav-number">4.</span> <span class="nav-text">Code in C++</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -479,6 +645,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
@@ -495,9 +665,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'jinshendan';
-      var disqus_identifier = 'tags/DP/index.html';
-      var disqus_title = "";
-      var disqus_url = '';
+      var disqus_identifier = 'calculator-conundrum.html';
+      var disqus_title = "Calculator Conundrum - UVA 11549";
+      var disqus_url = 'http://jinshendan.github.io/calculator-conundrum.html';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
@@ -508,6 +678,8 @@
       }
 
       run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
       
     </script>
   
