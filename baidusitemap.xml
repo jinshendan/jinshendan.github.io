@@ -11,9 +11,9 @@
         <title>Calculator Conundrum - UVA 11549</title>
         <pubTime>2016-09-17T22:00:00.000Z</pubTime>
         
-        <tag>Greedy</tag>
-         
         <tag>Floyd</tag>
+         
+        <tag>Greedy</tag>
          
          
            
@@ -33,9 +33,9 @@
         <title>Age Sort - UVA 11462</title>
         <pubTime>2016-09-09T22:00:00.000Z</pubTime>
         
-        <tag>Sort</tag>
-         
         <tag>Greedy</tag>
+         
+        <tag>Sort</tag>
          
          
            
