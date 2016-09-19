@@ -69,7 +69,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Floyd cycle detection," />
+  <meta name="keywords" content="Hash map" />
 
 
 
@@ -88,21 +88,24 @@
 
 
 <meta name="description" content="ProblemHere.
-Summary
-Given n(1 &amp;lt;= n &amp;lt;= 9) and k (0 &amp;lt;= k &amp;lt; 10^n) where n is the number of digits the calculator can display, k is the starting number. Compute the maximum number that we can">
+SummaryGiven an array of integers, return indices of the two numbers such that they add up to a specific target.
+You may assume that each input would have exactly one solution.
+The return">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Calculator Conundrum - UVA 11549">
-<meta property="og:url" content="http://jinshendan.github.io/calculator-conundrum.html">
+<meta property="og:title" content="Two Sum - Leetcode">
+<meta property="og:url" content="http://jinshendan.github.io/Two-Sum.html">
 <meta property="og:site_name" content="SWERC and Cachan">
 <meta property="og:description" content="ProblemHere.
-Summary
-Given n(1 &amp;lt;= n &amp;lt;= 9) and k (0 &amp;lt;= k &amp;lt; 10^n) where n is the number of digits the calculator can display, k is the starting number. Compute the maximum number that we can">
-<meta property="og:updated_time" content="2016-09-18T19:39:25.000Z">
+SummaryGiven an array of integers, return indices of the two numbers such that they add up to a specific target.
+You may assume that each input would have exactly one solution.
+The return">
+<meta property="og:updated_time" content="2016-09-19T09:21:18.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Calculator Conundrum - UVA 11549">
+<meta name="twitter:title" content="Two Sum - Leetcode">
 <meta name="twitter:description" content="ProblemHere.
-Summary
-Given n(1 &amp;lt;= n &amp;lt;= 9) and k (0 &amp;lt;= k &amp;lt; 10^n) where n is the number of digits the calculator can display, k is the starting number. Compute the maximum number that we can">
+SummaryGiven an array of integers, return indices of the two numbers such that they add up to a specific target.
+You may assume that each input would have exactly one solution.
+The return">
 
 
 
@@ -123,10 +126,10 @@ Given n(1 &amp;lt;= n &amp;lt;= 9) and k (0 &amp;lt;= k &amp;lt; 10^n) where n i
 
 
 
-  <link rel="canonical" href="http://jinshendan.github.io/calculator-conundrum.html"/>
+  <link rel="canonical" href="http://jinshendan.github.io/Two-Sum.html"/>
 
 
-  <title> Calculator Conundrum - UVA 11549 | SWERC and Cachan </title>
+  <title> Two Sum - Leetcode | SWERC and Cachan </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
@@ -276,7 +279,7 @@ Given n(1 &amp;lt;= n &amp;lt;= 9) and k (0 &amp;lt;= k &amp;lt; 10^n) where n i
             
             
               
-                Calculator Conundrum - UVA 11549
+                Two Sum - Leetcode
               
             
           </h1>
@@ -288,8 +291,8 @@ Given n(1 &amp;lt;= n &amp;lt;= 9) and k (0 &amp;lt;= k &amp;lt; 10^n) where n i
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-09-18T00:00:00+02:00" content="2016-09-18">
-              2016-09-18
+            <time itemprop="dateCreated" datetime="2016-09-19T10:59:47+02:00" content="2016-09-19">
+              2016-09-19
             </time>
           </span>
 
@@ -302,8 +305,8 @@ Given n(1 &amp;lt;= n &amp;lt;= 9) and k (0 &amp;lt;= k &amp;lt; 10^n) where n i
               <span class="post-meta-item-text">In</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/UVA/" itemprop="url" rel="index">
-                    <span itemprop="name">UVA</span>
+                  <a href="/categories/Leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">Leetcode</span>
                   </a>
                 </span>
 
@@ -322,8 +325,8 @@ Given n(1 &amp;lt;= n &amp;lt;= 9) and k (0 &amp;lt;= k &amp;lt; 10^n) where n i
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/calculator-conundrum.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="calculator-conundrum.html" itemprop="commentsCount"></span>
+                <a href="/Two-Sum.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Two-Sum.html" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -346,15 +349,24 @@ Given n(1 &amp;lt;= n &amp;lt;= 9) and k (0 &amp;lt;= k &amp;lt; 10^n) where n i
       
 
       
-        <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p><a href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;page=show_problem&amp;problem=2544" target="_blank" rel="external">Here</a>.</p>
-<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><ul>
-<li>Given n(1 &lt;= n &lt;= 9) and k (0 &lt;= k &lt; 10^n) where n is the number of digits the calculator can display, k is the starting number. Compute the maximum number that we can get by repeatedly squaring the starting number.</li>
+        <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p><a href="https://leetcode.com/problems/two-sum/" target="_blank" rel="external">Here</a>.</p>
+<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</p>
+<p>You may assume that each input would have exactly one solution.</p>
+<p>The return format had been changed to zero-based indices.<br><a id="more"></a></p>
+<h2 id="Analyse"><a href="#Analyse" class="headerlink" title="Analyse"></a>Analyse</h2><h3 id="Be-careful"><a href="#Be-careful" class="headerlink" title="Be careful"></a>Be careful</h3><ul>
+<li>zero-based indices.</li>
+<li>[1, 3, 4, 2].  4 + 2 = 6 is ok. But not for 3 + 3 = 6.</li>
+<li>[1, 3, 3, 2].  3 + 3 = 6 is ok.  </li>
 </ul>
-<h2 id="Analyse"><a href="#Analyse" class="headerlink" title="Analyse"></a>Analyse</h2><ul>
-<li>Floyd Cycle Detection Algorithm !</li>
-</ul>
-<a id="more"></a>
-<h2 id="Code-in-C"><a href="#Code-in-C" class="headerlink" title="Code in C++"></a>Code in C++</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> buffer[<span class="number">100</span>];</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">floyd</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> p)</span> </span>&#123;	</div><div class="line">	<span class="keyword">if</span> (!p) <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">	<span class="keyword">long</span> <span class="keyword">long</span> q = (<span class="keyword">long</span> <span class="keyword">long</span>) p * p;</div><div class="line">	<span class="keyword">int</span> tmp = <span class="number">0</span>;</div><div class="line">	<span class="keyword">while</span> (q &gt; <span class="number">0</span>) &#123;</div><div class="line">		buffer[tmp++] = q % <span class="number">10</span>;</div><div class="line">		q /= <span class="number">10</span>;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">if</span> (n &gt; tmp) n = tmp;</div><div class="line">	<span class="keyword">int</span> ans = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</div><div class="line">		ans = ans * <span class="number">10</span> + buffer[--tmp];</div><div class="line">	<span class="keyword">return</span> ans;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//floyd  </span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> T;</div><div class="line">	<span class="keyword">int</span> n, k;</div><div class="line">	<span class="built_in">cin</span> &gt;&gt; T;</div><div class="line">	<span class="keyword">while</span> (T--) &#123;</div><div class="line">		<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; k;</div><div class="line">		<span class="keyword">int</span> ans = k;</div><div class="line">		<span class="keyword">int</span> p1 = k, p2 = k;</div><div class="line">		<span class="keyword">do</span> &#123;</div><div class="line">			p1 = floyd(n, p1);</div><div class="line">			p2 = floyd(n, p2); <span class="keyword">if</span> (p2 &gt; ans) ans = p2;</div><div class="line">			p2 = floyd(n, p2); <span class="keyword">if</span> (p2 &gt; ans) ans = p2;</div><div class="line">		&#125; <span class="keyword">while</span> (p1 != p2);</div><div class="line">		<span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Brute-force"><a href="#Brute-force" class="headerlink" title="Brute force"></a>Brute force</h3><p>Loop through each element x and find if there is another value equals to target - x.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; twoSum(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target) &#123;</div><div class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; ans;</div><div class="line"> 		<span class="keyword">int</span> length = nums.size();</div><div class="line"> 		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; length; i++) </div><div class="line"> 			<span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; length; j++) &#123;</div><div class="line"> 				<span class="keyword">if</span> (nums[i] + nums[j] == target) &#123;</div><div class="line"> 					ans.push_back(i);</div><div class="line"> 					ans.push_back(j);</div><div class="line"> 					<span class="keyword">return</span> ans;</div><div class="line"> 				&#125;</div><div class="line"> 			&#125;</div><div class="line"> 		<span class="keyword">return</span> ans;</div><div class="line">	&#125;;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>Complexity: O(n^2).</p>
+<h3 id="Binary-Search"><a href="#Binary-Search" class="headerlink" title="Binary Search"></a>Binary Search</h3><p>One way to improve the brute force is sort the whole array and loop through each element x and find if there is another value equals to target - x by binary search.</p>
+<p>Complexity: O(nlogn).</p>
+<h3 id="Hash-Map"><a href="#Hash-Map" class="headerlink" title="Hash Map"></a>Hash Map</h3><p>While we iterate and inserting elements into the hash table, we also look back to check if current element’s complement already exists in the table. If it exists, we have found a solution and return immediately.</p>
+<p>16 / 16 test cases passed.<br>Status: Accepted<br>Runtime: 26 ms</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; twoSum(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target) &#123;</div><div class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; ans;</div><div class="line">        <span class="keyword">int</span> length = nums.size();</div><div class="line">        <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;mp;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; length; i++) &#123;</div><div class="line">        	<span class="keyword">if</span> (mp[target - nums[i]]) &#123;</div><div class="line">        		ans.push_back(mp[target - nums[i]] - <span class="number">1</span>);</div><div class="line">        		ans.push_back(i);</div><div class="line">        		<span class="keyword">return</span> ans;</div><div class="line">        	&#125;</div><div class="line">        	mp[nums[i]] = i + <span class="number">1</span>;</div><div class="line">        &#125;</div><div class="line"> 	   <span class="keyword">return</span> ans;</div><div class="line">	&#125;;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>Complexity: O(n).</p>
 
       
     </div>
@@ -377,7 +389,9 @@ Given n(1 &amp;lt;= n &amp;lt;= 9) and k (0 &amp;lt;= k &amp;lt; 10^n) where n i
       
         <div class="post-tags">
           
-            <a href="/tags/Floyd-cycle-detection/" rel="tag">#Floyd cycle detection</a>
+            <a href="/tags/Hash-Table/" rel="tag">#Hash Table</a>
+          
+            <a href="/tags/Binary-Search/" rel="tag">#Binary Search</a>
           
         </div>
       
@@ -386,17 +400,13 @@ Given n(1 &amp;lt;= n &amp;lt;= 9) and k (0 &amp;lt;= k &amp;lt; 10^n) where n i
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/open-credit-system.html" rel="next" title="Open Credit System - UVA 11078">
-                <i class="fa fa-chevron-left"></i> Open Credit System - UVA 11078
+              <a href="/calculator-conundrum.html" rel="next" title="Calculator Conundrum - UVA 11549">
+                <i class="fa fa-chevron-left"></i> Calculator Conundrum - UVA 11549
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/Two-Sum.html" rel="prev" title="Two Sum - Leetcode">
-                Two Sum - Leetcode <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -524,7 +534,7 @@ Given n(1 &amp;lt;= n &amp;lt;= 9) and k (0 &amp;lt;= k &amp;lt; 10^n) where n i
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem"><span class="nav-number">1.</span> <span class="nav-text">Problem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Summary"><span class="nav-number">2.</span> <span class="nav-text">Summary</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Analyse"><span class="nav-number">3.</span> <span class="nav-text">Analyse</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Code-in-C"><span class="nav-number">4.</span> <span class="nav-text">Code in C++</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem"><span class="nav-number">1.</span> <span class="nav-text">Problem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Summary"><span class="nav-number">2.</span> <span class="nav-text">Summary</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Analyse"><span class="nav-number">3.</span> <span class="nav-text">Analyse</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Be-careful"><span class="nav-number">3.1.</span> <span class="nav-text">Be careful</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Brute-force"><span class="nav-number">3.2.</span> <span class="nav-text">Brute force</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Binary-Search"><span class="nav-number">3.3.</span> <span class="nav-text">Binary Search</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hash-Map"><span class="nav-number">3.4.</span> <span class="nav-text">Hash Map</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
@@ -658,9 +668,9 @@ Given n(1 &amp;lt;= n &amp;lt;= 9) and k (0 &amp;lt;= k &amp;lt; 10^n) where n i
 
     <script type="text/javascript">
       var disqus_shortname = 'jinshendan';
-      var disqus_identifier = 'calculator-conundrum.html';
-      var disqus_title = "Calculator Conundrum - UVA 11549";
-      var disqus_url = 'http://jinshendan.github.io/calculator-conundrum.html';
+      var disqus_identifier = 'Two-Sum.html';
+      var disqus_title = "Two Sum - Leetcode";
+      var disqus_url = 'http://jinshendan.github.io/Two-Sum.html';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');

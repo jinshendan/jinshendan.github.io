@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jinshendan.github.io/"/>
-  <updated>2016-09-18T19:39:25.000Z</updated>
+  <updated>2016-09-19T09:21:18.000Z</updated>
   <id>http://jinshendan.github.io/</id>
   
   <author>
@@ -14,6 +14,51 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Two Sum - Leetcode</title>
+    <link href="http://jinshendan.github.io/Two-Sum.html"/>
+    <id>http://jinshendan.github.io/Two-Sum.html</id>
+    <published>2016-09-19T08:59:47.000Z</published>
+    <updated>2016-09-19T09:21:18.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p><a href="https://leetcode.com/problems/two-sum/" target="_blank" rel="external">Here</a>.</p>
+<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</p>
+<p>You may assume that each input would have exactly one solution.</p>
+<p>The return format had been changed to zero-based indices.<br><a id="more"></a></p>
+<h2 id="Analyse"><a href="#Analyse" class="headerlink" title="Analyse"></a>Analyse</h2><h3 id="Be-careful"><a href="#Be-careful" class="headerlink" title="Be careful"></a>Be careful</h3><ul>
+<li>zero-based indices.</li>
+<li>[1, 3, 4, 2].  4 + 2 = 6 is ok. But not for 3 + 3 = 6.</li>
+<li>[1, 3, 3, 2].  3 + 3 = 6 is ok.  </li>
+</ul>
+<h3 id="Brute-force"><a href="#Brute-force" class="headerlink" title="Brute force"></a>Brute force</h3><p>Loop through each element x and find if there is another value equals to target - x.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; twoSum(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target) &#123;</div><div class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; ans;</div><div class="line"> 		<span class="keyword">int</span> length = nums.size();</div><div class="line"> 		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; length; i++) </div><div class="line"> 			<span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; length; j++) &#123;</div><div class="line"> 				<span class="keyword">if</span> (nums[i] + nums[j] == target) &#123;</div><div class="line"> 					ans.push_back(i);</div><div class="line"> 					ans.push_back(j);</div><div class="line"> 					<span class="keyword">return</span> ans;</div><div class="line"> 				&#125;</div><div class="line"> 			&#125;</div><div class="line"> 		<span class="keyword">return</span> ans;</div><div class="line">	&#125;;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>Complexity: O(n^2).</p>
+<h3 id="Binary-Search"><a href="#Binary-Search" class="headerlink" title="Binary Search"></a>Binary Search</h3><p>One way to improve the brute force is sort the whole array and loop through each element x and find if there is another value equals to target - x by binary search.</p>
+<p>Complexity: O(nlogn).</p>
+<h3 id="Hash-Map"><a href="#Hash-Map" class="headerlink" title="Hash Map"></a>Hash Map</h3><p>While we iterate and inserting elements into the hash table, we also look back to check if current element’s complement already exists in the table. If it exists, we have found a solution and return immediately.</p>
+<p>16 / 16 test cases passed.<br>Status: Accepted<br>Runtime: 26 ms</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; twoSum(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target) &#123;</div><div class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; ans;</div><div class="line">        <span class="keyword">int</span> length = nums.size();</div><div class="line">        <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;mp;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; length; i++) &#123;</div><div class="line">        	<span class="keyword">if</span> (mp[target - nums[i]]) &#123;</div><div class="line">        		ans.push_back(mp[target - nums[i]] - <span class="number">1</span>);</div><div class="line">        		ans.push_back(i);</div><div class="line">        		<span class="keyword">return</span> ans;</div><div class="line">        	&#125;</div><div class="line">        	mp[nums[i]] = i + <span class="number">1</span>;</div><div class="line">        &#125;</div><div class="line"> 	   <span class="keyword">return</span> ans;</div><div class="line">	&#125;;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>Complexity: O(n).</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/two-sum/&quot;&gt;Here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;Summary&quot;&gt;&lt;a href=&quot;#Summary&quot; class=&quot;headerlink&quot; title=&quot;Summary&quot;&gt;&lt;/a&gt;Summary&lt;/h2&gt;&lt;p&gt;Given an array of integers, return indices of the two numbers such that they add up to a specific target.&lt;/p&gt;
+&lt;p&gt;You may assume that each input would have exactly one solution.&lt;/p&gt;
+&lt;p&gt;The return format had been changed to zero-based indices.&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Leetcode" scheme="http://jinshendan.github.io/categories/Leetcode/"/>
+    
+    
+      <category term="Hash Table" scheme="http://jinshendan.github.io/tags/Hash-Table/"/>
+    
+      <category term="Binary Search" scheme="http://jinshendan.github.io/tags/Binary-Search/"/>
+    
+  </entry>
   
   <entry>
     <title>Calculator Conundrum - UVA 11549</title>
