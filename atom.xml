@@ -42,9 +42,9 @@
       <category term="ProgSys" scheme="http://jinshendan.github.io/categories/ProgSys/"/>
     
     
-      <category term="Fork" scheme="http://jinshendan.github.io/tags/Fork/"/>
-    
       <category term="Process" scheme="http://jinshendan.github.io/tags/Process/"/>
+    
+      <category term="Fork" scheme="http://jinshendan.github.io/tags/Fork/"/>
     
   </entry>
   
