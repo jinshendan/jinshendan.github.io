@@ -37,9 +37,9 @@
       <category term="CodeForce" scheme="http://jinshendan.github.io/categories/CodeForce/"/>
     
     
-      <category term="Implementation" scheme="http://jinshendan.github.io/tags/Implementation/"/>
-    
       <category term="Expression parsing" scheme="http://jinshendan.github.io/tags/Expression-parsing/"/>
+    
+      <category term="Implementation" scheme="http://jinshendan.github.io/tags/Implementation/"/>
     
   </entry>
   
@@ -151,9 +151,9 @@
       <category term="CodeForce" scheme="http://jinshendan.github.io/categories/CodeForce/"/>
     
     
-      <category term="String" scheme="http://jinshendan.github.io/tags/String/"/>
-    
       <category term="Implementation" scheme="http://jinshendan.github.io/tags/Implementation/"/>
+    
+      <category term="String" scheme="http://jinshendan.github.io/tags/String/"/>
     
   </entry>
   
