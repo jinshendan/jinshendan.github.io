@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>http://jinshendan.github.io/progsys-fork.html</loc>
+    <lastmod>2016-11-18T16:33:16.000Z</lastmod>
+    <data>
+        <display>
+        <title>ProgSys(1) -- Process and Fork</title>
+        <pubTime>2016-11-18T16:01:51.000Z</pubTime>
+        
+        <tag>Fork</tag>
+         
+        <tag>Process</tag>
+         
+         
+           
+             
+              <breadCrumb title="ProgSys" url="http://jinshendan.github.io/categories/ProgSys/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://jinshendan.github.io/Text-Document-Analysis-CF-723B.html</loc>
     <lastmod>2016-10-28T13:47:54.000Z</lastmod>
     <data>
@@ -11,9 +33,9 @@
         <title>Text Document Analysis - CodeForce - 723B</title>
         <pubTime>2016-10-28T13:45:03.000Z</pubTime>
         
-        <tag>Expression parsing</tag>
-         
         <tag>Implementation</tag>
+         
+        <tag>Expression parsing</tag>
          
          
            
@@ -113,9 +135,9 @@
         <title>Bill Total Value - Codeforce 727B</title>
         <pubTime>2016-10-28T13:18:47.000Z</pubTime>
         
-        <tag>Implementation</tag>
-         
         <tag>String</tag>
+         
+        <tag>Implementation</tag>
          
          
            

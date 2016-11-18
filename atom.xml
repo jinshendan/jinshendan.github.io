@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jinshendan.github.io/"/>
-  <updated>2016-10-28T13:47:54.000Z</updated>
+  <updated>2016-11-18T16:33:16.000Z</updated>
   <id>http://jinshendan.github.io/</id>
   
   <author>
@@ -14,6 +14,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ProgSys(1) -- Process and Fork</title>
+    <link href="http://jinshendan.github.io/progsys-fork.html"/>
+    <id>http://jinshendan.github.io/progsys-fork.html</id>
+    <published>2016-11-18T16:01:51.000Z</published>
+    <updated>2016-11-18T16:33:16.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Usages"><a href="#Usages" class="headerlink" title="Usages"></a>Usages</h2><p>Header:<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/types.h&gt;</span></span></div></pre></td></tr></table></figure></p>
+<h3 id="Creat"><a href="#Creat" class="headerlink" title="Creat"></a>Creat</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">pid_t</span> p = fork();</div></pre></td></tr></table></figure>
+<p>Remarks:</p>
+<ul>
+<li>p == 0 (Child process)</li>
+<li>p == -1 (Error)</li>
+<li>p &gt; 0 (Parent process)</li>
+</ul>
+<h3 id="Get-ID"><a href="#Get-ID" class="headerlink" title="Get ID"></a>Get ID</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> my_PID = getpid();</div><div class="line"><span class="keyword">int</span> my_parent_PID = getppid();</div><div class="line"><span class="keyword">int</span> my_UID = getuid();</div><div class="line"><span class="keyword">int</span> my_GID = getgid();</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Usages&quot;&gt;&lt;a href=&quot;#Usages&quot; class=&quot;headerlink&quot; title=&quot;Usages&quot;&gt;&lt;/a&gt;Usages&lt;/h2&gt;&lt;p&gt;Header:&lt;br&gt;&lt;figure class=&quot;highlight c&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td 
+    
+    </summary>
+    
+      <category term="ProgSys" scheme="http://jinshendan.github.io/categories/ProgSys/"/>
+    
+    
+      <category term="Fork" scheme="http://jinshendan.github.io/tags/Fork/"/>
+    
+      <category term="Process" scheme="http://jinshendan.github.io/tags/Process/"/>
+    
+  </entry>
   
   <entry>
     <title>Text Document Analysis - CodeForce - 723B</title>
@@ -37,9 +70,9 @@
       <category term="CodeForce" scheme="http://jinshendan.github.io/categories/CodeForce/"/>
     
     
-      <category term="Expression parsing" scheme="http://jinshendan.github.io/tags/Expression-parsing/"/>
-    
       <category term="Implementation" scheme="http://jinshendan.github.io/tags/Implementation/"/>
+    
+      <category term="Expression parsing" scheme="http://jinshendan.github.io/tags/Expression-parsing/"/>
     
   </entry>
   
@@ -151,9 +184,9 @@
       <category term="CodeForce" scheme="http://jinshendan.github.io/categories/CodeForce/"/>
     
     
-      <category term="Implementation" scheme="http://jinshendan.github.io/tags/Implementation/"/>
-    
       <category term="String" scheme="http://jinshendan.github.io/tags/String/"/>
+    
+      <category term="Implementation" scheme="http://jinshendan.github.io/tags/Implementation/"/>
     
   </entry>
   
