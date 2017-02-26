@@ -269,8 +269,132 @@
             
               
                 
+                <a class="post-title-link" href="/Learning-C-2.html" itemprop="url">
+                  Learning C++ (2)
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2017-02-26T19:45:19+01:00" content="2017-02-26">
+              2017-02-26
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C++</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+		       <span id="busuanzi_container_page_pv">
+			          &nbsp; | &nbsp; Heat &nbsp; <span id="busuanzi_value_page_pv"></span>°C
+					         </span>
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/Learning-C-2.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Learning-C-2.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="3-Struct"><a href="#3-Struct" class="headerlink" title="3 - Struct"></a>3 - Struct</h2><hr>
+<h3 id="3-1"><a href="#3-1" class="headerlink" title="3.1 -"></a>3.1 -</h3>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/Learning-C.html" itemprop="url">
-                  Learning C++      Data
+                  Learning C++ (1)
                 </a>
               
             
@@ -366,7 +490,26 @@
 </li>
 </ul>
 <hr>
-
+<h2 id="2-String"><a href="#2-String" class="headerlink" title="2 - String"></a>2 - String</h2><hr>
+<h3 id="2-1-C-style-string"><a href="#2-1-C-style-string" class="headerlink" title="2.1 - C-style string"></a>2.1 - C-style string</h3><ul>
+<li>Library “cstring”, strlen(), …</li>
+<li>‘\0’ at the end of the string</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="keyword">char</span> tab[<span class="number">20</span>];</div><div class="line">	<span class="built_in">cin</span> &gt;&gt; tab;	<span class="comment">//Input "Alain Turing"</span></div><div class="line">	<span class="built_in">cout</span> &lt;&lt; tab &lt;&lt; <span class="built_in">endl</span>; <span class="comment">//Output: Alain</span></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>We get only one word here, not the entire string</li>
+</ul>
+<hr>
+<h3 id="2-2-cin-getline-and-cin-get"><a href="#2-2-cin-getline-and-cin-get" class="headerlink" title="2.2 - cin.getline() and cin.get()"></a>2.2 - cin.getline() and cin.get()</h3><ul>
+<li>getline() drops the ‘\n’ in the input stream, get() keeps the ‘\n’.</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">char</span> tab[<span class="number">20</span>];</div><div class="line">	<span class="built_in">cin</span>.getline(tab, <span class="number">6</span>);  <span class="comment">// Input: "Cat Dog"</span></div><div class="line">	<span class="built_in">cout</span> &lt;&lt; tab &lt;&lt; <span class="built_in">endl</span>;	<span class="comment">//Output: "Cat D"</span></div><div class="line">	<span class="built_in">cin</span>.clear();	<span class="comment">// Clear the failbit</span></div><div class="line">	<span class="built_in">cin</span>.getline(tab, <span class="number">20</span>);	<span class="comment">//Input: "og"</span></div><div class="line">	<span class="built_in">cout</span> &lt;&lt; tab &lt;&lt; <span class="built_in">endl</span>;	<span class="comment">//Output: "og"</span></div><div class="line"></div><div class="line"></div><div class="line">	<span class="built_in">cin</span>.get(tab, <span class="keyword">sizeof</span>(tab), <span class="string">'o'</span>); <span class="comment">//Input: "I'm good"</span></div><div class="line">	<span class="built_in">cout</span> &lt;&lt; tab &lt;&lt; <span class="built_in">endl</span>;	<span class="comment">//Output: "I'm g"</span></div><div class="line">	<span class="built_in">cin</span>.get(tab, <span class="keyword">sizeof</span>(tab)).get(); <span class="comment">//Input: "ood"</span></div><div class="line">	<span class="built_in">cout</span> &lt;&lt; tab &lt;&lt; <span class="built_in">endl</span>;	<span class="comment">//Output: "ood"</span></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>Do not forget to use a cin.clear() after using a cin.getline() and cin.get(), because there may be a failbit when the input stream is bigger than the need.</li>
+<li>cin.get(): get a char, we can use it to ignore the ‘\n’.</li>
+</ul>
+<hr>
+<h3 id="2-3-String-class"><a href="#2-3-String-class" class="headerlink" title="2.3 - String class"></a>2.3 - String class</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="built_in">string</span> str;</div><div class="line">	getline(<span class="built_in">cin</span>, str); <span class="comment">//Read a line.</span></div><div class="line">	<span class="built_in">cout</span> &lt;&lt; str &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
           
         
       
@@ -1443,138 +1586,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/calculator-conundrum.html" itemprop="url">
-                  Calculator Conundrum - UVA 11549
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-09-18T00:00:00+02:00" content="2016-09-18">
-              2016-09-18
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/UVA/" itemprop="url" rel="index">
-                    <span itemprop="name">UVA</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-		       <span id="busuanzi_container_page_pv">
-			          &nbsp; | &nbsp; Heat &nbsp; <span id="busuanzi_value_page_pv"></span>°C
-					         </span>
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/calculator-conundrum.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="calculator-conundrum.html" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p><a href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;page=show_problem&amp;problem=2544">Here</a>.</p>
-<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><ul>
-<li>Given n(1 &lt;= n &lt;= 9) and k (0 &lt;= k &lt; 10^n) where n is the number of digits the calculator can display, k is the starting number. Compute the maximum number that we can get by repeatedly squaring the starting number.</li>
-</ul>
-<h2 id="Analyse"><a href="#Analyse" class="headerlink" title="Analyse"></a>Analyse</h2><ul>
-<li>Floyd Cycle Detection Algorithm !</li>
-</ul>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/calculator-conundrum.html#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1620,7 +1631,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">14</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jinshendan.github.io/"/>
-  <updated>2017-02-26T15:15:23.000Z</updated>
+  <updated>2017-02-26T18:46:32.000Z</updated>
   <id>http://jinshendan.github.io/</id>
   
   <author>
@@ -16,11 +16,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Learning C++      Data</title>
+    <title>Learning C++ (2)</title>
+    <link href="http://jinshendan.github.io/Learning-C-2.html"/>
+    <id>http://jinshendan.github.io/Learning-C-2.html</id>
+    <published>2017-02-26T18:45:19.000Z</published>
+    <updated>2017-02-26T18:46:32.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="3-Struct"><a href="#3-Struct" class="headerlink" title="3 - Struct"></a>3 - Struct</h2><hr>
+<h3 id="3-1"><a href="#3-1" class="headerlink" title="3.1 -"></a>3.1 -</h3>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;3-Struct&quot;&gt;&lt;a href=&quot;#3-Struct&quot; class=&quot;headerlink&quot; title=&quot;3 - Struct&quot;&gt;&lt;/a&gt;3 - Struct&lt;/h2&gt;&lt;hr&gt;
+&lt;h3 id=&quot;3-1&quot;&gt;&lt;a href=&quot;#3-1&quot; class=&quot;heade
+    
+    </summary>
+    
+      <category term="C++" scheme="http://jinshendan.github.io/categories/C/"/>
+    
+    
+      <category term="C++" scheme="http://jinshendan.github.io/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Learning C++ (1)</title>
     <link href="http://jinshendan.github.io/Learning-C.html"/>
     <id>http://jinshendan.github.io/Learning-C.html</id>
     <published>2017-02-26T13:21:15.000Z</published>
-    <updated>2017-02-26T15:15:23.000Z</updated>
+    <updated>2017-02-26T18:44:07.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="1-Simple-Variables"><a href="#1-Simple-Variables" class="headerlink" title="1 - Simple Variables"></a>1 - Simple Variables</h2><hr>
 <h3 id="1-1-Byte-and-bit"><a href="#1-1-Byte-and-bit" class="headerlink" title="1.1 - Byte and bit"></a>1.1 - Byte and bit</h3><ul>
@@ -45,7 +69,26 @@
 </li>
 </ul>
 <hr>
-]]></content>
+<h2 id="2-String"><a href="#2-String" class="headerlink" title="2 - String"></a>2 - String</h2><hr>
+<h3 id="2-1-C-style-string"><a href="#2-1-C-style-string" class="headerlink" title="2.1 - C-style string"></a>2.1 - C-style string</h3><ul>
+<li>Library “cstring”, strlen(), …</li>
+<li>‘\0’ at the end of the string</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="keyword">char</span> tab[<span class="number">20</span>];</div><div class="line">	<span class="built_in">cin</span> &gt;&gt; tab;	<span class="comment">//Input "Alain Turing"</span></div><div class="line">	<span class="built_in">cout</span> &lt;&lt; tab &lt;&lt; <span class="built_in">endl</span>; <span class="comment">//Output: Alain</span></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>We get only one word here, not the entire string</li>
+</ul>
+<hr>
+<h3 id="2-2-cin-getline-and-cin-get"><a href="#2-2-cin-getline-and-cin-get" class="headerlink" title="2.2 - cin.getline() and cin.get()"></a>2.2 - cin.getline() and cin.get()</h3><ul>
+<li>getline() drops the ‘\n’ in the input stream, get() keeps the ‘\n’.</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">char</span> tab[<span class="number">20</span>];</div><div class="line">	<span class="built_in">cin</span>.getline(tab, <span class="number">6</span>);  <span class="comment">// Input: "Cat Dog"</span></div><div class="line">	<span class="built_in">cout</span> &lt;&lt; tab &lt;&lt; <span class="built_in">endl</span>;	<span class="comment">//Output: "Cat D"</span></div><div class="line">	<span class="built_in">cin</span>.clear();	<span class="comment">// Clear the failbit</span></div><div class="line">	<span class="built_in">cin</span>.getline(tab, <span class="number">20</span>);	<span class="comment">//Input: "og"</span></div><div class="line">	<span class="built_in">cout</span> &lt;&lt; tab &lt;&lt; <span class="built_in">endl</span>;	<span class="comment">//Output: "og"</span></div><div class="line"></div><div class="line"></div><div class="line">	<span class="built_in">cin</span>.get(tab, <span class="keyword">sizeof</span>(tab), <span class="string">'o'</span>); <span class="comment">//Input: "I'm good"</span></div><div class="line">	<span class="built_in">cout</span> &lt;&lt; tab &lt;&lt; <span class="built_in">endl</span>;	<span class="comment">//Output: "I'm g"</span></div><div class="line">	<span class="built_in">cin</span>.get(tab, <span class="keyword">sizeof</span>(tab)).get(); <span class="comment">//Input: "ood"</span></div><div class="line">	<span class="built_in">cout</span> &lt;&lt; tab &lt;&lt; <span class="built_in">endl</span>;	<span class="comment">//Output: "ood"</span></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>Do not forget to use a cin.clear() after using a cin.getline() and cin.get(), because there may be a failbit when the input stream is bigger than the need.</li>
+<li>cin.get(): get a char, we can use it to ignore the ‘\n’.</li>
+</ul>
+<hr>
+<h3 id="2-3-String-class"><a href="#2-3-String-class" class="headerlink" title="2.3 - String class"></a>2.3 - String class</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="built_in">string</span> str;</div><div class="line">	getline(<span class="built_in">cin</span>, str); <span class="comment">//Read a line.</span></div><div class="line">	<span class="built_in">cout</span> &lt;&lt; str &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
