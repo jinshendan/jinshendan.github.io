@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jinshendan.github.io/"/>
-  <updated>2016-11-18T16:33:16.000Z</updated>
+  <updated>2016-11-20T13:46:49.000Z</updated>
   <id>http://jinshendan.github.io/</id>
   
   <author>
@@ -20,9 +20,34 @@
     <link href="http://jinshendan.github.io/progsys-fork.html"/>
     <id>http://jinshendan.github.io/progsys-fork.html</id>
     <published>2016-11-18T16:01:51.000Z</published>
-    <updated>2016-11-18T16:33:16.000Z</updated>
+    <updated>2016-11-20T13:46:49.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="Usages"><a href="#Usages" class="headerlink" title="Usages"></a>Usages</h2><p>Header:<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/types.h&gt;</span></span></div></pre></td></tr></table></figure></p>
+    <content type="html"><![CDATA[<h2 id="Process"><a href="#Process" class="headerlink" title="Process"></a>Process</h2><hr>
+<h3 id="Process-program-in-execution"><a href="#Process-program-in-execution" class="headerlink" title="Process = program in execution"></a>Process = program in execution</h3><ul>
+<li>One or more threads.</li>
+<li>Can communicate through pipes, signals, networks, files.</li>
+</ul>
+<hr>
+<h3 id="Process-descriptor"><a href="#Process-descriptor" class="headerlink" title="Process descriptor"></a>Process descriptor</h3><ul>
+<li>Each process has its Process Descriptor, which is used to keep track of the process in memory</li>
+<li>Stores PID, state, parent process, children, registers, address space information, open files</li>
+<li>Process information is usually stored in the so called Process Table, i.e. an array of PD</li>
+</ul>
+<hr>
+<h3 id="Three-states-model"><a href="#Three-states-model" class="headerlink" title="Three states model"></a>Three states model</h3><ul>
+<li>Running : execution, process is using the CPU.</li>
+<li>Ready : process can be executed but is temporarily waiting, CPU is used by another process.</li>
+<li>Waiting : process can’t be executed; it is either blocked because waiting for an external event (e.g. I/O, interrupt from another process) or because scheduler assigned CPU to others.</li>
+</ul>
+<hr>
+<h3 id="Code-in-C"><a href="#Code-in-C" class="headerlink" title="Code in C"></a>Code in C</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/types.h&gt;</span></span></div><div class="line"><span class="keyword">gid_t</span> getgid (<span class="keyword">void</span>);</div><div class="line"><span class="keyword">pid_t</span> getpid (<span class="keyword">void</span>);</div><div class="line"><span class="keyword">pid_t</span> getppid (<span class="keyword">void</span>);</div><div class="line"><span class="keyword">uid_t</span> getuid (<span class="keyword">void</span>);</div></pre></td></tr></table></figure>
+<ul>
+<li>getpid(): returns the process ID of the calling process.</li>
+<li>getppid() : returns the process ID of the parent of the calling process.</li>
+<li>getgid() : returns the group ID of the calling process</li>
+<li>getuid() : returns the user ID of the calling process</li>
+</ul>
+<hr>
 <h3 id="Creat"><a href="#Creat" class="headerlink" title="Creat"></a>Creat</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">pid_t</span> p = fork();</div></pre></td></tr></table></figure>
 <p>Remarks:</p>
 <ul>
@@ -30,12 +55,14 @@
 <li>p == -1 (Error)</li>
 <li>p &gt; 0 (Parent process)</li>
 </ul>
-<h3 id="Get-ID"><a href="#Get-ID" class="headerlink" title="Get ID"></a>Get ID</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> my_PID = getpid();</div><div class="line"><span class="keyword">int</span> my_parent_PID = getppid();</div><div class="line"><span class="keyword">int</span> my_UID = getuid();</div><div class="line"><span class="keyword">int</span> my_GID = getgid();</div></pre></td></tr></table></figure>
+<h3 id="Get-ID"><a href="#Get-ID" class="headerlink" title="Get ID"></a>Get ID</h3><hr>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> my_PID = getpid();</div><div class="line"><span class="keyword">int</span> my_parent_PID = getppid();</div><div class="line"><span class="keyword">int</span> my_UID = getuid();</div><div class="line"><span class="keyword">int</span> my_GID = getgid();</div></pre></td></tr></table></figure>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;Usages&quot;&gt;&lt;a href=&quot;#Usages&quot; class=&quot;headerlink&quot; title=&quot;Usages&quot;&gt;&lt;/a&gt;Usages&lt;/h2&gt;&lt;p&gt;Header:&lt;br&gt;&lt;figure class=&quot;highlight c&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td 
+      &lt;h2 id=&quot;Process&quot;&gt;&lt;a href=&quot;#Process&quot; class=&quot;headerlink&quot; title=&quot;Process&quot;&gt;&lt;/a&gt;Process&lt;/h2&gt;&lt;hr&gt;
+&lt;h3 id=&quot;Process-program-in-execution&quot;&gt;&lt;a href=&quot;#
     
     </summary>
     

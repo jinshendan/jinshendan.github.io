@@ -7,7 +7,7 @@
 
 <html class="theme-next muse use-motion">
 <head>
-  <meta charset="UTF-8"/>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
 <meta name="google-site-verification" content="X7vsU4btCVKatlFpNLzWfV99SN9310BDEC9Ad0uDlkA" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
@@ -87,40 +87,37 @@
 
 
 
-<meta name="description" content="UsagesHeader:12#include &amp;lt;unistd.h&amp;gt;#include &amp;lt;sys/types.h&amp;gt;
-Creat1pid_t p = fork();
-Remarks:
+<meta name="description" content="Process
+Process = program in execution
+One or more threads.
+Can communicate through pipes, signals, networks, files.
 
-p == 0 (Child process)
-p == -1 (Error)
-p &amp;gt; 0 (Parent process)
 
-Get ID1234int my_PID = getpid()">
+Process descriptor
+Each process has its Process Descriptor, which is used to keep">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ProgSys(1) -- Process and Fork">
 <meta property="og:url" content="http://jinshendan.github.io/progsys-fork.html">
 <meta property="og:site_name" content="SWERC and Cachan">
-<meta property="og:description" content="UsagesHeader:12#include &amp;lt;unistd.h&amp;gt;#include &amp;lt;sys/types.h&amp;gt;
-Creat1pid_t p = fork();
-Remarks:
+<meta property="og:description" content="Process
+Process = program in execution
+One or more threads.
+Can communicate through pipes, signals, networks, files.
 
-p == 0 (Child process)
-p == -1 (Error)
-p &amp;gt; 0 (Parent process)
 
-Get ID1234int my_PID = getpid()">
-<meta property="og:updated_time" content="2016-11-18T16:33:16.000Z">
+Process descriptor
+Each process has its Process Descriptor, which is used to keep">
+<meta property="og:updated_time" content="2016-11-20T13:46:49.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ProgSys(1) -- Process and Fork">
-<meta name="twitter:description" content="UsagesHeader:12#include &amp;lt;unistd.h&amp;gt;#include &amp;lt;sys/types.h&amp;gt;
-Creat1pid_t p = fork();
-Remarks:
+<meta name="twitter:description" content="Process
+Process = program in execution
+One or more threads.
+Can communicate through pipes, signals, networks, files.
 
-p == 0 (Child process)
-p == -1 (Error)
-p &amp;gt; 0 (Parent process)
 
-Get ID1234int my_PID = getpid()">
+Process descriptor
+Each process has its Process Descriptor, which is used to keep">
 
 
 
@@ -144,7 +141,7 @@ Get ID1234int my_PID = getpid()">
   <link rel="canonical" href="http://jinshendan.github.io/progsys-fork.html"/>
 
 
-  <title> ProgSys(1) -- Process and Fork | SWERC and Cachan </title>
+  <title> ProgSys(1) -- Process and Fork | SWERC and Cachan </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
@@ -165,7 +162,7 @@ Get ID1234int my_PID = getpid()">
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -364,7 +361,32 @@ Get ID1234int my_PID = getpid()">
       
 
       
-        <h2 id="Usages"><a href="#Usages" class="headerlink" title="Usages"></a>Usages</h2><p>Header:<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/types.h&gt;</span></span></div></pre></td></tr></table></figure></p>
+        <h2 id="Process"><a href="#Process" class="headerlink" title="Process"></a>Process</h2><hr>
+<h3 id="Process-program-in-execution"><a href="#Process-program-in-execution" class="headerlink" title="Process = program in execution"></a>Process = program in execution</h3><ul>
+<li>One or more threads.</li>
+<li>Can communicate through pipes, signals, networks, files.</li>
+</ul>
+<hr>
+<h3 id="Process-descriptor"><a href="#Process-descriptor" class="headerlink" title="Process descriptor"></a>Process descriptor</h3><ul>
+<li>Each process has its Process Descriptor, which is used to keep track of the process in memory</li>
+<li>Stores PID, state, parent process, children, registers, address space information, open files</li>
+<li>Process information is usually stored in the so called Process Table, i.e. an array of PD</li>
+</ul>
+<hr>
+<h3 id="Three-states-model"><a href="#Three-states-model" class="headerlink" title="Three states model"></a>Three states model</h3><ul>
+<li>Running : execution, process is using the CPU.</li>
+<li>Ready : process can be executed but is temporarily waiting, CPU is used by another process.</li>
+<li>Waiting : process can’t be executed; it is either blocked because waiting for an external event (e.g. I/O, interrupt from another process) or because scheduler assigned CPU to others.</li>
+</ul>
+<hr>
+<h3 id="Code-in-C"><a href="#Code-in-C" class="headerlink" title="Code in C"></a>Code in C</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/types.h&gt;</span></span></div><div class="line"><span class="keyword">gid_t</span> getgid (<span class="keyword">void</span>);</div><div class="line"><span class="keyword">pid_t</span> getpid (<span class="keyword">void</span>);</div><div class="line"><span class="keyword">pid_t</span> getppid (<span class="keyword">void</span>);</div><div class="line"><span class="keyword">uid_t</span> getuid (<span class="keyword">void</span>);</div></pre></td></tr></table></figure>
+<ul>
+<li>getpid(): returns the process ID of the calling process.</li>
+<li>getppid() : returns the process ID of the parent of the calling process.</li>
+<li>getgid() : returns the group ID of the calling process</li>
+<li>getuid() : returns the user ID of the calling process</li>
+</ul>
+<hr>
 <h3 id="Creat"><a href="#Creat" class="headerlink" title="Creat"></a>Creat</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">pid_t</span> p = fork();</div></pre></td></tr></table></figure>
 <p>Remarks:</p>
 <ul>
@@ -372,7 +394,8 @@ Get ID1234int my_PID = getpid()">
 <li>p == -1 (Error)</li>
 <li>p &gt; 0 (Parent process)</li>
 </ul>
-<h3 id="Get-ID"><a href="#Get-ID" class="headerlink" title="Get ID"></a>Get ID</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> my_PID = getpid();</div><div class="line"><span class="keyword">int</span> my_parent_PID = getppid();</div><div class="line"><span class="keyword">int</span> my_UID = getuid();</div><div class="line"><span class="keyword">int</span> my_GID = getgid();</div></pre></td></tr></table></figure>
+<h3 id="Get-ID"><a href="#Get-ID" class="headerlink" title="Get ID"></a>Get ID</h3><hr>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> my_PID = getpid();</div><div class="line"><span class="keyword">int</span> my_parent_PID = getppid();</div><div class="line"><span class="keyword">int</span> my_UID = getuid();</div><div class="line"><span class="keyword">int</span> my_GID = getgid();</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -495,7 +518,7 @@ Get ID1234int my_PID = getpid()">
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -504,7 +527,7 @@ Get ID1234int my_PID = getpid()">
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -540,7 +563,7 @@ Get ID1234int my_PID = getpid()">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Usages"><span class="nav-number">1.</span> <span class="nav-text">Usages</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Creat"><span class="nav-number">1.1.</span> <span class="nav-text">Creat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Get-ID"><span class="nav-number">1.2.</span> <span class="nav-text">Get ID</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Process"><span class="nav-number">1.</span> <span class="nav-text">Process</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Process-program-in-execution"><span class="nav-number">1.1.</span> <span class="nav-text">Process = program in execution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Process-descriptor"><span class="nav-number">1.2.</span> <span class="nav-text">Process descriptor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Three-states-model"><span class="nav-number">1.3.</span> <span class="nav-text">Three states model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-in-C"><span class="nav-number">1.4.</span> <span class="nav-text">Code in C</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Creat"><span class="nav-number">1.5.</span> <span class="nav-text">Creat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Get-ID"><span class="nav-number">1.6.</span> <span class="nav-text">Get ID</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
@@ -559,7 +582,7 @@ Get ID1234int my_PID = getpid()">
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -725,7 +748,24 @@ Get ID1234int my_PID = getpid()">
 
   
 <script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
+</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
 </script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 
 
 </body>
