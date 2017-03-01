@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jinshendan.github.io/"/>
-  <updated>2017-02-26T18:46:32.000Z</updated>
+  <updated>2017-02-26T18:44:07.000Z</updated>
   <id>http://jinshendan.github.io/</id>
   
   <author>
@@ -14,30 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>Learning C++ (2)</title>
-    <link href="http://jinshendan.github.io/Learning-C-2.html"/>
-    <id>http://jinshendan.github.io/Learning-C-2.html</id>
-    <published>2017-02-26T18:45:19.000Z</published>
-    <updated>2017-02-26T18:46:32.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="3-Struct"><a href="#3-Struct" class="headerlink" title="3 - Struct"></a>3 - Struct</h2><hr>
-<h3 id="3-1"><a href="#3-1" class="headerlink" title="3.1 -"></a>3.1 -</h3>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;3-Struct&quot;&gt;&lt;a href=&quot;#3-Struct&quot; class=&quot;headerlink&quot; title=&quot;3 - Struct&quot;&gt;&lt;/a&gt;3 - Struct&lt;/h2&gt;&lt;hr&gt;
-&lt;h3 id=&quot;3-1&quot;&gt;&lt;a href=&quot;#3-1&quot; class=&quot;heade
-    
-    </summary>
-    
-      <category term="C++" scheme="http://jinshendan.github.io/categories/C/"/>
-    
-    
-      <category term="C++" scheme="http://jinshendan.github.io/tags/C/"/>
-    
-  </entry>
   
   <entry>
     <title>Learning C++ (1)</title>
