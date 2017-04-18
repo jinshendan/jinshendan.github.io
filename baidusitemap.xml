@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://jinshendan.github.io/generator.html</loc>
-    <lastmod>2017-04-18T20:06:57.000Z</lastmod>
+    <lastmod>2017-04-18T20:10:03.000Z</lastmod>
     <data>
         <display>
         <title>generator - Regionals 2015 Asia-Hangzhou</title>
@@ -27,7 +27,7 @@
     
   <url>
     <loc>http://jinshendan.github.io/Coupons.html</loc>
-    <lastmod>2017-04-18T19:59:01.000Z</lastmod>
+    <lastmod>2017-04-18T20:09:48.000Z</lastmod>
     <data>
         <display>
         <title>Coupons - UVA 10288</title>
@@ -263,9 +263,9 @@
         <title>Age Sort - UVA 11462</title>
         <pubTime>2016-09-09T22:00:00.000Z</pubTime>
         
-        <tag>Sort</tag>
-         
         <tag>Greedy</tag>
+         
+        <tag>Sort</tag>
          
          
            

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jinshendan.github.io/"/>
-  <updated>2017-04-18T20:06:57.000Z</updated>
+  <updated>2017-04-18T20:10:03.000Z</updated>
   <id>http://jinshendan.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://jinshendan.github.io/generator.html"/>
     <id>http://jinshendan.github.io/generator.html</id>
     <published>2017-04-18T20:00:12.000Z</published>
-    <updated>2017-04-18T20:06:57.000Z</updated>
+    <updated>2017-04-18T20:10:03.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>We generate a random string by generating a sequence of random characters and concatenating them together. Each character is chosen independently from the first n letters in the English alphabet with equal probability. Only capital letters are used in this problem. The generation is stopped as soon as a specific pattern occurs in the random string. Your task is to predict the expected length of the generated string.</p>
 <h2 id="Limits"><a href="#Limits" class="headerlink" title="Limits"></a>Limits</h2><ul>
@@ -28,6 +28,7 @@
 <li>1 &lt;= n &lt;= 26.</li>
 <li>The length of any pattern will not exceed 12.</li>
 </ul>
+<a id="more"></a>
 <h2 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h2><ul>
 <li>For any string S, define the function state(S) as the maximal length of the prefix of pattern which is also a suffix of the current string at the same time.</li>
 <li>If the pattern has length L, then the state of any string is a number between 0 and L. </li>
@@ -43,7 +44,12 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;We generate a random string by generating a sequen
+      &lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;We generate a random string by generating a sequence of random characters and concatenating them together. Each character is chosen independently from the first n letters in the English alphabet with equal probability. Only capital letters are used in this problem. The generation is stopped as soon as a specific pattern occurs in the random string. Your task is to predict the expected length of the generated string.&lt;/p&gt;
+&lt;h2 id=&quot;Limits&quot;&gt;&lt;a href=&quot;#Limits&quot; class=&quot;headerlink&quot; title=&quot;Limits&quot;&gt;&lt;/a&gt;Limits&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;1 &amp;lt;= T &amp;lt;= 10.&lt;/li&gt;
+&lt;li&gt;1 &amp;lt;= n &amp;lt;= 26.&lt;/li&gt;
+&lt;li&gt;The length of any pattern will not exceed 12.&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     
@@ -61,13 +67,14 @@
     <link href="http://jinshendan.github.io/Coupons.html"/>
     <id>http://jinshendan.github.io/Coupons.html</id>
     <published>2017-04-18T19:50:10.000Z</published>
-    <updated>2017-04-18T19:59:01.000Z</updated>
+    <updated>2017-04-18T20:09:48.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>There are n coupons numbered from 1 to n. How many times on average are required to make a complete set of n coupons<br>by selecting one coupon each time? </p>
 <p>If the answer is an integer number, output the number. If the answer is not integer, then output the integer part of the answer followed by a space and then by the proper fraction in the format Num/Denom. The fractional part should be irreducible.</p>
 <h2 id="Limits"><a href="#Limits" class="headerlink" title="Limits"></a>Limits</h2><ul>
 <li>1 &lt;= n &lt;= 33</li>
 </ul>
+<a id="more"></a>
 <h2 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h2><ul>
 <li>Assume that we have already k different coupons.</li>
 <li>Then the probability of getting a new different coupon is (n-k)/n. The expected cost is n/(n-k). </li>
@@ -80,7 +87,11 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;There are n coupons numbered from 1 to n. How many
+      &lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;There are n coupons numbered from 1 to n. How many times on average are required to make a complete set of n coupons&lt;br&gt;by selecting one coupon each time? &lt;/p&gt;
+&lt;p&gt;If the answer is an integer number, output the number. If the answer is not integer, then output the integer part of the answer followed by a space and then by the proper fraction in the format Num/Denom. The fractional part should be irreducible.&lt;/p&gt;
+&lt;h2 id=&quot;Limits&quot;&gt;&lt;a href=&quot;#Limits&quot; class=&quot;headerlink&quot; title=&quot;Limits&quot;&gt;&lt;/a&gt;Limits&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;1 &amp;lt;= n &amp;lt;= 33&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     
@@ -569,9 +580,9 @@
       <category term="UVA" scheme="http://jinshendan.github.io/categories/UVA/"/>
     
     
-      <category term="Sort" scheme="http://jinshendan.github.io/tags/Sort/"/>
-    
       <category term="Greedy" scheme="http://jinshendan.github.io/tags/Greedy/"/>
+    
+      <category term="Sort" scheme="http://jinshendan.github.io/tags/Sort/"/>
     
   </entry>
   

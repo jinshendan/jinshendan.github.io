@@ -342,26 +342,17 @@
 
       
         
-          
-            <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>We generate a random string by generating a sequence of random characters and concatenating them together. Each character is chosen independently from the first n letters in the English alphabet with equal probability. Only capital letters are used in this problem. The generation is stopped as soon as a specific pattern occurs in the random string. Your task is to predict the expected length of the generated string.</p>
+          <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>We generate a random string by generating a sequence of random characters and concatenating them together. Each character is chosen independently from the first n letters in the English alphabet with equal probability. Only capital letters are used in this problem. The generation is stopped as soon as a specific pattern occurs in the random string. Your task is to predict the expected length of the generated string.</p>
 <h2 id="Limits"><a href="#Limits" class="headerlink" title="Limits"></a>Limits</h2><ul>
 <li>1 &lt;= T &lt;= 10.</li>
 <li>1 &lt;= n &lt;= 26.</li>
 <li>The length of any pattern will not exceed 12.</li>
 </ul>
-<h2 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h2><ul>
-<li>For any string S, define the function state(S) as the maximal length of the prefix of pattern which is also a suffix of the current string at the same time.</li>
-<li>If the pattern has length L, then the state of any string is a number between 0 and L. </li>
-<li>We know that L is a final state. </li>
-<li>Let’s define f[i] as the expected number of steps from state i to state L. </li>
-<li>Then we have f[i] = 1+ 1/n(f[a(1,1)]+f[a(1,2)]+…+f[a(1,n)]), where a(i,j) is the state of the new string after concatenating the current string and the j-th letter together. </li>
-<li>Thus, the answer is f[0].</li>
-</ul>
-<h2 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h2><ul>
-<li>We can use brute-force to compute a(i,j).</li>
-</ul>
-
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/generator.html#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -482,22 +473,16 @@
 
       
         
-          
-            <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>There are n coupons numbered from 1 to n. How many times on average are required to make a complete set of n coupons<br>by selecting one coupon each time? </p>
+          <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>There are n coupons numbered from 1 to n. How many times on average are required to make a complete set of n coupons<br>by selecting one coupon each time? </p>
 <p>If the answer is an integer number, output the number. If the answer is not integer, then output the integer part of the answer followed by a space and then by the proper fraction in the format Num/Denom. The fractional part should be irreducible.</p>
 <h2 id="Limits"><a href="#Limits" class="headerlink" title="Limits"></a>Limits</h2><ul>
 <li>1 &lt;= n &lt;= 33</li>
 </ul>
-<h2 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h2><ul>
-<li>Assume that we have already k different coupons.</li>
-<li>Then the probability of getting a new different coupon is (n-k)/n. The expected cost is n/(n-k). </li>
-<li>Thus the expected number of times to make a complete set of n coupons is n/n+n/(n-1)+…+n/1 = n(1/1+1/2+1/3+…+1/n).</li>
-</ul>
-<h2 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h2><ul>
-<li>Make the fractional part irreducible after each addition to avoid any over 64 bits integers.</li>
-</ul>
-
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/Coupons.html#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
         
       
     </div>
