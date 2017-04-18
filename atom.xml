@@ -67,7 +67,7 @@
     <link href="http://jinshendan.github.io/Coupons.html"/>
     <id>http://jinshendan.github.io/Coupons.html</id>
     <published>2017-04-18T19:50:10.000Z</published>
-    <updated>2017-04-18T20:09:48.000Z</updated>
+    <updated>2017-04-18T20:10:19.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>There are n coupons numbered from 1 to n. How many times on average are required to make a complete set of n coupons<br>by selecting one coupon each time? </p>
 <p>If the answer is an integer number, output the number. If the answer is not integer, then output the integer part of the answer followed by a space and then by the proper fraction in the format Num/Denom. The fractional part should be irreducible.</p>
@@ -580,9 +580,9 @@
       <category term="UVA" scheme="http://jinshendan.github.io/categories/UVA/"/>
     
     
-      <category term="Greedy" scheme="http://jinshendan.github.io/tags/Greedy/"/>
-    
       <category term="Sort" scheme="http://jinshendan.github.io/tags/Sort/"/>
+    
+      <category term="Greedy" scheme="http://jinshendan.github.io/tags/Greedy/"/>
     
   </entry>
   

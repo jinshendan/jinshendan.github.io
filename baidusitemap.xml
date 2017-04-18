@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>http://jinshendan.github.io/Coupons.html</loc>
+    <lastmod>2017-04-18T20:10:19.000Z</lastmod>
+    <data>
+        <display>
+        <title>Coupons - UVA 10288</title>
+        <pubTime>2017-04-18T19:50:10.000Z</pubTime>
+        
+        <tag>Probability</tag>
+         
+        <tag>Fraction</tag>
+         
+         
+           
+             
+              <breadCrumb title="UVA" url="http://jinshendan.github.io/categories/UVA/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://jinshendan.github.io/generator.html</loc>
     <lastmod>2017-04-18T20:10:03.000Z</lastmod>
     <data>
@@ -19,28 +41,6 @@
            
              
               <breadCrumb title="LA" url="http://jinshendan.github.io/categories/LA/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://jinshendan.github.io/Coupons.html</loc>
-    <lastmod>2017-04-18T20:09:48.000Z</lastmod>
-    <data>
-        <display>
-        <title>Coupons - UVA 10288</title>
-        <pubTime>2017-04-18T19:50:10.000Z</pubTime>
-        
-        <tag>Probability</tag>
-         
-        <tag>Fraction</tag>
-         
-         
-           
-             
-              <breadCrumb title="UVA" url="http://jinshendan.github.io/categories/UVA/"/>
           
         </display>
     </data>
@@ -263,9 +263,9 @@
         <title>Age Sort - UVA 11462</title>
         <pubTime>2016-09-09T22:00:00.000Z</pubTime>
         
-        <tag>Greedy</tag>
-         
         <tag>Sort</tag>
+         
+        <tag>Greedy</tag>
          
          
            
