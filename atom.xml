@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jinshendan.github.io/"/>
-  <updated>2017-04-18T20:10:03.000Z</updated>
+  <updated>2017-08-17T00:16:15.000Z</updated>
   <id>http://jinshendan.github.io/</id>
   
   <author>
@@ -14,6 +14,59 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Approximation algorithm of Knapsack problem</title>
+    <link href="http://jinshendan.github.io/APX-knapsack.html"/>
+    <id>http://jinshendan.github.io/APX-knapsack.html</id>
+    <published>2017-08-16T23:13:00.000Z</published>
+    <updated>2017-08-17T00:16:15.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Knapsack-problem"><a href="#Knapsack-problem" class="headerlink" title="Knapsack problem"></a>Knapsack problem</h2><p>We have an algorithm (dynamic programming) when values are small integers.</p>
+<h3 id="Approximation-algorithm"><a href="#Approximation-algorithm" class="headerlink" title="Approximation algorithm"></a>Approximation algorithm</h3><ul>
+<li><p>Idea: modify input so that values are small integers and we can then use the previous algorithm as a black box.</p>
+</li>
+<li><p>Scale and round.</p>
+</li>
+</ul>
+<h3 id="Algorithm-description"><a href="#Algorithm-description" class="headerlink" title="Algorithm description"></a>Algorithm description</h3><ol>
+<li>Discard items that don’t fit in the knapsack.</li>
+<li>Multiply each value by $\alpha = \frac{N}{max_j {v_j}} $ so that the values become small, where $N$ is the maximum scaled value, $$v_i \leftarrow v_i * \alpha$$.</li>
+<li>Round values to integers and use the DP to solve the reduced problem.</li>
+</ol>
+<p>We have to choose $N$,</p>
+<ul>
+<li>small enough that the runtime is polynomial;</li>
+<li>large enough that the result is closed to OPT.</li>
+</ul>
+<h3 id="Runtime-analysis"><a href="#Runtime-analysis" class="headerlink" title="Runtime analysis"></a>Runtime analysis</h3><ul>
+<li>DP: $O(n*m)$.</li>
+<li>Apx: $m = n*N$, $O(n^2N)$.</li>
+</ul>
+<h3 id="Approximation-ratio-analysis"><a href="#Approximation-ratio-analysis" class="headerlink" title="Approximation ratio analysis"></a>Approximation ratio analysis</h3><ul>
+<li>Let $S$ be output items, then $S$ is optimal for the reduced input.</li>
+<li>Let $S^{*}$ be optimal items, then $S$ is optimal for the scaled unrounded input since scaling do not change structure.</li>
+<li>$Value(S) = \sum_S{v_i} = \frac{1}{\alpha}\sum_S(\alpha v_i)$, then $Value(S) \geq \frac{1}{\alpha}\sum_S{v^{‘}_i}$.</li>
+<li>$\sum_S{v^{‘}<em>i} \geq \sum</em>{S^{*}}{v^{‘}_i}$, since $S$ is optimial for reduced problem.</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Knapsack-problem&quot;&gt;&lt;a href=&quot;#Knapsack-problem&quot; class=&quot;headerlink&quot; title=&quot;Knapsack problem&quot;&gt;&lt;/a&gt;Knapsack problem&lt;/h2&gt;&lt;p&gt;We have an alg
+    
+    </summary>
+    
+      <category term="approximation" scheme="http://jinshendan.github.io/categories/approximation/"/>
+    
+    
+      <category term="approximation" scheme="http://jinshendan.github.io/tags/approximation/"/>
+    
+      <category term="dp" scheme="http://jinshendan.github.io/tags/dp/"/>
+    
+      <category term="rounding" scheme="http://jinshendan.github.io/tags/rounding/"/>
+    
+  </entry>
   
   <entry>
     <title>generator - Regionals 2015 Asia-Hangzhou</title>

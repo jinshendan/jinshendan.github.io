@@ -269,6 +269,156 @@
             
               
                 
+                <a class="post-title-link" href="/APX-knapsack.html" itemprop="url">
+                  Approximation algorithm of Knapsack problem
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2017-08-17T01:13:00+02:00" content="2017-08-17">
+              2017-08-17
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/approximation/" itemprop="url" rel="index">
+                    <span itemprop="name">approximation</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+		       <span id="busuanzi_container_page_pv">
+			          &nbsp; | &nbsp; Heat &nbsp; <span id="busuanzi_value_page_pv"></span>°C
+					         </span>
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/APX-knapsack.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="APX-knapsack.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Knapsack-problem"><a href="#Knapsack-problem" class="headerlink" title="Knapsack problem"></a>Knapsack problem</h2><p>We have an algorithm (dynamic programming) when values are small integers.</p>
+<h3 id="Approximation-algorithm"><a href="#Approximation-algorithm" class="headerlink" title="Approximation algorithm"></a>Approximation algorithm</h3><ul>
+<li><p>Idea: modify input so that values are small integers and we can then use the previous algorithm as a black box.</p>
+</li>
+<li><p>Scale and round.</p>
+</li>
+</ul>
+<h3 id="Algorithm-description"><a href="#Algorithm-description" class="headerlink" title="Algorithm description"></a>Algorithm description</h3><ol>
+<li>Discard items that don’t fit in the knapsack.</li>
+<li>Multiply each value by $\alpha = \frac{N}{max_j {v_j}} $ so that the values become small, where $N$ is the maximum scaled value, $$v_i \leftarrow v_i * \alpha$$.</li>
+<li>Round values to integers and use the DP to solve the reduced problem.</li>
+</ol>
+<p>We have to choose $N$,</p>
+<ul>
+<li>small enough that the runtime is polynomial;</li>
+<li>large enough that the result is closed to OPT.</li>
+</ul>
+<h3 id="Runtime-analysis"><a href="#Runtime-analysis" class="headerlink" title="Runtime analysis"></a>Runtime analysis</h3><ul>
+<li>DP: $O(n*m)$.</li>
+<li>Apx: $m = n*N$, $O(n^2N)$.</li>
+</ul>
+<h3 id="Approximation-ratio-analysis"><a href="#Approximation-ratio-analysis" class="headerlink" title="Approximation ratio analysis"></a>Approximation ratio analysis</h3><ul>
+<li>Let $S$ be output items, then $S$ is optimal for the reduced input.</li>
+<li>Let $S^{*}$ be optimal items, then $S$ is optimal for the scaled unrounded input since scaling do not change structure.</li>
+<li>$Value(S) = \sum_S{v_i} = \frac{1}{\alpha}\sum_S(\alpha v_i)$, then $Value(S) \geq \frac{1}{\alpha}\sum_S{v^{‘}_i}$.</li>
+<li>$\sum_S{v^{‘}<em>i} \geq \sum</em>{S^{*}}{v^{‘}_i}$, since $S$ is optimial for reduced problem.</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/generator.html" itemprop="url">
                   generator - Regionals 2015 Asia-Hangzhou
                 </a>
@@ -1467,133 +1617,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/CF-732E-Sockets.html" itemprop="url">
-                  Sockets - Codeforce 732E
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-10-28T14:57:40+02:00" content="2016-10-28">
-              2016-10-28
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/CodeForce/" itemprop="url" rel="index">
-                    <span itemprop="name">CodeForce</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-		       <span id="busuanzi_container_page_pv">
-			          &nbsp; | &nbsp; Heat &nbsp; <span id="busuanzi_value_page_pv"></span>°C
-					         </span>
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/CF-732E-Sockets.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="CF-732E-Sockets.html" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p><a href="http://codeforces.com/problemset/problem/732/E">Here</a>.</p>
-<h2 id="Code-in-C"><a href="#Code-in-C" class="headerlink" title="Code in C++"></a>Code in C++</h2>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/CF-732E-Sockets.html#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1639,7 +1662,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-count">16</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -1647,7 +1670,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -1656,7 +1679,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>

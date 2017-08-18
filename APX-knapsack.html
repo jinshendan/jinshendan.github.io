@@ -69,7 +69,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="SWERC" />
+  <meta name="keywords" content="approximation,dp,rounding," />
 
 
 
@@ -87,12 +87,22 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="SWERC and Cachan">
-<meta property="og:url" content="http://jinshendan.github.io/categories/Leetcode/index.html">
+<meta name="description" content="Knapsack problemWe have an algorithm (dynamic programming) when values are small integers.
+Approximation algorithm
+Idea: modify input so that values are small integers and we can then use the previous">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Approximation algorithm of Knapsack problem">
+<meta property="og:url" content="http://jinshendan.github.io/APX-knapsack.html">
 <meta property="og:site_name" content="SWERC and Cachan">
+<meta property="og:description" content="Knapsack problemWe have an algorithm (dynamic programming) when values are small integers.
+Approximation algorithm
+Idea: modify input so that values are small integers and we can then use the previous">
+<meta property="og:updated_time" content="2017-08-17T00:16:15.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SWERC and Cachan">
+<meta name="twitter:title" content="Approximation algorithm of Knapsack problem">
+<meta name="twitter:description" content="Knapsack problemWe have an algorithm (dynamic programming) when values are small integers.
+Approximation algorithm
+Idea: modify input so that values are small integers and we can then use the previous">
 
 
 
@@ -113,10 +123,10 @@
 
 
 
-  <link rel="canonical" href="http://jinshendan.github.io/categories/Leetcode/"/>
+  <link rel="canonical" href="http://jinshendan.github.io/APX-knapsack.html"/>
 
 
-  <title> Category: Leetcode | SWERC and Cachan </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title> Approximation algorithm of Knapsack problem | SWERC and Cachan </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
@@ -137,7 +147,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container one-collumn sidebar-position-left  ">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -245,47 +255,182 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        Leetcode
-        <small>Category</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Approximation algorithm of Knapsack problem
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2017-08-17T01:13:00+02:00" content="2017-08-17">
+              2017-08-17
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/approximation/" itemprop="url" rel="index">
+                    <span itemprop="name">approximation</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+		       <span id="busuanzi_container_page_pv">
+			          &nbsp; | &nbsp; Heat &nbsp; <span id="busuanzi_value_page_pv"></span>°C
+					         </span>
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/APX-knapsack.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="APX-knapsack.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <h2 id="Knapsack-problem"><a href="#Knapsack-problem" class="headerlink" title="Knapsack problem"></a>Knapsack problem</h2><p>We have an algorithm (dynamic programming) when values are small integers.</p>
+<h3 id="Approximation-algorithm"><a href="#Approximation-algorithm" class="headerlink" title="Approximation algorithm"></a>Approximation algorithm</h3><ul>
+<li><p>Idea: modify input so that values are small integers and we can then use the previous algorithm as a black box.</p>
+</li>
+<li><p>Scale and round.</p>
+</li>
+</ul>
+<h3 id="Algorithm-description"><a href="#Algorithm-description" class="headerlink" title="Algorithm description"></a>Algorithm description</h3><ol>
+<li>Discard items that don’t fit in the knapsack.</li>
+<li>Multiply each value by $\alpha = \frac{N}{max_j {v_j}} $ so that the values become small, where $N$ is the maximum scaled value, $$v_i \leftarrow v_i * \alpha$$.</li>
+<li>Round values to integers and use the DP to solve the reduced problem.</li>
+</ol>
+<p>We have to choose $N$,</p>
+<ul>
+<li>small enough that the runtime is polynomial;</li>
+<li>large enough that the result is closed to OPT.</li>
+</ul>
+<h3 id="Runtime-analysis"><a href="#Runtime-analysis" class="headerlink" title="Runtime analysis"></a>Runtime analysis</h3><ul>
+<li>DP: $O(n*m)$.</li>
+<li>Apx: $m = n*N$, $O(n^2N)$.</li>
+</ul>
+<h3 id="Approximation-ratio-analysis"><a href="#Approximation-ratio-analysis" class="headerlink" title="Approximation ratio analysis"></a>Approximation ratio analysis</h3><ul>
+<li>Let $S$ be output items, then $S$ is optimal for the reduced input.</li>
+<li>Let $S^{*}$ be optimal items, then $S$ is optimal for the scaled unrounded input since scaling do not change structure.</li>
+<li>$Value(S) = \sum_S{v_i} = \frac{1}{\alpha}\sum_S(\alpha v_i)$, then $Value(S) \geq \frac{1}{\alpha}\sum_S{v^{‘}_i}$.</li>
+<li>$\sum_S{v^{‘}<em>i} \geq \sum</em>{S^{*}}{v^{‘}_i}$, since $S$ is optimial for reduced problem.</li>
+</ul>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/Two-Sum.html" itemprop="url">
-              
-                <span itemprop="name">Two Sum - Leetcode A1</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-09-19T10:59:47+02:00"
-              content="2016-09-19" >
-          09-19
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/approximation/" rel="tag">#approximation</a>
+          
+            <a href="/tags/dp/" rel="tag">#dp</a>
+          
+            <a href="/tags/rounding/" rel="tag">#rounding</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/generator.html" rel="next" title="generator - Regionals 2015 Asia-Hangzhou">
+                <i class="fa fa-chevron-left"></i> generator - Regionals 2015 Asia-Hangzhou
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </section>
 
-  
-
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -293,6 +438,17 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -312,8 +468,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -370,6 +535,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Knapsack-problem"><span class="nav-number">1.</span> <span class="nav-text">Knapsack problem</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Approximation-algorithm"><span class="nav-number">1.1.</span> <span class="nav-text">Approximation algorithm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Algorithm-description"><span class="nav-number">1.2.</span> <span class="nav-text">Algorithm description</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Runtime-analysis"><span class="nav-number">1.3.</span> <span class="nav-text">Runtime analysis</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Approximation-ratio-analysis"><span class="nav-number">1.4.</span> <span class="nav-text">Approximation ratio analysis</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -480,6 +656,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
@@ -496,9 +676,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'jinshendan';
-      var disqus_identifier = 'categories/Leetcode/index.html';
-      var disqus_title = "";
-      var disqus_url = '';
+      var disqus_identifier = 'APX-knapsack.html';
+      var disqus_title = "Approximation algorithm of Knapsack problem";
+      var disqus_url = 'http://jinshendan.github.io/APX-knapsack.html';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
@@ -509,6 +689,8 @@
       }
 
       run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
       
     </script>
   
