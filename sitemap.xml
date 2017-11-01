@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://jinshendan.github.io/OR/index.html</loc>
+    
+    <lastmod>2017-11-01T20:38:53.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://jinshendan.github.io/APX-knapsack.html</loc>
     
     <lastmod>2017-11-01T10:42:41.000Z</lastmod>
