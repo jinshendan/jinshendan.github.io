@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion">
+<html class="theme-next pisces use-motion">
 <head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
 <meta name="google-site-verification" content="X7vsU4btCVKatlFpNLzWfV99SN9310BDEC9Ad0uDlkA" />
@@ -69,13 +69,13 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="SWERC" />
+  <meta name="keywords" content="algorithm competition, operations research,computer science,machine learning" />
 
 
 
 
 
-  <link rel="alternate" href="/atom.xml" title="SWERC and Cachan" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="Shendan's blog" type="application/atom+xml" />
 
 
 
@@ -88,18 +88,18 @@
 
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="SWERC and Cachan">
+<meta property="og:title" content="Shendan's blog">
 <meta property="og:url" content="http://jinshendan.github.io/index.html">
-<meta property="og:site_name" content="SWERC and Cachan">
+<meta property="og:site_name" content="Shendan's blog">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SWERC and Cachan">
+<meta name="twitter:title" content="Shendan's blog">
 
 
 
 <script type="text/javascript" id="hexo.configuration">
   var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Muse',
+    scheme: 'Pisces',
     sidebar: {"position":"left","display":"post"},
     fancybox: true,
     motion: true,
@@ -116,7 +116,7 @@
   <link rel="canonical" href="http://jinshendan.github.io/"/>
 
 
-  <title> SWERC and Cachan -  </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>Shendan's blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
@@ -142,6 +142,12 @@
  ">
     <div class="headband"></div>
 
+    <a href="https://github.com/jinshendan"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/8b6b8ccc6da3aa5722903da7b58eb5ab1081adee/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_orange_ff7600.png"></a>
+
+
+
+
+
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-meta ">
   
@@ -149,11 +155,11 @@
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">SWERC and Cachan</span>
+      <span class="site-title">Shendan's blog</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
-  <p class="site-subtitle">ACM-ICPC, SWERC</p>
+  <p class="site-subtitle">申旦的博客</p>
 </div>
 
 <div class="site-nav-toggle">
@@ -343,14 +349,27 @@
       
         
           
-            <h2 id="Knapsack-problem"><a href="#Knapsack-problem" class="headerlink" title="Knapsack problem"></a>Knapsack problem</h2><p>We have an algorithm (dynamic programming) when values are small integers.</p>
-<h3 id="Approximation-algorithm"><a href="#Approximation-algorithm" class="headerlink" title="Approximation algorithm"></a>Approximation algorithm</h3><ul>
+            <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+
+<script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+<h2 id="Knapsack-problem"><a href="#Knapsack-problem" class="headerlink" title="Knapsack problem"></a>Knapsack problem</h2><hr>
+<p>We have an algorithm (dynamic programming) when values are small integers.</p>
+<h3 id="Approximation-algorithm"><a href="#Approximation-algorithm" class="headerlink" title="Approximation algorithm"></a>Approximation algorithm</h3><hr>
+<ul>
 <li><p>Idea: modify input so that values are small integers and we can then use the previous algorithm as a black box.</p>
 </li>
 <li><p>Scale and round.</p>
 </li>
 </ul>
-<h3 id="Algorithm-description"><a href="#Algorithm-description" class="headerlink" title="Algorithm description"></a>Algorithm description</h3><ol>
+<h3 id="Algorithm-description"><a href="#Algorithm-description" class="headerlink" title="Algorithm description"></a>Algorithm description</h3><hr>
+<ol>
 <li>Discard items that don’t fit in the knapsack.</li>
 <li>Multiply each value by $\alpha = \frac{N}{max_j {v_j}} $ so that the values become small, where $N$ is the maximum scaled value, $$v_i \leftarrow v_i * \alpha$$.</li>
 <li>Round values to integers and use the DP to solve the reduced problem.</li>
@@ -360,16 +379,21 @@
 <li>small enough that the runtime is polynomial;</li>
 <li>large enough that the result is closed to OPT.</li>
 </ul>
-<h3 id="Runtime-analysis"><a href="#Runtime-analysis" class="headerlink" title="Runtime analysis"></a>Runtime analysis</h3><ul>
+<h3 id="Runtime-analysis"><a href="#Runtime-analysis" class="headerlink" title="Runtime analysis"></a>Runtime analysis</h3><hr>
+<ul>
 <li>DP: $O(n*m)$.</li>
 <li>Apx: $m = n*N$, $O(n^2N)$.</li>
 </ul>
-<h3 id="Approximation-ratio-analysis"><a href="#Approximation-ratio-analysis" class="headerlink" title="Approximation ratio analysis"></a>Approximation ratio analysis</h3><ul>
+<h3 id="Approximation-ratio-analysis"><a href="#Approximation-ratio-analysis" class="headerlink" title="Approximation ratio analysis"></a>Approximation ratio analysis</h3><hr>
+<ul>
 <li>Let $S$ be output items, then $S$ is optimal for the reduced input.</li>
 <li>Let $S^{*}$ be optimal items, then $S$ is optimal for the scaled unrounded input since scaling do not change structure.</li>
-<li>$Value(S) = \sum_S{v_i} = \frac{1}{\alpha}\sum_S(\alpha v_i)$, then $Value(S) \geq \frac{1}{\alpha}\sum_S{v^{‘}_i}$.</li>
-<li>$\sum_S{v^{‘}<em>i} \geq \sum</em>{S^{*}}{v^{‘}_i}$, since $S$ is optimial for reduced problem.</li>
 </ul>
+<ul>
+<li>$Value(S) = \sum_S{v_i} = \frac{1}{\alpha}\sum_S(\alpha v_i)$, then $Value(S) \geq \frac{1}{\alpha}\sum_S{v^{‘}_i}$.</li>
+<li>\(\sum_S v^{‘}<em>i \geq \sum</em>{S^{*}} \sum_S \)</li>
+</ul>
+<p>since $S$ is optimal for reduced problem.</p>
 
           
         
@@ -1738,7 +1762,7 @@
   Theme -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
 
-    NexT.Muse
+    NexT.Pisces
   </a>
 </div>
 
@@ -1816,6 +1840,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
 
   
 
