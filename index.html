@@ -46,6 +46,12 @@
   
 
   
+    
+      
+    
+
+    
+  
 
   
 
@@ -56,7 +62,7 @@
   
     
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open Sans:300,300italic,400,400italic,700,700italic|Courgette:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -100,7 +106,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     scheme: 'Pisces',
-    sidebar: {"position":"left","display":"post"},
+    sidebar: {"position":"left","scrollpercent":true,"onmobile":true,"display":"post"},
     fancybox: true,
     motion: true,
     duoshuo: {
@@ -348,54 +354,20 @@
 
       
         
-          
-            <script type="text/x-mathjax-config">
+          <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
 tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
 });
 </script>
 
-<script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
-
-
-<h2 id="Knapsack-problem"><a href="#Knapsack-problem" class="headerlink" title="Knapsack problem"></a>Knapsack problem</h2><hr>
-<p>We have an algorithm (dynamic programming) when values are small integers.</p>
-<h3 id="Approximation-algorithm"><a href="#Approximation-algorithm" class="headerlink" title="Approximation algorithm"></a>Approximation algorithm</h3><hr>
-<ul>
-<li><p>Idea: modify input so that values are small integers and we can then use the previous algorithm as a black box.</p>
-</li>
-<li><p>Scale and round.</p>
-</li>
-</ul>
-<h3 id="Algorithm-description"><a href="#Algorithm-description" class="headerlink" title="Algorithm description"></a>Algorithm description</h3><hr>
-<ol>
-<li>Discard items that don’t fit in the knapsack.</li>
-<li>Multiply each value by $\alpha = \frac{N}{max_j {v_j}} $ so that the values become small, where $N$ is the maximum scaled value, $$v_i \leftarrow v_i * \alpha$$.</li>
-<li>Round values to integers and use the DP to solve the reduced problem.</li>
-</ol>
-<p>We have to choose $N$,</p>
-<ul>
-<li>small enough that the runtime is polynomial;</li>
-<li>large enough that the result is closed to OPT.</li>
-</ul>
-<h3 id="Runtime-analysis"><a href="#Runtime-analysis" class="headerlink" title="Runtime analysis"></a>Runtime analysis</h3><hr>
-<ul>
-<li>DP: $O(n*m)$.</li>
-<li>Apx: $m = n*N$, $O(n^2N)$.</li>
-</ul>
-<h3 id="Approximation-ratio-analysis"><a href="#Approximation-ratio-analysis" class="headerlink" title="Approximation ratio analysis"></a>Approximation ratio analysis</h3><hr>
-<ul>
-<li>Let $S$ be output items, then $S$ is optimal for the reduced input.</li>
-<li>Let $S^{*}$ be optimal items, then $S$ is optimal for the scaled unrounded input since scaling do not change structure.</li>
-</ul>
-<ul>
-<li>$Value(S) = \sum_S{v_i} = \frac{1}{\alpha}\sum_S(\alpha v_i)$, then $Value(S) \geq \frac{1}{\alpha}\sum_S{v^{‘}_i}$.</li>
-<li>\(\sum_S v^{‘}<em>i \geq \sum</em>{S^{*}} \sum_S \)</li>
-</ul>
-<p>since $S$ is optimal for reduced problem.</p>
-
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/APX-knapsack.html#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1678,7 +1650,7 @@ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
       <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
+               src="/images/shendan.png"
                alt="Shendan JIN" />
           <p class="site-author-name" itemprop="name">Shendan JIN</p>
           <p class="site-description motion-element" itemprop="description"></p>
@@ -1777,7 +1749,6 @@ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
 		<span id="busuanzi_value_site_uv"></span> visiters
 	</span>
 </div>
-
 
         
 
