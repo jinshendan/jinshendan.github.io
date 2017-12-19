@@ -75,7 +75,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Probability,DP," />
+  <meta name="keywords" content="algorithm competition, operations research,computer science,machine learning" />
 
 
 
@@ -93,16 +93,12 @@
 
 
 
-<meta name="description" content="ProblemWe generate a random string by generating a sequence of random characters and concatenating them together. Each character is chosen independently from the first n letters in the English alphabe">
-<meta property="og:type" content="article">
-<meta property="og:title" content="generator - Regionals 2015 Asia-Hangzhou">
-<meta property="og:url" content="http://jinshendan.github.io/generator.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Shendan's blog">
+<meta property="og:url" content="http://jinshendan.github.io/archives/2017/12/index.html">
 <meta property="og:site_name" content="Shendan's blog">
-<meta property="og:description" content="ProblemWe generate a random string by generating a sequence of random characters and concatenating them together. Each character is chosen independently from the first n letters in the English alphabe">
-<meta property="og:updated_time" content="2017-04-18T20:10:03.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="generator - Regionals 2015 Asia-Hangzhou">
-<meta name="twitter:description" content="ProblemWe generate a random string by generating a sequence of random characters and concatenating them together. Each character is chosen independently from the first n letters in the English alphabe">
+<meta name="twitter:title" content="Shendan's blog">
 
 
 
@@ -123,10 +119,10 @@
 
 
 
-  <link rel="canonical" href="http://jinshendan.github.io/generator.html"/>
+  <link rel="canonical" href="http://jinshendan.github.io/archives/2017/12/"/>
 
 
-  <title>generator - Regionals 2015 Asia-Hangzhou | Shendan's blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>Archive | Shendan's blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
@@ -147,7 +143,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container one-collumn sidebar-position-left page-post-detail ">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container one-collumn sidebar-position-left  page-archive  ">
     <div class="headband"></div>
 
     <a href="https://github.com/jinshendan"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/8b6b8ccc6da3aa5722903da7b58eb5ab1081adee/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_orange_ff7600.png"></a>
@@ -251,175 +247,148 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
-
-  
-  
-
   
   
   
+  <div class="post-block archive">
+    <div id="posts" class="posts-collapse">
+      <span class="archive-move-on"></span>
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+      <span class="archive-page-counter">
+        
+        
+        
+          
+        
+        Um..! 19 posts in total. Keep on posting.
+      </span>
 
-    
-      <header class="post-header">
+      
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                generator - Regionals 2015 Asia-Hangzhou
-              
-            
-          </h1>
         
 
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2017-04-18T22:00:12+02:00" content="2017-04-18">
-              2017-04-18
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/LA/" itemprop="url" rel="index">
-                    <span itemprop="name">LA</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-		       <span id="busuanzi_container_page_pv">
-			          &nbsp; | &nbsp; Heat &nbsp; <span id="busuanzi_value_page_pv"></span>°C
-					         </span>
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/generator.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="generator.html" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>We generate a random string by generating a sequence of random characters and concatenating them together. Each character is chosen independently from the first n letters in the English alphabet with equal probability. Only capital letters are used in this problem. The generation is stopped as soon as a specific pattern occurs in the random string. Your task is to predict the expected length of the generated string.</p>
-<h2 id="Limits"><a href="#Limits" class="headerlink" title="Limits"></a>Limits</h2><ul>
-<li>1 &lt;= T &lt;= 10.</li>
-<li>1 &lt;= n &lt;= 26.</li>
-<li>The length of any pattern will not exceed 12.</li>
-</ul>
-<a id="more"></a>
-<h2 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h2><ul>
-<li>For any string S, define the function state(S) as the maximal length of the prefix of pattern which is also a suffix of the current string at the same time.</li>
-<li>If the pattern has length L, then the state of any string is a number between 0 and L. </li>
-<li>We know that L is a final state. </li>
-<li>Let’s define f[i] as the expected number of steps from state i to state L. </li>
-<li>Then we have f[i] = 1+ 1/n(f[a(1,1)]+f[a(1,2)]+…+f[a(1,n)]), where a(i,j) is the state of the new string after concatenating the current string and the j-th letter together. </li>
-<li>Thus, the answer is f[0].</li>
-</ul>
-<h2 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h2><ul>
-<li>We can use brute-force to compute a(i,j).</li>
-</ul>
-
-      
-    </div>
-
-    <div>
-      
         
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
           
-            <a href="/tags/Probability/" rel="tag">#Probability</a>
-          
-            <a href="/tags/DP/" rel="tag">#DP</a>
-          
-        </div>
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/Coupons.html" rel="next" title="Coupons - UVA 10288">
-                <i class="fa fa-chevron-left"></i> Coupons - UVA 10288
-              </a>
-            
+          <div class="collection-title">
+            <h2 class="archive-year motion-element" id="archive-year-2017">2017</h2>
           </div>
+        
+        
 
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/APX-knapsack.html" rel="prev" title="Approximation algorithm of Knapsack problem">
-                Approximation algorithm of Knapsack problem <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
+        
 
-      
-      
-    </footer>
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h1 class="post-title">
+        
+            <a class="post-title-link" href="/Median-of-two-sorted-arrays.html" itemprop="url">
+              
+                <span itemprop="name">Median of two sorted arrays</span>
+              
+            </a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-12-19T22:45:53+01:00"
+              content="2017-12-19" >
+          12-19
+        </time>
+      </div>
+
+    </header>
   </article>
 
 
 
-    <div class="post-spread">
       
+
+        
+        
+        
+
+        
+        
+
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h1 class="post-title">
+        
+            <a class="post-title-link" href="/longest-substring-without-repeating-characters.html" itemprop="url">
+              
+                <span itemprop="name">Longest substring without repeating characters - Leetcode A3</span>
+              
+            </a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-12-19T22:36:31+01:00"
+              content="2017-12-19" >
+          12-19
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+
+      
+
+        
+        
+        
+
+        
+        
+
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h1 class="post-title">
+        
+            <a class="post-title-link" href="/Add-Two-Numbers.html" itemprop="url">
+              
+                <span itemprop="name">Add Two Numbers - Leetcode A2</span>
+              
+            </a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-12-19T22:25:52+01:00"
+              content="2017-12-19" >
+          12-19
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+
+      
+
     </div>
   </div>
+  
+  
+  
+
+  
+
 
 
           </div>
@@ -427,17 +396,6 @@
 
 
           
-  <div class="comments" id="comments">
-    
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-    
-  </div>
-
 
         </div>
         
@@ -457,17 +415,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel ">
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/shendan.png"
@@ -524,17 +473,6 @@
 
       </section>
 
-      
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-            
-              
-            
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem"><span class="nav-number">1.</span> <span class="nav-text">Problem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Limits"><span class="nav-number">2.</span> <span class="nav-text">Limits</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Analysis"><span class="nav-number">3.</span> <span class="nav-text">Analysis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Notes"><span class="nav-number">4.</span> <span class="nav-text">Notes</span></a></li></ol></div>
-            
-          </div>
-        </section>
       
 
     </div>
@@ -651,9 +589,11 @@
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
-
+  
+    <script type="text/javascript" id="motion.page.archive">
+      $('.archive-year').velocity('transition.slideLeftIn');
+    </script>
+  
 
 
   
@@ -671,9 +611,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'jinshendan';
-      var disqus_identifier = 'generator.html';
-      var disqus_title = "generator - Regionals 2015 Asia-Hangzhou";
-      var disqus_url = 'http://jinshendan.github.io/generator.html';
+      var disqus_identifier = 'archives/2017/12/index.html';
+      var disqus_title = "";
+      var disqus_url = '';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
@@ -684,8 +624,6 @@
       }
 
       run_disqus_script('count.js');
-      
-        run_disqus_script('embed.js');
       
     </script>
   

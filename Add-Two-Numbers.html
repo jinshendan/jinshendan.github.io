@@ -75,7 +75,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Probability,DP," />
+  <meta name="keywords" content="linked list," />
 
 
 
@@ -93,16 +93,19 @@
 
 
 
-<meta name="description" content="ProblemWe generate a random string by generating a sequence of random characters and concatenating them together. Each character is chosen independently from the first n letters in the English alphabe">
+<meta name="description" content="ProblemProblem description.
+You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add">
 <meta property="og:type" content="article">
-<meta property="og:title" content="generator - Regionals 2015 Asia-Hangzhou">
-<meta property="og:url" content="http://jinshendan.github.io/generator.html">
+<meta property="og:title" content="Add Two Numbers - Leetcode A2">
+<meta property="og:url" content="http://jinshendan.github.io/Add-Two-Numbers.html">
 <meta property="og:site_name" content="Shendan's blog">
-<meta property="og:description" content="ProblemWe generate a random string by generating a sequence of random characters and concatenating them together. Each character is chosen independently from the first n letters in the English alphabe">
-<meta property="og:updated_time" content="2017-04-18T20:10:03.000Z">
+<meta property="og:description" content="ProblemProblem description.
+You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add">
+<meta property="og:updated_time" content="2017-12-19T21:40:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="generator - Regionals 2015 Asia-Hangzhou">
-<meta name="twitter:description" content="ProblemWe generate a random string by generating a sequence of random characters and concatenating them together. Each character is chosen independently from the first n letters in the English alphabe">
+<meta name="twitter:title" content="Add Two Numbers - Leetcode A2">
+<meta name="twitter:description" content="ProblemProblem description.
+You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add">
 
 
 
@@ -123,10 +126,10 @@
 
 
 
-  <link rel="canonical" href="http://jinshendan.github.io/generator.html"/>
+  <link rel="canonical" href="http://jinshendan.github.io/Add-Two-Numbers.html"/>
 
 
-  <title>generator - Regionals 2015 Asia-Hangzhou | Shendan's blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>Add Two Numbers - Leetcode A2 | Shendan's blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
@@ -272,7 +275,7 @@
             
             
               
-                generator - Regionals 2015 Asia-Hangzhou
+                Add Two Numbers - Leetcode A2
               
             
           </h1>
@@ -284,8 +287,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2017-04-18T22:00:12+02:00" content="2017-04-18">
-              2017-04-18
+            <time itemprop="dateCreated" datetime="2017-12-19T22:25:52+01:00" content="2017-12-19">
+              2017-12-19
             </time>
           </span>
 
@@ -298,8 +301,8 @@
               <span class="post-meta-item-text">In</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/LA/" itemprop="url" rel="index">
-                    <span itemprop="name">LA</span>
+                  <a href="/categories/Leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">Leetcode</span>
                   </a>
                 </span>
 
@@ -318,8 +321,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/generator.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="generator.html" itemprop="commentsCount"></span>
+                <a href="/Add-Two-Numbers.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Add-Two-Numbers.html" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -342,25 +345,11 @@
       
 
       
-        <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>We generate a random string by generating a sequence of random characters and concatenating them together. Each character is chosen independently from the first n letters in the English alphabet with equal probability. Only capital letters are used in this problem. The generation is stopped as soon as a specific pattern occurs in the random string. Your task is to predict the expected length of the generated string.</p>
-<h2 id="Limits"><a href="#Limits" class="headerlink" title="Limits"></a>Limits</h2><ul>
-<li>1 &lt;= T &lt;= 10.</li>
-<li>1 &lt;= n &lt;= 26.</li>
-<li>The length of any pattern will not exceed 12.</li>
-</ul>
+        <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p><a href="https://leetcode.com/problems/add-two-numbers/description/" target="_blank" rel="external">Problem description</a>.</p>
+<p>You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.</p>
+<p>You may assume the two numbers do not contain any leading zero, except the number 0 itself.</p>
 <a id="more"></a>
-<h2 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h2><ul>
-<li>For any string S, define the function state(S) as the maximal length of the prefix of pattern which is also a suffix of the current string at the same time.</li>
-<li>If the pattern has length L, then the state of any string is a number between 0 and L. </li>
-<li>We know that L is a final state. </li>
-<li>Let’s define f[i] as the expected number of steps from state i to state L. </li>
-<li>Then we have f[i] = 1+ 1/n(f[a(1,1)]+f[a(1,2)]+…+f[a(1,n)]), where a(i,j) is the state of the new string after concatenating the current string and the j-th letter together. </li>
-<li>Thus, the answer is f[0].</li>
-</ul>
-<h2 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h2><ul>
-<li>We can use brute-force to compute a(i,j).</li>
-</ul>
-
+<h2 id="Python-Implementation"><a href="#Python-Implementation" class="headerlink" title="Python Implementation"></a>Python Implementation</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Definition for singly-linked list.</span></div><div class="line"><span class="comment"># class ListNode(object):</span></div><div class="line"><span class="comment">#     def __init__(self, x):</span></div><div class="line"><span class="comment">#         self.val = x</span></div><div class="line"><span class="comment">#         self.next = None</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">addTwoNumbers</span><span class="params">(self, l1, l2)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line">        :type l1: ListNode</div><div class="line">        :type l2: ListNode</div><div class="line">        :rtype: ListNode</div><div class="line">        """</div><div class="line">        tete = ListNode(<span class="number">0</span>)</div><div class="line">        pre = tete</div><div class="line">        t = <span class="number">0</span></div><div class="line">        <span class="keyword">while</span> (l1 != <span class="keyword">None</span> <span class="keyword">or</span> l2 != <span class="keyword">None</span>):</div><div class="line">            node = ListNode(<span class="number">0</span>)</div><div class="line">            pre.next = node</div><div class="line">            <span class="keyword">if</span> (l1 == <span class="keyword">None</span>):</div><div class="line">                node.val =  (l2.val + t) % <span class="number">10</span></div><div class="line">                t = (l2.val + t) // <span class="number">10</span></div><div class="line">                l2 = l2.next</div><div class="line">            <span class="keyword">elif</span> (l2 == <span class="keyword">None</span>):</div><div class="line">                node.val = (l1.val + t) % <span class="number">10</span></div><div class="line">                t = (l1.val + t) // <span class="number">10</span></div><div class="line">                l1 = l1.next</div><div class="line">            <span class="keyword">else</span>: </div><div class="line">                node.val = (l1.val + l2.val + t) % <span class="number">10</span></div><div class="line">                t = (l1.val + l2.val + t) // <span class="number">10</span></div><div class="line">                l1 = l1.next</div><div class="line">                l2 = l2.next</div><div class="line">            pre = node</div><div class="line">        </div><div class="line">        <span class="keyword">if</span> (t &gt; <span class="number">0</span>):</div><div class="line">            node = ListNode(t)</div><div class="line">            pre.next = node</div><div class="line">        </div><div class="line">        <span class="keyword">return</span> tete.next</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -382,9 +371,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Probability/" rel="tag">#Probability</a>
-          
-            <a href="/tags/DP/" rel="tag">#DP</a>
+            <a href="/tags/linked-list/" rel="tag">#linked list</a>
           
         </div>
       
@@ -393,16 +380,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Coupons.html" rel="next" title="Coupons - UVA 10288">
-                <i class="fa fa-chevron-left"></i> Coupons - UVA 10288
+              <a href="/APX-knapsack.html" rel="next" title="Approximation algorithm of Knapsack problem">
+                <i class="fa fa-chevron-left"></i> Approximation algorithm of Knapsack problem
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/APX-knapsack.html" rel="prev" title="Approximation algorithm of Knapsack problem">
-                Approximation algorithm of Knapsack problem <i class="fa fa-chevron-right"></i>
+              <a href="/longest-substring-without-repeating-characters.html" rel="prev" title="Longest substring without repeating characters - Leetcode A3">
+                Longest substring without repeating characters - Leetcode A3 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -531,7 +518,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem"><span class="nav-number">1.</span> <span class="nav-text">Problem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Limits"><span class="nav-number">2.</span> <span class="nav-text">Limits</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Analysis"><span class="nav-number">3.</span> <span class="nav-text">Analysis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Notes"><span class="nav-number">4.</span> <span class="nav-text">Notes</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem"><span class="nav-number">1.</span> <span class="nav-text">Problem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-Implementation"><span class="nav-number">2.</span> <span class="nav-text">Python Implementation</span></a></li></ol></div>
             
           </div>
         </section>
@@ -671,9 +658,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'jinshendan';
-      var disqus_identifier = 'generator.html';
-      var disqus_title = "generator - Regionals 2015 Asia-Hangzhou";
-      var disqus_url = 'http://jinshendan.github.io/generator.html';
+      var disqus_identifier = 'Add-Two-Numbers.html';
+      var disqus_title = "Add Two Numbers - Leetcode A2";
+      var disqus_url = 'http://jinshendan.github.io/Add-Two-Numbers.html';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
