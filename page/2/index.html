@@ -271,6 +271,164 @@
             
               
                 
+                <a class="post-title-link" href="/progsys-fork.html" itemprop="url">
+                  ProgSys(1) -- Process and Fork
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-11-18T17:01:51+01:00" content="2016-11-18">
+              2016-11-18
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/ProgSys/" itemprop="url" rel="index">
+                    <span itemprop="name">ProgSys</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+		       <span id="busuanzi_container_page_pv">
+			          &nbsp; | &nbsp; Heat &nbsp; <span id="busuanzi_value_page_pv"></span>°C
+					         </span>
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/progsys-fork.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="progsys-fork.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Process"><a href="#Process" class="headerlink" title="Process"></a>Process</h2><hr>
+<h3 id="Process-program-in-execution"><a href="#Process-program-in-execution" class="headerlink" title="Process = program in execution"></a>Process = program in execution</h3><ul>
+<li>One or more threads.</li>
+<li>Can communicate through pipes, signals, networks, files.</li>
+</ul>
+<hr>
+<h3 id="Process-descriptor"><a href="#Process-descriptor" class="headerlink" title="Process descriptor"></a>Process descriptor</h3><ul>
+<li>Each process has its Process Descriptor, which is used to keep track of the process in memory</li>
+<li>Stores PID, state, parent process, children, registers, address space information, open files</li>
+<li>Process information is usually stored in the so called Process Table, i.e. an array of PD</li>
+</ul>
+<hr>
+<h3 id="Three-states-model"><a href="#Three-states-model" class="headerlink" title="Three states model"></a>Three states model</h3><ul>
+<li>Running : execution, process is using the CPU.</li>
+<li>Ready : process can be executed but is temporarily waiting, CPU is used by another process.</li>
+<li>Waiting : process can’t be executed; it is either blocked because waiting for an external event (e.g. I/O, interrupt from another process) or because scheduler assigned CPU to others.</li>
+</ul>
+<hr>
+<h3 id="Code-in-C"><a href="#Code-in-C" class="headerlink" title="Code in C"></a>Code in C</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/types.h&gt;</span></span></div><div class="line"><span class="keyword">gid_t</span> getgid (<span class="keyword">void</span>);</div><div class="line"><span class="keyword">pid_t</span> getpid (<span class="keyword">void</span>);</div><div class="line"><span class="keyword">pid_t</span> getppid (<span class="keyword">void</span>);</div><div class="line"><span class="keyword">uid_t</span> getuid (<span class="keyword">void</span>);</div></pre></td></tr></table></figure>
+<ul>
+<li>getpid(): returns the process ID of the calling process.</li>
+<li>getppid() : returns the process ID of the parent of the calling process.</li>
+<li>getgid() : returns the group ID of the calling process</li>
+<li>getuid() : returns the user ID of the calling process</li>
+</ul>
+<hr>
+<h3 id="Creat"><a href="#Creat" class="headerlink" title="Creat"></a>Creat</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">pid_t</span> p = fork();</div></pre></td></tr></table></figure>
+<p>Remarks:</p>
+<ul>
+<li>p == 0 (Child process)</li>
+<li>p == -1 (Error)</li>
+<li>p &gt; 0 (Parent process)</li>
+</ul>
+<h3 id="Get-ID"><a href="#Get-ID" class="headerlink" title="Get ID"></a>Get ID</h3><hr>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> my_PID = getpid();</div><div class="line"><span class="keyword">int</span> my_parent_PID = getppid();</div><div class="line"><span class="keyword">int</span> my_UID = getuid();</div><div class="line"><span class="keyword">int</span> my_GID = getgid();</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/Text-Document-Analysis-CF-723B.html" itemprop="url">
                   Text Document Analysis - CodeForce - 723B
                 </a>
@@ -1406,140 +1564,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/Age-sort.html" itemprop="url">
-                  Age Sort - UVA 11462
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-09-10T00:00:00+02:00" content="2016-09-10">
-              2016-09-10
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/UVA/" itemprop="url" rel="index">
-                    <span itemprop="name">UVA</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-		       <span id="busuanzi_container_page_pv">
-			          &nbsp; | &nbsp; Heat &nbsp; <span id="busuanzi_value_page_pv"></span>°C
-					         </span>
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/Age-sort.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Age-sort.html" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p><a href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;category=26&amp;page=show_problem&amp;problem=2457">Here</a>.</p>
-<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><ul>
-<li>Sort 2,000,000 integers between 1 and 100. </li>
-</ul>
-<h2 id="Analyse"><a href="#Analyse" class="headerlink" title="Analyse"></a>Analyse</h2><ul>
-<li>First idea: fast sort, merge sort O(nlogn), TIMELIMIT!</li>
-<li>Use the counting sort algorithm!  </li>
-<li>Complexity: O(n).</li>
-</ul>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/Age-sort.html#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1585,7 +1609,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-count">22</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -1602,7 +1626,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-count">22</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
