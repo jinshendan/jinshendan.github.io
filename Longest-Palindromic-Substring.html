@@ -75,7 +75,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="DP," />
+  <meta name="keywords" content="algorithm competition, operations research,computer science,machine learning" />
 
 
 
@@ -93,34 +93,28 @@
 
 
 
-<meta name="description" content="ProblemHere.
-Summary
-Given a list A, find the max(a[i]-a[j]) with i &amp;lt; j.
-
-Analyse
-max(a[i]-a[j]) = max(max(a[1..j-1]) - a[j]).
-Complexity: O(n).">
+<meta name="description" content="ProblemProblem descriptionGiven a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.
+Example:
+Input: “babad”
+Output: “bab”
+Note: “aba” is also">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Open Credit System - UVA 11078">
-<meta property="og:url" content="http://jinshendan.github.io/open-credit-system.html">
+<meta property="og:title" content="Longest Palindromic Substring - Leetcode A5">
+<meta property="og:url" content="http://jinshendan.github.io/Longest-Palindromic-Substring.html">
 <meta property="og:site_name" content="Shendan's blog">
-<meta property="og:description" content="ProblemHere.
-Summary
-Given a list A, find the max(a[i]-a[j]) with i &amp;lt; j.
-
-Analyse
-max(a[i]-a[j]) = max(max(a[1..j-1]) - a[j]).
-Complexity: O(n).">
-<meta property="og:updated_time" content="2016-09-17T12:10:32.000Z">
+<meta property="og:description" content="ProblemProblem descriptionGiven a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.
+Example:
+Input: “babad”
+Output: “bab”
+Note: “aba” is also">
+<meta property="og:updated_time" content="2017-12-20T14:22:37.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Open Credit System - UVA 11078">
-<meta name="twitter:description" content="ProblemHere.
-Summary
-Given a list A, find the max(a[i]-a[j]) with i &amp;lt; j.
-
-Analyse
-max(a[i]-a[j]) = max(max(a[1..j-1]) - a[j]).
-Complexity: O(n).">
+<meta name="twitter:title" content="Longest Palindromic Substring - Leetcode A5">
+<meta name="twitter:description" content="ProblemProblem descriptionGiven a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.
+Example:
+Input: “babad”
+Output: “bab”
+Note: “aba” is also">
 
 
 
@@ -141,10 +135,10 @@ Complexity: O(n).">
 
 
 
-  <link rel="canonical" href="http://jinshendan.github.io/open-credit-system.html"/>
+  <link rel="canonical" href="http://jinshendan.github.io/Longest-Palindromic-Substring.html"/>
 
 
-  <title>Open Credit System - UVA 11078 | Shendan's blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>Longest Palindromic Substring - Leetcode A5 | Shendan's blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
@@ -290,7 +284,7 @@ Complexity: O(n).">
             
             
               
-                Open Credit System - UVA 11078
+                Longest Palindromic Substring - Leetcode A5
               
             
           </h1>
@@ -302,8 +296,8 @@ Complexity: O(n).">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-09-16T00:00:00+02:00" content="2016-09-16">
-              2016-09-16
+            <time itemprop="dateCreated" datetime="2017-12-20T15:20:59+01:00" content="2017-12-20">
+              2017-12-20
             </time>
           </span>
 
@@ -316,8 +310,8 @@ Complexity: O(n).">
               <span class="post-meta-item-text">In</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/UVA/" itemprop="url" rel="index">
-                    <span itemprop="name">UVA</span>
+                  <a href="/categories/Leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">Leetcode</span>
                   </a>
                 </span>
 
@@ -336,8 +330,8 @@ Complexity: O(n).">
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/open-credit-system.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="open-credit-system.html" itemprop="commentsCount"></span>
+                <a href="/Longest-Palindromic-Substring.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Longest-Palindromic-Substring.html" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -360,16 +354,14 @@ Complexity: O(n).">
       
 
       
-        <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p><a href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;page=show_problem&amp;problem=2019" target="_blank" rel="external">Here</a>.</p>
-<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><ul>
-<li>Given a list A, find the max(a[i]-a[j]) with i &lt; j.</li>
-</ul>
-<h2 id="Analyse"><a href="#Analyse" class="headerlink" title="Analyse"></a>Analyse</h2><ul>
-<li>max(a[i]-a[j]) = max(max(a[1..j-1]) - a[j]).</li>
-<li>Complexity: O(n).</li>
-</ul>
+        <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p><a href="https://leetcode.com/problems/longest-palindromic-substring/description/" target="_blank" rel="external">Problem description</a><br>Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.</p>
+<p>Example:</p>
+<p>Input: “babad”</p>
+<p>Output: “bab”</p>
+<p>Note: “aba” is also a valid answer.</p>
 <a id="more"></a>
-<h2 id="Code-in-C"><a href="#Code-in-C" class="headerlink" title="Code in C++"></a>Code in C++</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">1000000000</span>;</div><div class="line"><span class="keyword">int</span> T;</div><div class="line"><span class="keyword">int</span> n;</div><div class="line"><span class="keyword">int</span> MAX, x, ans;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="built_in">cin</span> &gt;&gt; T;</div><div class="line">	<span class="keyword">while</span> (T--) &#123;</div><div class="line">		<span class="built_in">cin</span> &gt;&gt; n;</div><div class="line">		<span class="built_in">cin</span> &gt;&gt; MAX;</div><div class="line">		ans = -INF;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++)&#123;</div><div class="line">			<span class="built_in">cin</span> &gt;&gt; x;</div><div class="line">			<span class="keyword">if</span> (MAX - x &gt; ans)</div><div class="line">				ans = MAX - x;</div><div class="line">			<span class="keyword">if</span> (x &gt; MAX)</div><div class="line">				MAX = x ;</div><div class="line">		&#125;</div><div class="line">		<span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h2><h2 id="Python-Implementation"><a href="#Python-Implementation" class="headerlink" title="Python Implementation"></a>Python Implementation</h2><pre><code class="python">
+</code></pre>
 
       
     </div>
@@ -390,28 +382,18 @@ Complexity: O(n).">
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/DP/" rel="tag">#DP</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Age-sort.html" rel="next" title="Age Sort - UVA 11462">
-                <i class="fa fa-chevron-left"></i> Age Sort - UVA 11462
+              <a href="/Median-of-two-sorted-arrays.html" rel="next" title="Median of two sorted arrays - Leetcode A4">
+                <i class="fa fa-chevron-left"></i> Median of two sorted arrays - Leetcode A4
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/calculator-conundrum.html" rel="prev" title="Calculator Conundrum - UVA 11549">
-                Calculator Conundrum - UVA 11549 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -539,7 +521,7 @@ Complexity: O(n).">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem"><span class="nav-number">1.</span> <span class="nav-text">Problem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Summary"><span class="nav-number">2.</span> <span class="nav-text">Summary</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Analyse"><span class="nav-number">3.</span> <span class="nav-text">Analyse</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Code-in-C"><span class="nav-number">4.</span> <span class="nav-text">Code in C++</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem"><span class="nav-number">1.</span> <span class="nav-text">Problem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Analysis"><span class="nav-number">2.</span> <span class="nav-text">Analysis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-Implementation"><span class="nav-number">3.</span> <span class="nav-text">Python Implementation</span></a></li></ol></div>
             
           </div>
         </section>
@@ -679,9 +661,9 @@ Complexity: O(n).">
 
     <script type="text/javascript">
       var disqus_shortname = 'jinshendan';
-      var disqus_identifier = 'open-credit-system.html';
-      var disqus_title = "Open Credit System - UVA 11078";
-      var disqus_url = 'http://jinshendan.github.io/open-credit-system.html';
+      var disqus_identifier = 'Longest-Palindromic-Substring.html';
+      var disqus_title = "Longest Palindromic Substring - Leetcode A5";
+      var disqus_url = 'http://jinshendan.github.io/Longest-Palindromic-Substring.html';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
