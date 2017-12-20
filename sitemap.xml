@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://jinshendan.github.io/Median-of-two-sorted-arrays.html</loc>
+    <loc>http://jinshendan.github.io/ZigZag-Conversion.html</loc>
     
-    <lastmod>2017-12-20T15:51:00.000Z</lastmod>
+    <lastmod>2017-12-20T16:35:59.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://jinshendan.github.io/Longest-Palindromic-Substring.html</loc>
     
-    <lastmod>2017-12-20T15:50:59.000Z</lastmod>
+    <lastmod>2017-12-20T16:10:05.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://jinshendan.github.io/Median-of-two-sorted-arrays.html</loc>
+    
+    <lastmod>2017-12-20T15:51:00.000Z</lastmod>
     
   </url>
   
