@@ -5,12 +5,14 @@
     
   <url>
     <loc>http://jinshendan.github.io/Median-of-two-sorted-arrays.html</loc>
-    <lastmod>2017-12-19T21:47:22.000Z</lastmod>
+    <lastmod>2017-12-20T14:17:56.000Z</lastmod>
     <data>
         <display>
-        <title>Median of two sorted arrays</title>
+        <title>Median of two sorted arrays - Leetcode A4</title>
         <pubTime>2017-12-19T21:45:53.000Z</pubTime>
         
+        <tag>Binary Search</tag>
+         
          
            
              
@@ -346,9 +348,9 @@
         <title>Age Sort - UVA 11462</title>
         <pubTime>2016-09-09T22:00:00.000Z</pubTime>
         
-        <tag>Sort</tag>
-         
         <tag>Greedy</tag>
+         
+        <tag>Sort</tag>
          
          
            
