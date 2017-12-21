@@ -94,18 +94,18 @@
 
 
 <meta name="description" content="ProblemProblem description
-Python Implementation12345678910111213141516class Solution:	def isPalindrome(self, x):		&quot;&quot;&quot;		:type x: int		:rtype: bool		&quot;&quot;&quot;		if x &amp;lt; 0:			return False		y = 0		t = x		whil">
+Determine whether an integer is a palindrome. Do this without extra space.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Palindrome Number - Leetcode A9">
 <meta property="og:url" content="http://jinshendan.github.io/Palindrome-Number.html">
 <meta property="og:site_name" content="Shendan's blog">
 <meta property="og:description" content="ProblemProblem description
-Python Implementation12345678910111213141516class Solution:	def isPalindrome(self, x):		&quot;&quot;&quot;		:type x: int		:rtype: bool		&quot;&quot;&quot;		if x &amp;lt; 0:			return False		y = 0		t = x		whil">
-<meta property="og:updated_time" content="2017-12-21T21:12:52.000Z">
+Determine whether an integer is a palindrome. Do this without extra space.">
+<meta property="og:updated_time" content="2017-12-21T21:14:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Palindrome Number - Leetcode A9">
 <meta name="twitter:description" content="ProblemProblem description
-Python Implementation12345678910111213141516class Solution:	def isPalindrome(self, x):		&quot;&quot;&quot;		:type x: int		:rtype: bool		&quot;&quot;&quot;		if x &amp;lt; 0:			return False		y = 0		t = x		whil">
+Determine whether an integer is a palindrome. Do this without extra space.">
 
 
 
@@ -346,6 +346,8 @@ Python Implementation12345678910111213141516class Solution:	def isPalindrome(sel
 
       
         <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p><a href="https://leetcode.com/problems/palindrome-number/description/" target="_blank" rel="external">Problem description</a></p>
+<p>Determine whether an integer is a palindrome. Do this without extra space.</p>
+<a id="more"></a>
 <h2 id="Python-Implementation"><a href="#Python-Implementation" class="headerlink" title="Python Implementation"></a>Python Implementation</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></div><div class="line">	<span class="function"><span class="keyword">def</span> <span class="title">isPalindrome</span><span class="params">(self, x)</span>:</span></div><div class="line">		<span class="string">"""</span></div><div class="line">		:type x: int</div><div class="line">		:rtype: bool</div><div class="line">		"""</div><div class="line"></div><div class="line">		<span class="keyword">if</span> x &lt; <span class="number">0</span>:</div><div class="line">			<span class="keyword">return</span> <span class="keyword">False</span></div><div class="line">		y = <span class="number">0</span></div><div class="line">		t = x</div><div class="line">		<span class="keyword">while</span> t &gt; <span class="number">0</span>:</div><div class="line">			y = y * <span class="number">10</span> + (t % <span class="number">10</span>)</div><div class="line">			t = t // <span class="number">10</span></div><div class="line">		print(y)</div><div class="line">		<span class="keyword">return</span> x == y</div></pre></td></tr></table></figure>
 
       
