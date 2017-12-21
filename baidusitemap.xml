@@ -4,6 +4,44 @@
 
     
   <url>
+    <loc>http://jinshendan.github.io/Palindrome-Number.html</loc>
+    <lastmod>2017-12-21T21:12:52.000Z</lastmod>
+    <data>
+        <display>
+        <title>Palindrome Number - Leetcode A9</title>
+        <pubTime>2017-12-21T21:11:36.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="Leetcode" url="http://jinshendan.github.io/categories/Leetcode/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://jinshendan.github.io/Reverse-Integer.html</loc>
+    <lastmod>2017-12-21T14:43:30.000Z</lastmod>
+    <data>
+        <display>
+        <title>Reverse Integer - Leetcode A7</title>
+        <pubTime>2017-12-20T22:05:19.000Z</pubTime>
+        
+        <tag>Integer</tag>
+         
+         
+           
+             
+              <breadCrumb title="Leetcode" url="http://jinshendan.github.io/categories/Leetcode/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://jinshendan.github.io/Atoi.html</loc>
     <lastmod>2017-12-21T14:42:21.000Z</lastmod>
     <data>
@@ -23,26 +61,6 @@
     </url>
 
     
-    
-  <url>
-    <loc>http://jinshendan.github.io/Reverse-Integer.html</loc>
-    <lastmod>2017-12-20T22:16:55.000Z</lastmod>
-    <data>
-        <display>
-        <title>Reverse Integer - Leetcode A7</title>
-        <pubTime>2017-12-20T22:05:19.000Z</pubTime>
-        
-        <tag>Integer</tag>
-         
-         
-           
-             
-              <breadCrumb title="Leetcode" url="http://jinshendan.github.io/categories/Leetcode/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
   <url>
     <loc>http://jinshendan.github.io/ZigZag-Conversion.html</loc>

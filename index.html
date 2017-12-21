@@ -271,6 +271,131 @@
             
               
                 
+                <a class="post-title-link" href="/Palindrome-Number.html" itemprop="url">
+                  Palindrome Number - Leetcode A9
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2017-12-21T22:11:36+01:00" content="2017-12-21">
+              2017-12-21
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">Leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+		       <span id="busuanzi_container_page_pv">
+			          &nbsp; | &nbsp; Heat &nbsp; <span id="busuanzi_value_page_pv"></span>°C
+					         </span>
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/Palindrome-Number.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Palindrome-Number.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p><a href="https://leetcode.com/problems/palindrome-number/description/" target="_blank" rel="external">Problem description</a></p>
+<h2 id="Python-Implementation"><a href="#Python-Implementation" class="headerlink" title="Python Implementation"></a>Python Implementation</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></div><div class="line">	<span class="function"><span class="keyword">def</span> <span class="title">isPalindrome</span><span class="params">(self, x)</span>:</span></div><div class="line">		<span class="string">"""</span></div><div class="line">		:type x: int</div><div class="line">		:rtype: bool</div><div class="line">		"""</div><div class="line"></div><div class="line">		<span class="keyword">if</span> x &lt; <span class="number">0</span>:</div><div class="line">			<span class="keyword">return</span> <span class="keyword">False</span></div><div class="line">		y = <span class="number">0</span></div><div class="line">		t = x</div><div class="line">		<span class="keyword">while</span> t &gt; <span class="number">0</span>:</div><div class="line">			y = y * <span class="number">10</span> + (t % <span class="number">10</span>)</div><div class="line">			t = t // <span class="number">10</span></div><div class="line">		print(y)</div><div class="line">		<span class="keyword">return</span> x == y</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/Atoi.html" itemprop="url">
                   Atoi - Leetcode A8
                 </a>
@@ -475,16 +600,17 @@
 
       
         
-          
-            <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p><a href="https://leetcode.com/problems/reverse-integer/description/" target="_blank" rel="external">Problem description</a></p>
+          <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p><a href="https://leetcode.com/problems/reverse-integer/description/">Problem description</a></p>
 <p>Given a 32-bit signed integer, reverse digits of an integer.</p>
 <p>Example 1:</p>
 <p>Input: 123<br>Output:  321<br>Example 2:</p>
 <p>Input: -123<br>Output: -321<br>Example 3:</p>
 <p>Input: 120<br>Output: 21<br>Note:<br>Assume we are dealing with an environment which could only hold integers within the 32-bit signed integer range. For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows.</p>
-<h2 id="Python-“C-style”-Implementation"><a href="#Python-“C-style”-Implementation" class="headerlink" title="Python “C-style” Implementation"></a>Python “C-style” Implementation</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></div><div class="line">	<span class="function"><span class="keyword">def</span> <span class="title">reverse</span><span class="params">(self, x)</span>:</span></div><div class="line">		<span class="string">"""</span></div><div class="line">		:type x: int</div><div class="line">		:rtype: int</div><div class="line">		"""</div><div class="line"></div><div class="line">		sign = <span class="number">1</span></div><div class="line">		<span class="keyword">if</span> (x &lt; <span class="number">0</span>):</div><div class="line">			sign = <span class="number">-1</span></div><div class="line">			x = -x</div><div class="line"></div><div class="line">		ans = <span class="number">0</span></div><div class="line">		<span class="keyword">while</span> (x &gt; <span class="number">0</span>):</div><div class="line">			ans = ans * <span class="number">10</span> + x % <span class="number">10</span></div><div class="line">			x = x // <span class="number">10</span></div><div class="line">			<span class="keyword">if</span> ans*sign &gt; ((<span class="number">1</span> &lt;&lt; <span class="number">31</span>) - <span class="number">1</span>) <span class="keyword">or</span> ans*sign &lt; -(<span class="number">1</span> &lt;&lt; <span class="number">31</span>):</div><div class="line">				ans = <span class="number">0</span></div><div class="line">				<span class="keyword">break</span></div><div class="line"></div><div class="line">		<span class="keyword">return</span> ans*sign</div></pre></td></tr></table></figure>
-<h2 id="Python-Implementation"><a href="#Python-Implementation" class="headerlink" title="Python Implementation"></a>Python Implementation</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></div><div class="line">	<span class="function"><span class="keyword">def</span> <span class="title">reverse</span><span class="params">(self, x)</span>:</span></div><div class="line">		<span class="string">"""</span></div><div class="line">		:type x: int</div><div class="line">		:rtype: int</div><div class="line">		"""</div><div class="line">		MaxInt = (<span class="number">1</span>&lt;&lt;<span class="number">31</span>)<span class="number">-1</span></div><div class="line">		MinInt = -(<span class="number">1</span>&lt;&lt;<span class="number">31</span>)</div><div class="line">		<span class="keyword">if</span> x &gt; <span class="number">0</span>:</div><div class="line">			ans = int(str(x)[::<span class="number">-1</span>])</div><div class="line">		<span class="keyword">else</span>:</div><div class="line">			ans = int(str(-x)[::<span class="number">-1</span>])*(<span class="number">-1</span>)</div><div class="line">		<span class="keyword">if</span> (ans &gt; MaxInt <span class="keyword">or</span> ans &lt; MinInt):</div><div class="line">			ans = <span class="number">0</span></div><div class="line">		<span class="keyword">return</span> ans</div></pre></td></tr></table></figure>
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/Reverse-Integer.html#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1424,136 +1550,6 @@ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/Coupons.html" itemprop="url">
-                  Coupons - UVA 10288
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2017-04-18T21:50:10+02:00" content="2017-04-18">
-              2017-04-18
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/UVA/" itemprop="url" rel="index">
-                    <span itemprop="name">UVA</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-		       <span id="busuanzi_container_page_pv">
-			          &nbsp; | &nbsp; Heat &nbsp; <span id="busuanzi_value_page_pv"></span>°C
-					         </span>
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/Coupons.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Coupons.html" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>There are n coupons numbered from 1 to n. How many times on average are required to make a complete set of n coupons<br>by selecting one coupon each time? </p>
-<p>If the answer is an integer number, output the number. If the answer is not integer, then output the integer part of the answer followed by a space and then by the proper fraction in the format Num/Denom. The fractional part should be irreducible.</p>
-<h2 id="Limits"><a href="#Limits" class="headerlink" title="Limits"></a>Limits</h2><ul>
-<li>1 &lt;= n &lt;= 33</li>
-</ul>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/Coupons.html#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1599,7 +1595,7 @@ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">23</span>
+              <span class="site-state-item-count">24</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
