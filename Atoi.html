@@ -75,7 +75,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="sliding window," />
+  <meta name="keywords" content="string," />
 
 
 
@@ -93,28 +93,22 @@
 
 
 
-<meta name="description" content="ProblemProblem description.
-Given a string, find the length of the longest substring without repeating characters.
-Examples:
-Given “abcabcbb”, the answer is “abc”, which the length is 3.
-Given “bbbbb”">
+<meta name="description" content="ProblemProblem description
+Implement atoi to convert a string to an integer.
+Requirements for atoi:The function first discards as many whitespace characters as necessary until the first non-whitespace">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Longest substring without repeating characters - Leetcode A3">
-<meta property="og:url" content="http://jinshendan.github.io/longest-substring-without-repeating-characters.html">
+<meta property="og:title" content="Atoi - Leetcode A8">
+<meta property="og:url" content="http://jinshendan.github.io/Atoi.html">
 <meta property="og:site_name" content="Shendan's blog">
-<meta property="og:description" content="ProblemProblem description.
-Given a string, find the length of the longest substring without repeating characters.
-Examples:
-Given “abcabcbb”, the answer is “abc”, which the length is 3.
-Given “bbbbb”">
-<meta property="og:updated_time" content="2017-12-19T21:44:09.000Z">
+<meta property="og:description" content="ProblemProblem description
+Implement atoi to convert a string to an integer.
+Requirements for atoi:The function first discards as many whitespace characters as necessary until the first non-whitespace">
+<meta property="og:updated_time" content="2017-12-21T14:42:21.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Longest substring without repeating characters - Leetcode A3">
-<meta name="twitter:description" content="ProblemProblem description.
-Given a string, find the length of the longest substring without repeating characters.
-Examples:
-Given “abcabcbb”, the answer is “abc”, which the length is 3.
-Given “bbbbb”">
+<meta name="twitter:title" content="Atoi - Leetcode A8">
+<meta name="twitter:description" content="ProblemProblem description
+Implement atoi to convert a string to an integer.
+Requirements for atoi:The function first discards as many whitespace characters as necessary until the first non-whitespace">
 
 
 
@@ -135,10 +129,10 @@ Given “bbbbb”">
 
 
 
-  <link rel="canonical" href="http://jinshendan.github.io/longest-substring-without-repeating-characters.html"/>
+  <link rel="canonical" href="http://jinshendan.github.io/Atoi.html"/>
 
 
-  <title>Longest substring without repeating characters - Leetcode A3 | Shendan's blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>Atoi - Leetcode A8 | Shendan's blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
@@ -284,7 +278,7 @@ Given “bbbbb”">
             
             
               
-                Longest substring without repeating characters - Leetcode A3
+                Atoi - Leetcode A8
               
             
           </h1>
@@ -296,8 +290,8 @@ Given “bbbbb”">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2017-12-19T22:36:31+01:00" content="2017-12-19">
-              2017-12-19
+            <time itemprop="dateCreated" datetime="2017-12-21T15:37:51+01:00" content="2017-12-21">
+              2017-12-21
             </time>
           </span>
 
@@ -330,8 +324,8 @@ Given “bbbbb”">
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/longest-substring-without-repeating-characters.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="longest-substring-without-repeating-characters.html" itemprop="commentsCount"></span>
+                <a href="/Atoi.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Atoi.html" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -354,17 +348,15 @@ Given “bbbbb”">
       
 
       
-        <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p><a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/description/" target="_blank" rel="external">Problem description</a>.</p>
-<p>Given a string, find the length of the longest substring without repeating characters.</p>
-<p>Examples:</p>
-<p>Given “abcabcbb”, the answer is “abc”, which the length is 3.</p>
-<p>Given “bbbbb”, the answer is “b”, with the length of 1.</p>
-<p>Given “pwwkew”, the answer is “wke”, with the length of 3. Note that the answer must be a substring, “pwke” is a subsequence and not a substring.</p>
+        <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p><a href="https://leetcode.com/problems/string-to-integer-atoi/description/" target="_blank" rel="external">Problem description</a></p>
+<p>Implement atoi to convert a string to an integer.</p>
+<p>Requirements for atoi:<br>The function first discards as many whitespace characters as necessary until the first non-whitespace character is found. Then, starting from this character, takes an optional initial plus or minus sign followed by as many numerical digits as possible, and interprets them as a numerical value.</p>
+<p>The string can contain additional characters after those that form the integral number, which are ignored and have no effect on the behavior of this function.</p>
+<p>If the first sequence of non-whitespace characters in str is not a valid integral number, or if no such sequence exists because either str is empty or it contains only whitespace characters, no conversion is performed.</p>
+<p>If no valid conversion could be performed, a zero value is returned. If the correct value is out of the range of representable values, INT_MAX (2147483647) or INT_MIN (-2147483648) is returned.</p>
 <a id="more"></a>
-<h2 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h2><ul>
-<li>Sliding window</li>
-</ul>
-<h2 id="Python-Implementation"><a href="#Python-Implementation" class="headerlink" title="Python Implementation"></a>Python Implementation</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(self, s)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line">        :type s: str</div><div class="line">        :rtype: int</div><div class="line">        """</div><div class="line">        ss = set()</div><div class="line">        start = <span class="number">0</span></div><div class="line">        maxlen = <span class="number">0</span></div><div class="line">        <span class="keyword">for</span> i, x <span class="keyword">in</span> enumerate(s):</div><div class="line">        	<span class="keyword">while</span> x <span class="keyword">in</span> ss:</div><div class="line">        		ss.remove(s[start])</div><div class="line">        		start += <span class="number">1</span></div><div class="line">        	ss.add(x)</div><div class="line">        	maxlen = max(maxlen, i - start + <span class="number">1</span>)</div><div class="line">        	<span class="comment"># print(start, i, maxlen)</span></div><div class="line">        <span class="keyword">return</span> maxlen</div></pre></td></tr></table></figure>
+<h2 id="Python-Implementation"><a href="#Python-Implementation" class="headerlink" title="Python Implementation"></a>Python Implementation</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">myAtoi</span><span class="params">(self, str)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line">        :type str: str</div><div class="line">        :rtype: int</div><div class="line">        """</div><div class="line">        <span class="comment"># discard whitespace</span></div><div class="line">        str = str.strip()</div><div class="line">        </div><div class="line">        sign = <span class="number">1</span></div><div class="line">        i = <span class="number">0</span></div><div class="line">        <span class="keyword">if</span> (str == <span class="string">""</span>):</div><div class="line">            <span class="keyword">return</span> <span class="number">0</span></div><div class="line">            </div><div class="line">        <span class="keyword">if</span> str[<span class="number">0</span>] == <span class="string">'+'</span>:</div><div class="line">            sign = <span class="number">1</span></div><div class="line">            i += <span class="number">1</span></div><div class="line">        <span class="keyword">elif</span> str[<span class="number">0</span>] == <span class="string">'-'</span>:</div><div class="line">            sign = <span class="number">-1</span></div><div class="line">            i += <span class="number">1</span></div><div class="line">        </div><div class="line">        ans = <span class="number">0</span></div><div class="line">        <span class="keyword">while</span> i &lt; len(str) <span class="keyword">and</span> str[i].isdigit():</div><div class="line">            ans = ans * <span class="number">10</span> + int(str[i])</div><div class="line">            i += <span class="number">1</span></div><div class="line"></div><div class="line">        ans = ans * sign</div><div class="line"></div><div class="line">        <span class="keyword">if</span> (i == <span class="number">0</span> <span class="keyword">and</span> str[<span class="number">0</span>] <span class="keyword">not</span> <span class="keyword">in</span> [<span class="string">'+'</span>, <span class="string">'-'</span>]):</div><div class="line">            <span class="keyword">return</span> <span class="number">0</span></div><div class="line">        <span class="keyword">if</span> ans &gt; (<span class="number">1</span>&lt;&lt;<span class="number">31</span>)<span class="number">-1</span>:</div><div class="line">            <span class="keyword">return</span> (<span class="number">1</span>&lt;&lt;<span class="number">31</span>)<span class="number">-1</span></div><div class="line">        <span class="keyword">if</span> ans &lt; -(<span class="number">1</span>&lt;&lt;<span class="number">31</span>):</div><div class="line">            <span class="keyword">return</span> -(<span class="number">1</span>&lt;&lt;<span class="number">31</span>)</div><div class="line"></div><div class="line">        <span class="keyword">return</span> ans</div></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -386,7 +378,7 @@ Given “bbbbb”">
       
         <div class="post-tags">
           
-            <a href="/tags/sliding-window/" rel="tag">#sliding window</a>
+            <a href="/tags/string/" rel="tag">#string</a>
           
         </div>
       
@@ -395,17 +387,13 @@ Given “bbbbb”">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Add-Two-Numbers.html" rel="next" title="Add Two Numbers - Leetcode A2">
-                <i class="fa fa-chevron-left"></i> Add Two Numbers - Leetcode A2
+              <a href="/Reverse-Integer.html" rel="next" title="Reverse Integer - Leetcode A7">
+                <i class="fa fa-chevron-left"></i> Reverse Integer - Leetcode A7
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/Median-of-two-sorted-arrays.html" rel="prev" title="Median of two sorted arrays - Leetcode A4">
-                Median of two sorted arrays - Leetcode A4 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -533,7 +521,7 @@ Given “bbbbb”">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem"><span class="nav-number">1.</span> <span class="nav-text">Problem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Analysis"><span class="nav-number">2.</span> <span class="nav-text">Analysis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-Implementation"><span class="nav-number">3.</span> <span class="nav-text">Python Implementation</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem"><span class="nav-number">1.</span> <span class="nav-text">Problem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-Implementation"><span class="nav-number">2.</span> <span class="nav-text">Python Implementation</span></a></li></ol></div>
             
           </div>
         </section>
@@ -673,9 +661,9 @@ Given “bbbbb”">
 
     <script type="text/javascript">
       var disqus_shortname = 'jinshendan';
-      var disqus_identifier = 'longest-substring-without-repeating-characters.html';
-      var disqus_title = "Longest substring without repeating characters - Leetcode A3";
-      var disqus_url = 'http://jinshendan.github.io/longest-substring-without-repeating-characters.html';
+      var disqus_identifier = 'Atoi.html';
+      var disqus_title = "Atoi - Leetcode A8";
+      var disqus_url = 'http://jinshendan.github.io/Atoi.html';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');

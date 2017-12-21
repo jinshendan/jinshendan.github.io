@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jinshendan.github.io/"/>
-  <updated>2017-12-20T22:16:55.000Z</updated>
+  <updated>2017-12-21T14:42:21.000Z</updated>
   <id>http://jinshendan.github.io/</id>
   
   <author>
@@ -14,6 +14,41 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Atoi - Leetcode A8</title>
+    <link href="http://jinshendan.github.io/Atoi.html"/>
+    <id>http://jinshendan.github.io/Atoi.html</id>
+    <published>2017-12-21T14:37:51.000Z</published>
+    <updated>2017-12-21T14:42:21.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p><a href="https://leetcode.com/problems/string-to-integer-atoi/description/" target="_blank" rel="external">Problem description</a></p>
+<p>Implement atoi to convert a string to an integer.</p>
+<p>Requirements for atoi:<br>The function first discards as many whitespace characters as necessary until the first non-whitespace character is found. Then, starting from this character, takes an optional initial plus or minus sign followed by as many numerical digits as possible, and interprets them as a numerical value.</p>
+<p>The string can contain additional characters after those that form the integral number, which are ignored and have no effect on the behavior of this function.</p>
+<p>If the first sequence of non-whitespace characters in str is not a valid integral number, or if no such sequence exists because either str is empty or it contains only whitespace characters, no conversion is performed.</p>
+<p>If no valid conversion could be performed, a zero value is returned. If the correct value is out of the range of representable values, INT_MAX (2147483647) or INT_MIN (-2147483648) is returned.</p>
+<a id="more"></a>
+<h2 id="Python-Implementation"><a href="#Python-Implementation" class="headerlink" title="Python Implementation"></a>Python Implementation</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">myAtoi</span><span class="params">(self, str)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line">        :type str: str</div><div class="line">        :rtype: int</div><div class="line">        """</div><div class="line">        <span class="comment"># discard whitespace</span></div><div class="line">        str = str.strip()</div><div class="line">        </div><div class="line">        sign = <span class="number">1</span></div><div class="line">        i = <span class="number">0</span></div><div class="line">        <span class="keyword">if</span> (str == <span class="string">""</span>):</div><div class="line">            <span class="keyword">return</span> <span class="number">0</span></div><div class="line">            </div><div class="line">        <span class="keyword">if</span> str[<span class="number">0</span>] == <span class="string">'+'</span>:</div><div class="line">            sign = <span class="number">1</span></div><div class="line">            i += <span class="number">1</span></div><div class="line">        <span class="keyword">elif</span> str[<span class="number">0</span>] == <span class="string">'-'</span>:</div><div class="line">            sign = <span class="number">-1</span></div><div class="line">            i += <span class="number">1</span></div><div class="line">        </div><div class="line">        ans = <span class="number">0</span></div><div class="line">        <span class="keyword">while</span> i &lt; len(str) <span class="keyword">and</span> str[i].isdigit():</div><div class="line">            ans = ans * <span class="number">10</span> + int(str[i])</div><div class="line">            i += <span class="number">1</span></div><div class="line"></div><div class="line">        ans = ans * sign</div><div class="line"></div><div class="line">        <span class="keyword">if</span> (i == <span class="number">0</span> <span class="keyword">and</span> str[<span class="number">0</span>] <span class="keyword">not</span> <span class="keyword">in</span> [<span class="string">'+'</span>, <span class="string">'-'</span>]):</div><div class="line">            <span class="keyword">return</span> <span class="number">0</span></div><div class="line">        <span class="keyword">if</span> ans &gt; (<span class="number">1</span>&lt;&lt;<span class="number">31</span>)<span class="number">-1</span>:</div><div class="line">            <span class="keyword">return</span> (<span class="number">1</span>&lt;&lt;<span class="number">31</span>)<span class="number">-1</span></div><div class="line">        <span class="keyword">if</span> ans &lt; -(<span class="number">1</span>&lt;&lt;<span class="number">31</span>):</div><div class="line">            <span class="keyword">return</span> -(<span class="number">1</span>&lt;&lt;<span class="number">31</span>)</div><div class="line"></div><div class="line">        <span class="keyword">return</span> ans</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/string-to-integer-atoi/description/&quot;&gt;Problem description&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Implement atoi to convert a string to an integer.&lt;/p&gt;
+&lt;p&gt;Requirements for atoi:&lt;br&gt;The function first discards as many whitespace characters as necessary until the first non-whitespace character is found. Then, starting from this character, takes an optional initial plus or minus sign followed by as many numerical digits as possible, and interprets them as a numerical value.&lt;/p&gt;
+&lt;p&gt;The string can contain additional characters after those that form the integral number, which are ignored and have no effect on the behavior of this function.&lt;/p&gt;
+&lt;p&gt;If the first sequence of non-whitespace characters in str is not a valid integral number, or if no such sequence exists because either str is empty or it contains only whitespace characters, no conversion is performed.&lt;/p&gt;
+&lt;p&gt;If no valid conversion could be performed, a zero value is returned. If the correct value is out of the range of representable values, INT_MAX (2147483647) or INT_MIN (-2147483648) is returned.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Leetcode" scheme="http://jinshendan.github.io/categories/Leetcode/"/>
+    
+    
+      <category term="string" scheme="http://jinshendan.github.io/tags/string/"/>
+    
+  </entry>
   
   <entry>
     <title>Reverse Integer - Leetcode A7</title>
@@ -791,45 +826,6 @@ tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]]
     
     
       <category term="Floyd cycle detection" scheme="http://jinshendan.github.io/tags/Floyd-cycle-detection/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Open Credit System - UVA 11078</title>
-    <link href="http://jinshendan.github.io/open-credit-system.html"/>
-    <id>http://jinshendan.github.io/open-credit-system.html</id>
-    <published>2016-09-15T22:00:00.000Z</published>
-    <updated>2016-09-17T12:10:32.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p><a href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;page=show_problem&amp;problem=2019" target="_blank" rel="external">Here</a>.</p>
-<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><ul>
-<li>Given a list A, find the max(a[i]-a[j]) with i &lt; j.</li>
-</ul>
-<h2 id="Analyse"><a href="#Analyse" class="headerlink" title="Analyse"></a>Analyse</h2><ul>
-<li>max(a[i]-a[j]) = max(max(a[1..j-1]) - a[j]).</li>
-<li>Complexity: O(n).</li>
-</ul>
-<a id="more"></a>
-<h2 id="Code-in-C"><a href="#Code-in-C" class="headerlink" title="Code in C++"></a>Code in C++</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">1000000000</span>;</div><div class="line"><span class="keyword">int</span> T;</div><div class="line"><span class="keyword">int</span> n;</div><div class="line"><span class="keyword">int</span> MAX, x, ans;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="built_in">cin</span> &gt;&gt; T;</div><div class="line">	<span class="keyword">while</span> (T--) &#123;</div><div class="line">		<span class="built_in">cin</span> &gt;&gt; n;</div><div class="line">		<span class="built_in">cin</span> &gt;&gt; MAX;</div><div class="line">		ans = -INF;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++)&#123;</div><div class="line">			<span class="built_in">cin</span> &gt;&gt; x;</div><div class="line">			<span class="keyword">if</span> (MAX - x &gt; ans)</div><div class="line">				ans = MAX - x;</div><div class="line">			<span class="keyword">if</span> (x &gt; MAX)</div><div class="line">				MAX = x ;</div><div class="line">		&#125;</div><div class="line">		<span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;amp;Itemid=8&amp;amp;page=show_problem&amp;amp;problem=2019&quot;&gt;Here&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;Summary&quot;&gt;&lt;a href=&quot;#Summary&quot; class=&quot;headerlink&quot; title=&quot;Summary&quot;&gt;&lt;/a&gt;Summary&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Given a list A, find the max(a[i]-a[j]) with i &amp;lt; j.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;Analyse&quot;&gt;&lt;a href=&quot;#Analyse&quot; class=&quot;headerlink&quot; title=&quot;Analyse&quot;&gt;&lt;/a&gt;Analyse&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;max(a[i]-a[j]) = max(max(a[1..j-1]) - a[j]).&lt;/li&gt;
-&lt;li&gt;Complexity: O(n).&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="UVA" scheme="http://jinshendan.github.io/categories/UVA/"/>
-    
-    
-      <category term="DP" scheme="http://jinshendan.github.io/tags/DP/"/>
     
   </entry>
   

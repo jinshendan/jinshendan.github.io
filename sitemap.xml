@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://jinshendan.github.io/Atoi.html</loc>
+    
+    <lastmod>2017-12-21T14:42:21.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://jinshendan.github.io/OR/index.html</loc>
+    
+    <lastmod>2017-12-21T13:48:04.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://jinshendan.github.io/Reverse-Integer.html</loc>
     
     <lastmod>2017-12-20T22:16:55.000Z</lastmod>
@@ -40,13 +54,6 @@
     <loc>http://jinshendan.github.io/Add-Two-Numbers.html</loc>
     
     <lastmod>2017-12-19T21:40:08.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://jinshendan.github.io/OR/index.html</loc>
-    
-    <lastmod>2017-11-01T20:38:53.000Z</lastmod>
     
   </url>
   
