@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jinshendan.github.io/"/>
-  <updated>2017-12-21T21:14:21.000Z</updated>
+  <updated>2017-12-23T20:52:13.000Z</updated>
   <id>http://jinshendan.github.io/</id>
   
   <author>
@@ -14,6 +14,47 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Regular Expression Matching - Leetcode A10</title>
+    <link href="http://jinshendan.github.io/Regualr-Expression-Matching.html"/>
+    <id>http://jinshendan.github.io/Regualr-Expression-Matching.html</id>
+    <published>2017-12-23T20:45:13.000Z</published>
+    <updated>2017-12-23T20:52:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p><a href="https://leetcode.com/problems/regular-expression-matching/description/" target="_blank" rel="external">Problem description</a></p>
+<p>Implement regular expression matching with support for ‘.’ and ‘*’.</p>
+<p>‘.’ Matches any single character.<br>‘*’ Matches zero or more of the preceding element.</p>
+<p>The matching should cover the entire input string (not partial).</p>
+<p>The function prototype should be:<br>bool isMatch(const char <em>s, const char </em>p)</p>
+<p>Some examples:<br>isMatch(“aa”,”a”) → false<br>isMatch(“aa”,”aa”) → true<br>isMatch(“aaa”,”aa”) → false<br>isMatch(“aa”, “a<em>“) → true<br>isMatch(“aa”, “.</em>“) → true<br>isMatch(“ab”, “.<em>“) → true<br>isMatch(“aab”, “c</em>a*b”) → true</p>
+<a id="more"></a>
+<h2 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h2><p>DP</p>
+<ul>
+<li>dp[i, j] = true if s[i:] == p[j:]</li>
+<li>dp[i, j] = dp[i, j+2] or first_matched and dp[i+1, j] if j+1 &lt; len(p) and p[j+1] == ‘*’.</li>
+<li>dp[i, j] = first_matched and dp[i+1, j+1], otherwise </li>
+<li>first_matched = p[j] in {s[i], ‘.’}<h2 id="Python-Implementation"><a href="#Python-Implementation" class="headerlink" title="Python Implementation"></a>Python Implementation</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isMatch</span><span class="params">(self, s, p)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line">        :type s: str</div><div class="line">        :type p: str</div><div class="line">        :rtype: bool</div><div class="line">        """</div><div class="line">        </div><div class="line">        cache = &#123;&#125;</div><div class="line">        <span class="function"><span class="keyword">def</span> <span class="title">dp</span><span class="params">(i, j)</span>:</span></div><div class="line">        	<span class="keyword">if</span> (i, j) <span class="keyword">not</span> <span class="keyword">in</span> cache:</div><div class="line">        		<span class="keyword">if</span> (j == len(p)):</div><div class="line">        			ans = (i == len(s))</div><div class="line">        		<span class="keyword">else</span>:</div><div class="line">        			first = i &lt; len(s) <span class="keyword">and</span> p[j] <span class="keyword">in</span> &#123;s[i], <span class="string">'.'</span>&#125;</div><div class="line">        			<span class="keyword">if</span> j + <span class="number">1</span> &lt; len(p) <span class="keyword">and</span> p[j + <span class="number">1</span>] == <span class="string">'*'</span>:</div><div class="line">        				ans = dp(i, j + <span class="number">2</span>) <span class="keyword">or</span> first <span class="keyword">and</span> dp(i+<span class="number">1</span>, j)</div><div class="line">        			<span class="keyword">else</span>:</div><div class="line">        				ans = first <span class="keyword">and</span> dp(i+<span class="number">1</span>, j+<span class="number">1</span>)</div><div class="line">        		cache[(i,j)] = ans</div><div class="line">        	<span class="keyword">return</span> cache[(i,j)]</div><div class="line">        <span class="keyword">return</span> dp(<span class="number">0</span>, <span class="number">0</span>)</div></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/regular-expression-matching/description/&quot;&gt;Problem description&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Implement regular expression matching with support for ‘.’ and ‘*’.&lt;/p&gt;
+&lt;p&gt;‘.’ Matches any single character.&lt;br&gt;‘*’ Matches zero or more of the preceding element.&lt;/p&gt;
+&lt;p&gt;The matching should cover the entire input string (not partial).&lt;/p&gt;
+&lt;p&gt;The function prototype should be:&lt;br&gt;bool isMatch(const char &lt;em&gt;s, const char &lt;/em&gt;p)&lt;/p&gt;
+&lt;p&gt;Some examples:&lt;br&gt;isMatch(“aa”,”a”) → false&lt;br&gt;isMatch(“aa”,”aa”) → true&lt;br&gt;isMatch(“aaa”,”aa”) → false&lt;br&gt;isMatch(“aa”, “a&lt;em&gt;“) → true&lt;br&gt;isMatch(“aa”, “.&lt;/em&gt;“) → true&lt;br&gt;isMatch(“ab”, “.&lt;em&gt;“) → true&lt;br&gt;isMatch(“aab”, “c&lt;/em&gt;a*b”) → true&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Leetcode" scheme="http://jinshendan.github.io/categories/Leetcode/"/>
+    
+    
+      <category term="DP" scheme="http://jinshendan.github.io/tags/DP/"/>
+    
+  </entry>
   
   <entry>
     <title>Palindrome Number - Leetcode A9</title>
@@ -412,9 +453,9 @@ tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]]
       <category term="LA" scheme="http://jinshendan.github.io/categories/LA/"/>
     
     
-      <category term="Probability" scheme="http://jinshendan.github.io/tags/Probability/"/>
-    
       <category term="DP" scheme="http://jinshendan.github.io/tags/DP/"/>
+    
+      <category term="Probability" scheme="http://jinshendan.github.io/tags/Probability/"/>
     
   </entry>
   
@@ -775,51 +816,6 @@ tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]]
     
     
       <category term="Greedy" scheme="http://jinshendan.github.io/tags/Greedy/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Two Sum - Leetcode A1</title>
-    <link href="http://jinshendan.github.io/Two-Sum.html"/>
-    <id>http://jinshendan.github.io/Two-Sum.html</id>
-    <published>2016-09-19T08:59:47.000Z</published>
-    <updated>2016-09-19T09:23:11.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p><a href="https://leetcode.com/problems/two-sum/" target="_blank" rel="external">Here</a>.</p>
-<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</p>
-<p>You may assume that each input would have exactly one solution.</p>
-<p>The return format had been changed to zero-based indices.<br><a id="more"></a></p>
-<h2 id="Analyse"><a href="#Analyse" class="headerlink" title="Analyse"></a>Analyse</h2><h3 id="Be-careful"><a href="#Be-careful" class="headerlink" title="Be careful"></a>Be careful</h3><ul>
-<li>zero-based indices.</li>
-<li>[1, 3, 4, 2].  4 + 2 = 6 is ok. But not for 3 + 3 = 6.</li>
-<li>[1, 3, 3, 2].  3 + 3 = 6 is ok.  </li>
-</ul>
-<h3 id="Brute-force"><a href="#Brute-force" class="headerlink" title="Brute force"></a>Brute force</h3><p>Loop through each element x and find if there is another value equals to target - x.</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; twoSum(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target) &#123;</div><div class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; ans;</div><div class="line"> 		<span class="keyword">int</span> length = nums.size();</div><div class="line"> 		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; length; i++) </div><div class="line"> 			<span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; length; j++) &#123;</div><div class="line"> 				<span class="keyword">if</span> (nums[i] + nums[j] == target) &#123;</div><div class="line"> 					ans.push_back(i);</div><div class="line"> 					ans.push_back(j);</div><div class="line"> 					<span class="keyword">return</span> ans;</div><div class="line"> 				&#125;</div><div class="line"> 			&#125;</div><div class="line"> 		<span class="keyword">return</span> ans;</div><div class="line">	&#125;;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p>Complexity: O(n^2).</p>
-<h3 id="Binary-Search"><a href="#Binary-Search" class="headerlink" title="Binary Search"></a>Binary Search</h3><p>One way to improve the brute force is sort the whole array and loop through each element x and find if there is another value equals to target - x by binary search.</p>
-<p>Complexity: O(nlogn).</p>
-<h3 id="Hash-Map"><a href="#Hash-Map" class="headerlink" title="Hash Map"></a>Hash Map</h3><p>While we iterate and inserting elements into the hash table, we also look back to check if current element’s complement already exists in the table. If it exists, we have found a solution and return immediately.</p>
-<p>16 / 16 test cases passed.<br>Status: Accepted<br>Runtime: 26 ms</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; twoSum(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target) &#123;</div><div class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; ans;</div><div class="line">        <span class="keyword">int</span> length = nums.size();</div><div class="line">        <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;mp;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; length; i++) &#123;</div><div class="line">        	<span class="keyword">if</span> (mp[target - nums[i]]) &#123;</div><div class="line">        		ans.push_back(mp[target - nums[i]] - <span class="number">1</span>);</div><div class="line">        		ans.push_back(i);</div><div class="line">        		<span class="keyword">return</span> ans;</div><div class="line">        	&#125;</div><div class="line">        	mp[nums[i]] = i + <span class="number">1</span>;</div><div class="line">        &#125;</div><div class="line"> 	   <span class="keyword">return</span> ans;</div><div class="line">	&#125;;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p>Complexity: O(n).</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/two-sum/&quot;&gt;Here&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;Summary&quot;&gt;&lt;a href=&quot;#Summary&quot; class=&quot;headerlink&quot; title=&quot;Summary&quot;&gt;&lt;/a&gt;Summary&lt;/h2&gt;&lt;p&gt;Given an array of integers, return indices of the two numbers such that they add up to a specific target.&lt;/p&gt;
-&lt;p&gt;You may assume that each input would have exactly one solution.&lt;/p&gt;
-&lt;p&gt;The return format had been changed to zero-based indices.&lt;br&gt;
-    
-    </summary>
-    
-      <category term="Leetcode" scheme="http://jinshendan.github.io/categories/Leetcode/"/>
-    
-    
-      <category term="Binary Search" scheme="http://jinshendan.github.io/tags/Binary-Search/"/>
-    
-      <category term="Hash Table" scheme="http://jinshendan.github.io/tags/Hash-Table/"/>
     
   </entry>
   
