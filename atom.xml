@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jinshendan.github.io/"/>
-  <updated>2017-12-23T20:52:13.000Z</updated>
+  <updated>2017-12-31T20:44:00.000Z</updated>
   <id>http://jinshendan.github.io/</id>
   
   <author>
@@ -14,6 +14,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>再见, 2017</title>
+    <link href="http://jinshendan.github.io/2017-2018.html"/>
+    <id>http://jinshendan.github.io/2017-2018.html</id>
+    <published>2017-12-31T20:39:50.000Z</published>
+    <updated>2017-12-31T20:44:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>2017年的最后一天</p>
+<p>莫名奇妙的感冒</p>
+<p>平平淡淡的迎接2018</p>
+<p>祝你 永远开心</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;2017年的最后一天&lt;/p&gt;
+&lt;p&gt;莫名奇妙的感冒&lt;/p&gt;
+&lt;p&gt;平平淡淡的迎接2018&lt;/p&gt;
+&lt;p&gt;祝你 永远开心&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Regular Expression Matching - Leetcode A10</title>
@@ -453,9 +479,9 @@ tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]]
       <category term="LA" scheme="http://jinshendan.github.io/categories/LA/"/>
     
     
-      <category term="DP" scheme="http://jinshendan.github.io/tags/DP/"/>
-    
       <category term="Probability" scheme="http://jinshendan.github.io/tags/Probability/"/>
+    
+      <category term="DP" scheme="http://jinshendan.github.io/tags/DP/"/>
     
   </entry>
   
@@ -782,32 +808,6 @@ tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]]
     <summary type="html">
     
       &lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://codeforces.com/problemset/problem/732/B&quot;&gt;Here&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;Code-in-C&quot;&gt;&lt;a href=&quot;#Code-in-C&quot; class=&quot;headerlink&quot; title=&quot;Code in C++&quot;&gt;&lt;/a&gt;Code in C++&lt;/h2&gt;
-    
-    </summary>
-    
-      <category term="CodeForce" scheme="http://jinshendan.github.io/categories/CodeForce/"/>
-    
-    
-      <category term="Greedy" scheme="http://jinshendan.github.io/tags/Greedy/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Sockets - Codeforce 732E</title>
-    <link href="http://jinshendan.github.io/CF-732E-Sockets.html"/>
-    <id>http://jinshendan.github.io/CF-732E-Sockets.html</id>
-    <published>2016-10-28T12:57:40.000Z</published>
-    <updated>2016-10-28T13:21:57.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p><a href="http://codeforces.com/problemset/problem/732/E" target="_blank" rel="external">Here</a>.</p>
-<h2 id="Code-in-C"><a href="#Code-in-C" class="headerlink" title="Code in C++"></a>Code in C++</h2><a id="more"></a>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">200000</span> + <span class="number">5</span>;</div><div class="line"><span class="keyword">struct</span> Node &#123;</div><div class="line">	<span class="keyword">int</span> v, id, num;</div><div class="line">	Node(<span class="keyword">int</span> v, <span class="keyword">int</span> id, <span class="keyword">int</span> num): v(v), id(id), num(num) &#123;&#125;</div><div class="line"></div><div class="line">	<span class="keyword">bool</span> <span class="keyword">operator</span> &lt;(<span class="keyword">const</span> Node &amp;t) <span class="keyword">const</span> &#123;</div><div class="line">		<span class="keyword">return</span> (v &lt; t.v) || (v == t.v &amp;&amp; num &gt; t.num);</div><div class="line">	&#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">int</span> n, m;</div><div class="line"><span class="keyword">int</span> ans[maxn], ans2[maxn];</div><div class="line"><span class="keyword">int</span> total_socket, total_computer;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">	priority_queue&lt;Node&gt; que;</div><div class="line">	<span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt; mp;</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%d %d"</span>, &amp;n, &amp;m);</div><div class="line">	<span class="keyword">int</span> x;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;=n; i++) &#123;</div><div class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;x);</div><div class="line">		mp[x].push_back(i);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++) &#123;</div><div class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;x);</div><div class="line">		que.push(Node(x, i, <span class="number">0</span>));</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="comment">//memset(ans2, 0, sizeof(ans2));</span></div><div class="line"></div><div class="line">	total_socket = total_computer = <span class="number">0</span>;</div><div class="line">	<span class="comment">//int max_now;</span></div><div class="line">	<span class="keyword">while</span>(!que.empty())&#123;</div><div class="line">		Node tmp = que.top(); que.pop();</div><div class="line">		<span class="keyword">if</span> (mp.find(tmp.v) != mp.end() &amp;&amp; mp[tmp.v].size()) &#123;</div><div class="line">			ans[tmp.id] = tmp.num;</div><div class="line">			ans2[mp[tmp.v][mp[tmp.v].size()<span class="number">-1</span>]] = tmp.id;</div><div class="line">			total_socket += tmp.num;</div><div class="line">			total_computer ++;</div><div class="line">			mp[tmp.v].pop_back();</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">else</span> &#123;</div><div class="line">			<span class="keyword">if</span> (tmp.v &gt; <span class="number">1</span>) &#123;</div><div class="line">				que.push(Node(tmp.v - tmp.v/<span class="number">2</span>, tmp.id, tmp.num+<span class="number">1</span>));</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%d %d\n"</span>, total_computer, total_socket);</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; m; i++)</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%d "</span>, ans[i]);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans[m]);</div><div class="line"></div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++)</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%d "</span>, ans2[i]);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans2[n]);</div><div class="line"> 	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://codeforces.com/problemset/problem/732/E&quot;&gt;Here&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&quot;Code-in-C&quot;&gt;&lt;a href=&quot;#Code-in-C&quot; class=&quot;headerlink&quot; title=&quot;Code in C++&quot;&gt;&lt;/a&gt;Code in C++&lt;/h2&gt;
     
     </summary>
