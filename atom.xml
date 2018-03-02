@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jinshendan.github.io/"/>
-  <updated>2017-12-31T20:44:00.000Z</updated>
+  <updated>2018-03-02T17:22:33.113Z</updated>
   <id>http://jinshendan.github.io/</id>
   
   <author>
@@ -14,6 +14,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>The 3n + 1 problem - UVA 100</title>
+    <link href="http://jinshendan.github.io/The-3n1-problem.html"/>
+    <id>http://jinshendan.github.io/The-3n1-problem.html</id>
+    <published>2018-03-02T15:47:47.000Z</published>
+    <updated>2018-03-02T17:22:33.113Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p><a href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;category=3&amp;page=show_problem&amp;problem=36" target="_blank" rel="external">Here</a>.</p>
+<a id="more"></a>
+<h2 id="Code-in-C"><a href="#Code-in-C" class="headerlink" title="Code in C++"></a>Code in C++</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> s, t;</div><div class="line"><span class="keyword">int</span> ans;</div><div class="line"><span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; a;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">calc</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> step = <span class="number">1</span>;</div><div class="line">	<span class="keyword">while</span> (x != <span class="number">1</span>)&#123;</div><div class="line">		step ++;</div><div class="line">		<span class="keyword">if</span> (x % <span class="number">2</span> == <span class="number">1</span>)</div><div class="line">			x = <span class="number">3</span>*x + <span class="number">1</span>;</div><div class="line">		<span class="keyword">else</span> x = x / <span class="number">2</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> step;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="keyword">while</span>(<span class="built_in">cin</span> &gt;&gt; s &gt;&gt; t)&#123;</div><div class="line">		<span class="keyword">int</span> u = min(s,t);</div><div class="line">		<span class="keyword">int</span> v = max(s,t);</div><div class="line">		ans = <span class="number">1</span>;</div><div class="line">		FOR(i, u, v+<span class="number">1</span>)</div><div class="line">			<span class="keyword">if</span> (a.find(i) != a.end())</div><div class="line">				ans = max(ans, a[i]);</div><div class="line">			<span class="keyword">else</span> &#123;</div><div class="line">				a[i] = calc(i);</div><div class="line">				ans = max(ans, a[i]);</div><div class="line">			&#125;</div><div class="line">		<span class="built_in">cout</span> &lt;&lt; s &lt;&lt; <span class="string">" "</span> &lt;&lt; t &lt;&lt; <span class="string">" "</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;amp;Itemid=8&amp;amp;category=3&amp;amp;page=show_problem&amp;amp;problem=36&quot;&gt;Here&lt;/a&gt;.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="UVA" scheme="http://jinshendan.github.io/categories/UVA/"/>
+    
+    
+      <category term="Ad Hoc" scheme="http://jinshendan.github.io/tags/Ad-Hoc/"/>
+    
+  </entry>
   
   <entry>
     <title>再见, 2017</title>
@@ -791,31 +816,6 @@ tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]]
       <category term="String" scheme="http://jinshendan.github.io/tags/String/"/>
     
       <category term="Implementation" scheme="http://jinshendan.github.io/tags/Implementation/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Cormen The Best Friend Of a Man - Codeforce 732B</title>
-    <link href="http://jinshendan.github.io/Cormen-CF-732B.html"/>
-    <id>http://jinshendan.github.io/Cormen-CF-732B.html</id>
-    <published>2016-10-28T13:06:21.000Z</published>
-    <updated>2016-10-28T13:23:31.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p><a href="http://codeforces.com/problemset/problem/732/B" target="_blank" rel="external">Here</a>.</p>
-<h2 id="Code-in-C"><a href="#Code-in-C" class="headerlink" title="Code in C++"></a>Code in C++</h2><a id="more"></a>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">505</span>;</div><div class="line"><span class="keyword">int</span> a[maxn];</div><div class="line"><span class="keyword">int</span> tot;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> n, m;</div><div class="line">	<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; n; i++) </div><div class="line">		<span class="built_in">cin</span> &gt;&gt; a[i];</div><div class="line"></div><div class="line">	tot = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++)</div><div class="line">		<span class="keyword">if</span> (a[i<span class="number">-1</span>] + a[i] &lt; m) &#123;</div><div class="line">			tot += m - a[i] - a[i<span class="number">-1</span>];</div><div class="line">			a[i] = m - a[i<span class="number">-1</span>];</div><div class="line">		&#125;</div><div class="line">	</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; tot &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n<span class="number">-1</span>; i++)</div><div class="line">		<span class="built_in">cout</span> &lt;&lt; a[i] &lt;&lt; <span class="string">" "</span>;</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; a[n<span class="number">-1</span>] &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://codeforces.com/problemset/problem/732/B&quot;&gt;Here&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;Code-in-C&quot;&gt;&lt;a href=&quot;#Code-in-C&quot; class=&quot;headerlink&quot; title=&quot;Code in C++&quot;&gt;&lt;/a&gt;Code in C++&lt;/h2&gt;
-    
-    </summary>
-    
-      <category term="CodeForce" scheme="http://jinshendan.github.io/categories/CodeForce/"/>
-    
-    
-      <category term="Greedy" scheme="http://jinshendan.github.io/tags/Greedy/"/>
     
   </entry>
   
