@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jinshendan.github.io/"/>
-  <updated>2018-03-04T18:45:03.602Z</updated>
+  <updated>2018-03-04T22:00:06.143Z</updated>
   <id>http://jinshendan.github.io/</id>
   
   <author>
@@ -14,6 +14,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Codejam 2017 Qualification Bathroom Stalls</title>
+    <link href="http://jinshendan.github.io/Codejam-2017-Qualification-Bathroom-Stalls.html"/>
+    <id>http://jinshendan.github.io/Codejam-2017-Qualification-Bathroom-Stalls.html</id>
+    <published>2018-03-04T21:53:04.000Z</published>
+    <updated>2018-03-04T22:00:06.143Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p><a href="https://code.google.com/codejam/contest/3264486/dashboard#s=p2&amp;a=2" target="_blank" rel="external">Here</a>.</p>
+<a id="more"></a>
+<h2 id="Code-in-C"><a href="#Code-in-C" class="headerlink" title="Code in C++"></a>Code in C++</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> T;</div><div class="line">	<span class="built_in">cin</span> &gt;&gt; T;</div><div class="line">	FOR(kase, <span class="number">0</span>, T)&#123;</div><div class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"Case #"</span> &lt;&lt; kase + <span class="number">1</span> &lt;&lt; <span class="string">": "</span>;</div><div class="line">		ll n, k;</div><div class="line">		<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; k;</div><div class="line">		<span class="built_in">cerr</span> &lt;&lt; kase &lt;&lt; <span class="string">" "</span> &lt;&lt; n &lt;&lt; <span class="string">" "</span> &lt;&lt; k &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">		<span class="built_in">map</span>&lt;ll, ll&gt; s;</div><div class="line">		s[n] = <span class="number">1L</span>L;</div><div class="line"> 		<span class="keyword">while</span>(k &gt; <span class="number">0</span>)&#123;</div><div class="line"> 			<span class="keyword">auto</span> p = *(--s.end());</div><div class="line"> 			s.erase(--s.end());</div><div class="line">			ll len = p.first;</div><div class="line">			ll cnt = p.second;</div><div class="line">			<span class="keyword">if</span> (cnt &gt;= k)&#123;</div><div class="line">				<span class="built_in">cout</span> &lt;&lt; len / <span class="number">2</span> &lt;&lt; <span class="string">" "</span> &lt;&lt; (len - <span class="number">1</span>) / <span class="number">2</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">			&#125;</div><div class="line">			k -= cnt;</div><div class="line">			s[len/<span class="number">2</span>] += cnt;</div><div class="line">			s[(len<span class="number">-1</span>)/<span class="number">2</span>] += cnt;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://code.google.com/codejam/contest/3264486/dashboard#s=p2&amp;amp;a=2&quot;&gt;Here&lt;/a&gt;.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Codejam" scheme="http://jinshendan.github.io/categories/Codejam/"/>
+    
+    
+      <category term="map" scheme="http://jinshendan.github.io/tags/map/"/>
+    
+  </entry>
   
   <entry>
     <title>Codejam 2017 Qualification Tidy Numbers</title>
@@ -761,32 +786,6 @@ tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]]
       <category term="Implementation" scheme="http://jinshendan.github.io/tags/Implementation/"/>
     
       <category term="Expression parsing" scheme="http://jinshendan.github.io/tags/Expression-parsing/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>The New Year Meeting Friends - Codeforce 723A</title>
-    <link href="http://jinshendan.github.io/The-New-Year-Meeting-Friends-CF-723A.html"/>
-    <id>http://jinshendan.github.io/The-New-Year-Meeting-Friends-CF-723A.html</id>
-    <published>2016-10-28T13:35:27.000Z</published>
-    <updated>2016-10-28T13:39:15.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p><a href="http://codeforces.com/problemset/problem/723/A" target="_blank" rel="external">Here</a>.</p>
-<h2 id="Code-in-C"><a href="#Code-in-C" class="headerlink" title="Code in C++"></a>Code in C++</h2><a id="more"></a>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> a, b, c;</div><div class="line">	<span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b &gt;&gt; c;</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; max(max(a, b), c) - min(min(a, b), c) &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://codeforces.com/problemset/problem/723/A&quot;&gt;Here&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;Code-in-C&quot;&gt;&lt;a href=&quot;#Code-in-C&quot; class=&quot;headerlink&quot; title=&quot;Code in C++&quot;&gt;&lt;/a&gt;Code in C++&lt;/h2&gt;
-    
-    </summary>
-    
-      <category term="CodeForce" scheme="http://jinshendan.github.io/categories/CodeForce/"/>
-    
-    
-      <category term="Sort" scheme="http://jinshendan.github.io/tags/Sort/"/>
     
   </entry>
   
