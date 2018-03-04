@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jinshendan.github.io/"/>
-  <updated>2018-03-02T17:22:33.113Z</updated>
+  <updated>2018-03-04T18:45:03.602Z</updated>
   <id>http://jinshendan.github.io/</id>
   
   <author>
@@ -14,6 +14,65 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Codejam 2017 Qualification Tidy Numbers</title>
+    <link href="http://jinshendan.github.io/Codejam-2017-Qualification-Tidy-Numbers.html"/>
+    <id>http://jinshendan.github.io/Codejam-2017-Qualification-Tidy-Numbers.html</id>
+    <published>2018-03-04T18:31:32.000Z</published>
+    <updated>2018-03-04T18:45:03.602Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p><a href="https://code.google.com/codejam/contest/3264486/dashboard#s=p1&amp;a=0" target="_blank" rel="external">Here</a>.</p>
+<h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>求不超过N的最大的非递减整数，N 最大不超过 10^18.</p>
+<a id="more"></a>
+<h2 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h2><ul>
+<li>N 长度最大为18，可以贪心枚举每个位置可能放置的数字。</li>
+</ul>
+<h2 id="Code-in-C"><a href="#Code-in-C" class="headerlink" title="Code in C++"></a>Code in C++</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> T;</div><div class="line">	<span class="built_in">cin</span> &gt;&gt; T;</div><div class="line">	<span class="built_in">string</span> s;</div><div class="line">	FOR(kase, <span class="number">0</span>, T)&#123;</div><div class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"Case #"</span> &lt;&lt; kase+<span class="number">1</span> &lt;&lt; <span class="string">": "</span>;</div><div class="line">		<span class="built_in">cin</span> &gt;&gt; s;</div><div class="line">		<span class="built_in">string</span> t;</div><div class="line">		FOR(i, <span class="number">0</span>, s.length())&#123;</div><div class="line">			<span class="keyword">int</span> bound = (i == <span class="number">0</span> ? <span class="number">0</span> : t.back() - <span class="string">'0'</span>);</div><div class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> d = <span class="number">9</span>; d &gt;= bound; d--)&#123;</div><div class="line">				<span class="built_in">string</span> tt = t;</div><div class="line">				FOR(j, i, s.length())</div><div class="line">					tt += (<span class="keyword">char</span>)(<span class="string">'0'</span> + d);</div><div class="line">				<span class="keyword">if</span> (tt &lt;= s)&#123;</div><div class="line">					t += (<span class="keyword">char</span>)(<span class="string">'0'</span> + d);</div><div class="line">					<span class="keyword">break</span>;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">while</span> (t[<span class="number">0</span>] == <span class="string">'0'</span>)&#123;</div><div class="line">			t = t.substr(<span class="number">1</span>);</div><div class="line">		&#125;</div><div class="line">		<span class="built_in">cout</span> &lt;&lt; t &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://code.google.com/codejam/contest/3264486/dashboard#s=p1&amp;amp;a=0&quot;&gt;Here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;题目大意&quot;&gt;&lt;a href=&quot;#题目大意&quot; class=&quot;headerlink&quot; title=&quot;题目大意&quot;&gt;&lt;/a&gt;题目大意&lt;/h2&gt;&lt;p&gt;求不超过N的最大的非递减整数，N 最大不超过 10^18.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Codejam" scheme="http://jinshendan.github.io/categories/Codejam/"/>
+    
+    
+      <category term="Brute force" scheme="http://jinshendan.github.io/tags/Brute-force/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Codejam 2017 Qualification Oversized Pancake Flipper</title>
+    <link href="http://jinshendan.github.io/Codejam-2017-Qualification-Oversized-Pancake-Flipper.html"/>
+    <id>http://jinshendan.github.io/Codejam-2017-Qualification-Oversized-Pancake-Flipper.html</id>
+    <published>2018-03-04T18:11:36.000Z</published>
+    <updated>2018-03-04T18:46:18.706Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p><a href="https://code.google.com/codejam/contest/3264486/dashboard" target="_blank" rel="external">Here</a>.</p>
+<h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>桌面上有S (S &lt;= 1000) 枚硬币排成一行，每次可以翻转连续的K枚硬币（只改变正反状态，不改变相对顺序），求从一个初始状态到另一个状态的最少翻转次数。<br><a id="more"></a></p>
+<h2 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h2><ul>
+<li>pancake的正反状态，仅由初始状态和反转次数决定</li>
+</ul>
+<h2 id="Code-in-C"><a href="#Code-in-C" class="headerlink" title="Code in C++"></a>Code in C++</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> T;</div><div class="line">	<span class="built_in">string</span> s;</div><div class="line">	<span class="keyword">int</span> K;</div><div class="line">	<span class="keyword">int</span> ans;</div><div class="line">	<span class="built_in">cin</span> &gt;&gt; T;</div><div class="line">	FOR(kase, <span class="number">0</span>, T)&#123;</div><div class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"Case #"</span> &lt;&lt; kase + <span class="number">1</span> &lt;&lt; <span class="string">": "</span>;</div><div class="line">		<span class="built_in">cin</span> &gt;&gt; s &gt;&gt; K;</div><div class="line">		ans = <span class="number">0</span>;</div><div class="line">		FOR(i, <span class="number">0</span>, s.length() - K + <span class="number">1</span>) &#123;</div><div class="line">			<span class="keyword">if</span> (s[i] == <span class="string">'-'</span>)&#123;</div><div class="line">				ans ++;</div><div class="line">				FOR(j, i, i+K)</div><div class="line">					s[j] = <span class="string">'-'</span> + <span class="string">'+'</span> - s[j];</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">if</span> (s != <span class="built_in">string</span>(s.length(), <span class="string">'+'</span>))</div><div class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"IMPOSSIBLE"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">		<span class="keyword">else</span></div><div class="line">		 	<span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://code.google.com/codejam/contest/3264486/dashboard&quot;&gt;Here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;题目大意&quot;&gt;&lt;a href=&quot;#题目大意&quot; class=&quot;headerlink&quot; title=&quot;题目大意&quot;&gt;&lt;/a&gt;题目大意&lt;/h2&gt;&lt;p&gt;桌面上有S (S &amp;lt;= 1000) 枚硬币排成一行，每次可以翻转连续的K枚硬币（只改变正反状态，不改变相对顺序），求从一个初始状态到另一个状态的最少翻转次数。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Codejam" scheme="http://jinshendan.github.io/categories/Codejam/"/>
+    
+    
+      <category term="Ad Hoc" scheme="http://jinshendan.github.io/tags/Ad-Hoc/"/>
+    
+  </entry>
   
   <entry>
     <title>The 3n + 1 problem - UVA 100</title>
@@ -728,94 +787,6 @@ tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]]
     
     
       <category term="Sort" scheme="http://jinshendan.github.io/tags/Sort/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Transformation from A to B - Codeforce 727A</title>
-    <link href="http://jinshendan.github.io/Transformation-from-A-to-B-CF-727A.html"/>
-    <id>http://jinshendan.github.io/Transformation-from-A-to-B-CF-727A.html</id>
-    <published>2016-10-28T13:25:41.000Z</published>
-    <updated>2016-10-28T13:42:44.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p><a href="http://codeforces.com/problemset/problem/727/A" target="_blank" rel="external">Here</a>.</p>
-<h2 id="Code-in-C"><a href="#Code-in-C" class="headerlink" title="Code in C++"></a>Code in C++</h2><a id="more"></a>
-<pre><code class="C++"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span>
-<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span>
-<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
-
-<span class="keyword">int</span> a, b;
-<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>{
-    <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b;
-    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v;
-    <span class="keyword">int</span> ok = <span class="number">1</span>;
-    <span class="keyword">while</span> (b &gt; a) {
-        <span class="comment">//cout &lt;&lt; b &lt;&lt; endl;</span>
-        v.push_back(b);
-        <span class="keyword">if</span> ((b &amp; <span class="number">1</span>) == <span class="number">0</span>) {
-            b = b / <span class="number">2</span>;
-        }
-        <span class="keyword">else</span> <span class="keyword">if</span> (b % <span class="number">10</span> == <span class="number">1</span>) {
-            b = b / <span class="number">10</span>;
-        }
-        <span class="keyword">else</span> { ok = <span class="number">0</span>; <span class="keyword">break</span>;}
-    }
-
-    <span class="keyword">if</span> (b != a) ok = <span class="number">0</span>; 
-    <span class="keyword">else</span> v.push_back(a);
-
-
-    <span class="keyword">if</span> (!ok) <span class="built_in">cout</span> &lt;&lt; <span class="string">"NO"</span> &lt;&lt; <span class="built_in">endl</span>;
-    <span class="keyword">else</span> {
-        <span class="built_in">cout</span> &lt;&lt; <span class="string">"YES"</span> &lt;&lt; <span class="built_in">endl</span>;
-        <span class="built_in">cout</span> &lt;&lt; v.size() &lt;&lt; <span class="built_in">endl</span>;
-        <span class="keyword">for</span> (<span class="keyword">int</span> i = v.size()<span class="number">-1</span>; i &gt;<span class="number">0</span>; i--)
-            <span class="built_in">cout</span> &lt;&lt; v[i] &lt;&lt; <span class="string">" "</span>;
-        <span class="built_in">cout</span> &lt;&lt; v[<span class="number">0</span>] &lt;&lt; <span class="built_in">endl</span>;
-    }
-    <span class="keyword">return</span> <span class="number">0</span>;
-}
-</code></pre>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://codeforces.com/problemset/problem/727/A&quot;&gt;Here&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;Code-in-C&quot;&gt;&lt;a href=&quot;#Code-in-C&quot; class=&quot;headerlink&quot; title=&quot;Code in C++&quot;&gt;&lt;/a&gt;Code in C++&lt;/h2&gt;
-    
-    </summary>
-    
-      <category term="CodeForce" scheme="http://jinshendan.github.io/categories/CodeForce/"/>
-    
-    
-      <category term="dfs" scheme="http://jinshendan.github.io/tags/dfs/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Bill Total Value - Codeforce 727B</title>
-    <link href="http://jinshendan.github.io/Bill-Total-Value-CF-727B.html"/>
-    <id>http://jinshendan.github.io/Bill-Total-Value-CF-727B.html</id>
-    <published>2016-10-28T13:18:47.000Z</published>
-    <updated>2016-10-28T13:21:48.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p><a href="http://codeforces.com/problemset/problem/727/B" target="_blank" rel="external">Here</a>.</p>
-<h2 id="Code-in-C"><a href="#Code-in-C" class="headerlink" title="Code in C++"></a>Code in C++</h2><a id="more"></a>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">const</span> <span class="keyword">double</span> epsilon = <span class="number">0.00001</span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span> (x == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">	<span class="keyword">int</span> n = <span class="number">0</span>;</div><div class="line">	<span class="keyword">while</span> (x &gt; <span class="number">0</span>) &#123;</div><div class="line">		n ++;</div><div class="line">		x = x / <span class="number">10</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> n;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v;</div><div class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; w;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">double</span> <span class="title">solve</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="keyword">if</span> (v.size() == <span class="number">1</span>)</div><div class="line">		<span class="keyword">return</span> v[<span class="number">0</span>];</div><div class="line">	<span class="keyword">double</span> tmp = <span class="number">0.0</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; v.size()<span class="number">-1</span>; i++)</div><div class="line">		tmp = tmp*<span class="number">1000</span> + v[i];</div><div class="line">	<span class="comment">//cout &lt;&lt; tmp &lt;&lt; endl;</span></div><div class="line">	<span class="comment">//cout &lt;&lt; v[v.size()-1] &lt;&lt; endl;</span></div><div class="line">	<span class="comment">//cout &lt;&lt; f(32) &lt;&lt; endl;</span></div><div class="line">	<span class="comment">//cout &lt;&lt; w[v.size()-1] &lt;&lt; endl;</span></div><div class="line">	<span class="keyword">if</span> (w[v.size()<span class="number">-1</span>] &lt;= <span class="number">2</span>) &#123;</div><div class="line">		<span class="comment">//cout &lt;&lt; "----&gt; " &lt;&lt; v[v.size()-1] &lt;&lt; endl;</span></div><div class="line">		tmp += <span class="number">0.01</span> * v[v.size()<span class="number">-1</span>];</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">else</span> tmp = tmp * <span class="number">1000</span> + v[v.size()<span class="number">-1</span>];</div><div class="line"></div><div class="line">	<span class="comment">//cout &lt;&lt; "return " &lt;&lt; tmp &lt;&lt; endl;</span></div><div class="line">	<span class="keyword">return</span> tmp;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">out</span><span class="params">(<span class="keyword">double</span> sum)</span> </span>&#123;</div><div class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v;</div><div class="line">	<span class="keyword">int</span> zhengshu = (<span class="keyword">int</span>)sum;</div><div class="line">	<span class="comment">//cout &lt;&lt; (sum-zhengshu)*100 + epsilon &lt;&lt; endl;</span></div><div class="line">	<span class="keyword">int</span> xiaoshu = ((sum - zhengshu)*<span class="number">100</span>) + epsilon;</div><div class="line">	<span class="comment">//cout &lt;&lt; "xs : " &lt;&lt; xiaoshu &lt;&lt; endl;</span></div><div class="line">	<span class="comment">//cout &lt;&lt; zhengshu &lt;&lt; endl;</span></div><div class="line">	<span class="keyword">if</span> (zhengshu == <span class="number">0</span>)</div><div class="line">		v.push_back(<span class="number">0</span>);</div><div class="line">	<span class="keyword">while</span> (zhengshu &gt; <span class="number">0</span>)&#123;</div><div class="line">		v.push_back(zhengshu % <span class="number">1000</span>);</div><div class="line">		zhengshu = zhengshu / <span class="number">1000</span>;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="built_in">cout</span> &lt;&lt; v[v.size()<span class="number">-1</span>];</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = v.size()<span class="number">-2</span>; i &gt;=<span class="number">0</span>; i--)&#123;</div><div class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"."</span>;</div><div class="line">		<span class="keyword">if</span> (f(v[i]) == <span class="number">1</span>) <span class="built_in">cout</span> &lt;&lt; <span class="string">"00"</span>;</div><div class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (f(v[i]) == <span class="number">2</span>) <span class="built_in">cout</span> &lt;&lt; <span class="string">"0"</span>;</div><div class="line"></div><div class="line">		<span class="built_in">cout</span> &lt;&lt; v[i];</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">if</span> (xiaoshu == <span class="number">0</span>)</div><div class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	<span class="keyword">else</span> &#123;</div><div class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">'.'</span>; </div><div class="line">		<span class="keyword">if</span> (f(xiaoshu) == <span class="number">1</span>) <span class="built_in">cout</span> &lt;&lt; <span class="string">'0'</span>;</div><div class="line">		<span class="built_in">cout</span> &lt;&lt; xiaoshu &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="built_in">string</span> s;</div><div class="line">	<span class="built_in">cin</span> &gt;&gt; s;</div><div class="line">	<span class="keyword">int</span> len = s.length();</div><div class="line">	<span class="keyword">int</span> num = <span class="number">0</span>;</div><div class="line">	<span class="keyword">double</span> sum = <span class="number">0.00</span>;</div><div class="line">	<span class="keyword">int</span> len_num = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</div><div class="line"></div><div class="line">		<span class="keyword">if</span> (<span class="string">'0'</span> &lt;= s[i] &amp;&amp; s[i] &lt;= <span class="string">'9'</span>) &#123;</div><div class="line">			num = num * <span class="number">10</span> + (s[i]-<span class="string">'0'</span>);</div><div class="line">			len_num++;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		<span class="keyword">if</span> (s[i] == <span class="string">'.'</span>) &#123;</div><div class="line">			v.push_back(num);</div><div class="line">			w.push_back(len_num);</div><div class="line">			num = <span class="number">0</span>;  len_num = <span class="number">0</span>;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		<span class="keyword">if</span> (<span class="string">'a'</span> &lt;= s[i] &amp;&amp; s[i] &lt;= <span class="string">'z'</span>) &#123;</div><div class="line">			v.push_back(num);</div><div class="line">			w.push_back(len_num);</div><div class="line">			sum += solve();</div><div class="line">			num = <span class="number">0</span>; len_num = <span class="number">0</span>;</div><div class="line">			v.clear(); w.clear();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line"></div><div class="line">	v.push_back(num);</div><div class="line">	w.push_back(len_num);</div><div class="line">	sum += solve();</div><div class="line">	out(sum);</div><div class="line">	<span class="comment">//printf("%.2f\n", sum);</span></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://codeforces.com/problemset/problem/727/B&quot;&gt;Here&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;Code-in-C&quot;&gt;&lt;a href=&quot;#Code-in-C&quot; class=&quot;headerlink&quot; title=&quot;Code in C++&quot;&gt;&lt;/a&gt;Code in C++&lt;/h2&gt;
-    
-    </summary>
-    
-      <category term="CodeForce" scheme="http://jinshendan.github.io/categories/CodeForce/"/>
-    
-    
-      <category term="String" scheme="http://jinshendan.github.io/tags/String/"/>
-    
-      <category term="Implementation" scheme="http://jinshendan.github.io/tags/Implementation/"/>
     
   </entry>
   
