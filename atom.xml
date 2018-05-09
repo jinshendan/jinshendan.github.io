@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jinshendan.github.io/"/>
-  <updated>2018-05-09T09:57:15.228Z</updated>
+  <updated>2018-05-09T11:01:08.118Z</updated>
   <id>http://jinshendan.github.io/</id>
   
   <author>
@@ -16,11 +16,85 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Topcoder - StablePairsDiv1</title>
+    <link href="http://jinshendan.github.io/StablePairsDiv1.html"/>
+    <id>http://jinshendan.github.io/StablePairsDiv1.html</id>
+    <published>2018-05-09T10:51:33.000Z</published>
+    <updated>2018-05-09T11:01:08.118Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Problem-Statement"><a href="#Problem-Statement" class="headerlink" title="Problem Statement"></a>Problem Statement</h2><p>Consider the set of integers between 1 and n, inclusive, and two positive integers c and k. You want to build an ordered list of k pairs (x1, y1), (x2, y2), … (xk, yk) such that the following conditions are met.</p>
+<p>1 ≤ xi &lt; yi ≤ n for all i between 1 and k, inclusive.<br>yi &lt; xi+1 for all i between 1 and k-1, inclusive.<br>(xi+1 + yi+1) - (xi + yi) = c for all i between 1 and k-1, inclusive.<br>If a list of pairs satisfies all of the above conditions, the list is said to be stable. For any fixed n, c, and k, a stable list of k pairs is said to be maximal if its sum of elements (the sum of all 2k integers it contains) is the largest among all stable lists of k pairs.</p>
+<p>For instance, consider n=5, c=4, and k=2. There are two stable lists of pairs: one is [(1, 2), (3, 4)] and the other is [(2, 3), (4, 5)]. The latter is the only maximal stable list of pairs in this example as its sum is (2+3+4+5) = 14.</p>
+<p>Given n, c, and k, find one maximal stable list of pairs, and return a int[] that describes the list. Specifically, if (x1, y1), (x2, y2), …, (xk, yk) is your maximal stable list of pairs, you must return { x1, y1, x2, y2, …, xk, yk }.</p>
+<p>If there are many maximal stable lists of pairs, you may return any one of them. If no stable list of pairs with the desired properties exists, you must return an empty int[].</p>
+<h2 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h2><p>Class:    StablePairsDiv1<br>Method:    findMaxStablePairs<br>Parameters:    int, int, int<br>Returns:    int[]<br>Method signature:    int[] findMaxStablePairs(int n, int c, int k)<br>(be sure your method is public)</p>
+<h2 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h2><ul>
+<li>n will be between 1 and 100, inclusive.</li>
+<li>c will be between 1 and 100, inclusive.</li>
+<li>k will be between 1 and 100, inclusive.</li>
+</ul>
+<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2><ol>
+<li><p>5<br>4<br>2<br>Returns: {2, 3, 4, 5 }<br>This example was described in the problem statement.</p>
+</li>
+<li><p>4<br>4<br>2<br>Returns: {1, 2, 3, 4 }</p>
+</li>
+<li><p>1<br>100<br>1<br>Returns: { }<br>When n=1, regardless of c and k, there is no way to build a pair.</p>
+</li>
+<li><p>3<br>100<br>1<br>Returns: {2, 3 }<br>With k=1 we are looking for stable lists that only contain a single pair of numbers. There are three stable lists: [(1, 2)], [(1, 3)], and [(2, 3)]. Obviously, the last one is the only maximal one in this case.</p>
+</li>
+<li><p>10<br>6<br>3<br>Returns: {2, 5, 6, 7, 9, 10 }</p>
+</li>
+<li><p>12<br>7<br>3<br>Returns: {4, 5, 6, 10, 11, 12 }</p>
+</li>
+</ol>
+<a id="more"></a>
+<h2 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h2><p>Use Dynamic Programming. Denote by f[i][x][y] the value of the maximal stable list of i pairs where the last pair is (x,y). Then f[i][x][y] = max(f[i-1][x’][y’] + x + y, for y+1 &lt;= x’ &lt;= n, y’ = x + y + c - x’), for all (i,x,y). The complexity is O(n^4).</p>
+<h2 id="C-Implementation"><a href="#C-Implementation" class="headerlink" title="C++ Implementation"></a>C++ Implementation</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">class</span> StablePairsDiv1&#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; findMaxStablePairs(<span class="keyword">int</span>, <span class="keyword">int</span>, <span class="keyword">int</span>);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = (<span class="keyword">int</span>) <span class="number">1e9</span>;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">105</span>;</div><div class="line"></div><div class="line"><span class="keyword">int</span> dp[N][N][N];</div><div class="line">pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; sol[N][N][N];</div><div class="line"></div><div class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; StablePairsDiv1::findMaxStablePairs(<span class="keyword">int</span> n, <span class="keyword">int</span> c, <span class="keyword">int</span> k)&#123;</div><div class="line">	<span class="comment">// Initialisation</span></div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; i++)</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; N; j++)</div><div class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> p = <span class="number">0</span>; p &lt; N; p++)</div><div class="line">				dp[i][j][p] = -INF;</div><div class="line"></div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> x = <span class="number">1</span>; x &lt;= n; x++)</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> y = x+<span class="number">1</span>; y &lt;= n; y++)</div><div class="line">			dp[<span class="number">0</span>][x][y] = x + y;</div><div class="line"></div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; k<span class="number">-1</span>; i++)</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> x = <span class="number">1</span>;  x &lt;= n; x++)</div><div class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> y = x+<span class="number">1</span>; y &lt;= n; y++)&#123;</div><div class="line">				<span class="keyword">int</span> tmp = dp[i][x][y];</div><div class="line">				<span class="keyword">if</span> (tmp &lt; <span class="number">0</span>) <span class="keyword">continue</span>;</div><div class="line">				<span class="keyword">for</span> (<span class="keyword">int</span> xx = y + <span class="number">1</span>; xx &lt;= n; xx++)&#123;</div><div class="line">					<span class="keyword">int</span> yy = x + y + c - xx;</div><div class="line">					<span class="keyword">if</span> (yy &gt; xx &amp;&amp; yy &lt;= n) &#123;</div><div class="line">						<span class="keyword">int</span> cur = tmp + xx + yy;</div><div class="line">						<span class="keyword">if</span> (cur &gt; dp[i+<span class="number">1</span>][xx][yy]) &#123;</div><div class="line">							dp[i+<span class="number">1</span>][xx][yy] = cur;</div><div class="line">							sol[i+<span class="number">1</span>][xx][yy] = make_pair(x, y);</div><div class="line">						&#125;</div><div class="line">					&#125;</div><div class="line">				&#125;</div><div class="line">			&#125;	</div><div class="line"></div><div class="line">	<span class="keyword">int</span> ans = <span class="number">-1</span>, ans_x = <span class="number">-1</span>, ans_y = <span class="number">-1</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> x = <span class="number">1</span>; x &lt;= n; x++)</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> y = x+<span class="number">1</span>; y &lt;= n; y++)</div><div class="line">			<span class="keyword">if</span> (dp[k<span class="number">-1</span>][x][y] &gt; ans) &#123;</div><div class="line">				ans = dp[k<span class="number">-1</span>][x][y];</div><div class="line">				ans_x = x;</div><div class="line">				ans_y = y;</div><div class="line">			&#125;</div><div class="line">	<span class="keyword">if</span> (ans == <span class="number">-1</span>) &#123;</div><div class="line">		<span class="keyword">return</span> <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;();</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = k - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)&#123;</div><div class="line">		v.push_back(ans_y);</div><div class="line">		v.push_back(ans_x);</div><div class="line">		<span class="keyword">if</span> (i == <span class="number">0</span>) <span class="keyword">break</span>;</div><div class="line">		<span class="keyword">int</span> tx = sol[i][ans_x][ans_y].first;</div><div class="line">		<span class="keyword">int</span> ty = sol[i][ans_x][ans_y].second;</div><div class="line">		ans_x = tx;</div><div class="line">		ans_y = ty;</div><div class="line">	&#125;</div><div class="line">	reverse(v.begin(), v.end());</div><div class="line">	<span class="keyword">return</span> v;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Problem-Statement&quot;&gt;&lt;a href=&quot;#Problem-Statement&quot; class=&quot;headerlink&quot; title=&quot;Problem Statement&quot;&gt;&lt;/a&gt;Problem Statement&lt;/h2&gt;&lt;p&gt;Consider the set of integers between 1 and n, inclusive, and two positive integers c and k. You want to build an ordered list of k pairs (x1, y1), (x2, y2), … (xk, yk) such that the following conditions are met.&lt;/p&gt;
+&lt;p&gt;1 ≤ xi &amp;lt; yi ≤ n for all i between 1 and k, inclusive.&lt;br&gt;yi &amp;lt; xi+1 for all i between 1 and k-1, inclusive.&lt;br&gt;(xi+1 + yi+1) - (xi + yi) = c for all i between 1 and k-1, inclusive.&lt;br&gt;If a list of pairs satisfies all of the above conditions, the list is said to be stable. For any fixed n, c, and k, a stable list of k pairs is said to be maximal if its sum of elements (the sum of all 2k integers it contains) is the largest among all stable lists of k pairs.&lt;/p&gt;
+&lt;p&gt;For instance, consider n=5, c=4, and k=2. There are two stable lists of pairs: one is [(1, 2), (3, 4)] and the other is [(2, 3), (4, 5)]. The latter is the only maximal stable list of pairs in this example as its sum is (2+3+4+5) = 14.&lt;/p&gt;
+&lt;p&gt;Given n, c, and k, find one maximal stable list of pairs, and return a int[] that describes the list. Specifically, if (x1, y1), (x2, y2), …, (xk, yk) is your maximal stable list of pairs, you must return { x1, y1, x2, y2, …, xk, yk }.&lt;/p&gt;
+&lt;p&gt;If there are many maximal stable lists of pairs, you may return any one of them. If no stable list of pairs with the desired properties exists, you must return an empty int[].&lt;/p&gt;
+&lt;h2 id=&quot;Definition&quot;&gt;&lt;a href=&quot;#Definition&quot; class=&quot;headerlink&quot; title=&quot;Definition&quot;&gt;&lt;/a&gt;Definition&lt;/h2&gt;&lt;p&gt;Class:    StablePairsDiv1&lt;br&gt;Method:    findMaxStablePairs&lt;br&gt;Parameters:    int, int, int&lt;br&gt;Returns:    int[]&lt;br&gt;Method signature:    int[] findMaxStablePairs(int n, int c, int k)&lt;br&gt;(be sure your method is public)&lt;/p&gt;
+&lt;h2 id=&quot;Constraints&quot;&gt;&lt;a href=&quot;#Constraints&quot; class=&quot;headerlink&quot; title=&quot;Constraints&quot;&gt;&lt;/a&gt;Constraints&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;n will be between 1 and 100, inclusive.&lt;/li&gt;
+&lt;li&gt;c will be between 1 and 100, inclusive.&lt;/li&gt;
+&lt;li&gt;k will be between 1 and 100, inclusive.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;Examples&quot;&gt;&lt;a href=&quot;#Examples&quot; class=&quot;headerlink&quot; title=&quot;Examples&quot;&gt;&lt;/a&gt;Examples&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;5&lt;br&gt;4&lt;br&gt;2&lt;br&gt;Returns: {2, 3, 4, 5 }&lt;br&gt;This example was described in the problem statement.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;4&lt;br&gt;4&lt;br&gt;2&lt;br&gt;Returns: {1, 2, 3, 4 }&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;1&lt;br&gt;100&lt;br&gt;1&lt;br&gt;Returns: { }&lt;br&gt;When n=1, regardless of c and k, there is no way to build a pair.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;3&lt;br&gt;100&lt;br&gt;1&lt;br&gt;Returns: {2, 3 }&lt;br&gt;With k=1 we are looking for stable lists that only contain a single pair of numbers. There are three stable lists: [(1, 2)], [(1, 3)], and [(2, 3)]. Obviously, the last one is the only maximal one in this case.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;10&lt;br&gt;6&lt;br&gt;3&lt;br&gt;Returns: {2, 5, 6, 7, 9, 10 }&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;12&lt;br&gt;7&lt;br&gt;3&lt;br&gt;Returns: {4, 5, 6, 10, 11, 12 }&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="Topcoder" scheme="http://jinshendan.github.io/categories/Topcoder/"/>
+    
+    
+      <category term="DP" scheme="http://jinshendan.github.io/tags/DP/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Topcoder - LineOff</title>
     <link href="http://jinshendan.github.io/LineOff.html"/>
     <id>http://jinshendan.github.io/LineOff.html</id>
     <published>2018-05-09T09:16:54.000Z</published>
-    <updated>2018-05-09T09:57:15.228Z</updated>
+    <updated>2018-05-09T10:54:38.777Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Problem-Statement"><a href="#Problem-Statement" class="headerlink" title="Problem Statement"></a>Problem Statement</h2><p>You are given a set of colored points on a straight line.</p>
 <p>You play a game with these points. The game is a sequence of moves. In each move you have to erase two points that are adjacent and share the same color. (Two points are adjacent if there is no other point between them. Distances don’t matter.)</p>
@@ -725,71 +799,6 @@ tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]]
       <category term="Probability" scheme="http://jinshendan.github.io/tags/Probability/"/>
     
       <category term="Fraction" scheme="http://jinshendan.github.io/tags/Fraction/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Learning C++ (1)</title>
-    <link href="http://jinshendan.github.io/Learning-C.html"/>
-    <id>http://jinshendan.github.io/Learning-C.html</id>
-    <published>2017-02-26T13:21:15.000Z</published>
-    <updated>2017-03-01T23:19:35.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Simple-Variables"><a href="#Simple-Variables" class="headerlink" title="Simple Variables"></a>Simple Variables</h2><hr>
-<h3 id="Byte-and-bit"><a href="#Byte-and-bit" class="headerlink" title="Byte and bit"></a>Byte and bit</h3><ul>
-<li>Usually, 1 byte = 8 bits. </li>
-<li>In C++, 1 byte = number of bits per char.</li>
-<li>Using the library “climits” to determine the limit. </li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;climits&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"int is "</span> &lt;&lt; <span class="keyword">sizeof</span>(<span class="keyword">int</span>) &lt;&lt; <span class="string">" bytes."</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"short is "</span> &lt;&lt; <span class="keyword">sizeof</span> (SHRT_MAX) &lt;&lt; <span class="string">" bytes"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"long is "</span> &lt;&lt; <span class="keyword">sizeof</span> (LONG_MAX) &lt;&lt; <span class="string">" bytes"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"long long is "</span> &lt;&lt; <span class="keyword">sizeof</span>(LLONG_MAX) &lt;&lt; <span class="string">" bytes"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"Bits per byte = "</span> &lt;&lt; CHAR_BIT &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"Maximum int values: "</span> &lt;&lt; INT_MAX &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"Minimum int values: "</span> &lt;&lt; INT_MIN &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<hr>
-<h3 id="Using-to-initilize-the-varaibles"><a href="#Using-to-initilize-the-varaibles" class="headerlink" title="Using {} to initilize the varaibles."></a>Using {} to initilize the varaibles.</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">- <span class="keyword">int</span> x&#123;<span class="number">7</span>&#125;;	<span class="comment">//Set x to 7.</span></div><div class="line">- <span class="keyword">int</span> y = &#123;<span class="number">1</span>&#125;	<span class="comment">//Set y to 1.</span></div><div class="line">- <span class="keyword">int</span> z = &#123;&#125;; 	<span class="comment">//Set z to 0.</span></div></pre></td></tr></table></figure>
-<hr>
-<h3 id="Hex-and-Octal-literals"><a href="#Hex-and-Octal-literals" class="headerlink" title="Hex and Octal literals"></a>Hex and Octal literals</h3><ul>
-<li>An integer in C++ also has Hex and Octal representations.</li>
-<li>C++ uses the first two bits to identify the base.</li>
-<li>In decimal, the first bit is 1-9.</li>
-<li>In octal, the first bit is 0 and the second bit is 1-7.</li>
-<li><p>In hex, the first two bits are 0X or 0x. </p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> x = <span class="number">32</span>;</div><div class="line">	<span class="keyword">int</span> y = <span class="number">0x32</span>;</div><div class="line">	<span class="keyword">int</span> z = <span class="number">032</span>;</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"x = "</span> &lt;&lt; x &lt;&lt; <span class="string">" in decimal"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"y = "</span> &lt;&lt; y &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"z = "</span> &lt;&lt; z &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>By default, cout prints the number in decimal.</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cout</span> &lt;&lt; hex;</div><div class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"y = "</span> &lt;&lt; y &lt;&lt; <span class="string">" in hex"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line"><span class="built_in">cout</span> &lt;&lt; oct;</div><div class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"z = "</span> &lt;&lt; z &lt;&lt; <span class="string">" in oct"</span> &lt;&lt; <span class="built_in">endl</span>;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<hr>
-<h2 id="String"><a href="#String" class="headerlink" title="String"></a>String</h2><hr>
-<h3 id="C-style-string"><a href="#C-style-string" class="headerlink" title="C-style string"></a>C-style string</h3><ul>
-<li>Library “cstring”, strlen(), …</li>
-<li>‘\0’ at the end of the string</li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="keyword">char</span> tab[<span class="number">20</span>];</div><div class="line">	<span class="built_in">cin</span> &gt;&gt; tab;	<span class="comment">//Input "Alain Turing"</span></div><div class="line">	<span class="built_in">cout</span> &lt;&lt; tab &lt;&lt; <span class="built_in">endl</span>; <span class="comment">//Output: Alain</span></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>We get only one word here, not the entire string</li>
-</ul>
-<hr>
-<h3 id="cin-getline-and-cin-get"><a href="#cin-getline-and-cin-get" class="headerlink" title="cin.getline() and cin.get()"></a>cin.getline() and cin.get()</h3><ul>
-<li>getline() drops the ‘\n’ in the input stream, get() keeps the ‘\n’.</li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">char</span> tab[<span class="number">20</span>];</div><div class="line">	<span class="built_in">cin</span>.getline(tab, <span class="number">6</span>);  <span class="comment">// Input: "Cat Dog"</span></div><div class="line">	<span class="built_in">cout</span> &lt;&lt; tab &lt;&lt; <span class="built_in">endl</span>;	<span class="comment">//Output: "Cat D"</span></div><div class="line">	<span class="built_in">cin</span>.clear();	<span class="comment">// Clear the failbit</span></div><div class="line">	<span class="built_in">cin</span>.getline(tab, <span class="number">20</span>);	<span class="comment">//Input: "og"</span></div><div class="line">	<span class="built_in">cout</span> &lt;&lt; tab &lt;&lt; <span class="built_in">endl</span>;	<span class="comment">//Output: "og"</span></div><div class="line"></div><div class="line"></div><div class="line">	<span class="built_in">cin</span>.get(tab, <span class="keyword">sizeof</span>(tab), <span class="string">'o'</span>); <span class="comment">//Input: "I'm good"</span></div><div class="line">	<span class="built_in">cout</span> &lt;&lt; tab &lt;&lt; <span class="built_in">endl</span>;	<span class="comment">//Output: "I'm g"</span></div><div class="line">	<span class="built_in">cin</span>.get(tab, <span class="keyword">sizeof</span>(tab)).get(); <span class="comment">//Input: "ood"</span></div><div class="line">	<span class="built_in">cout</span> &lt;&lt; tab &lt;&lt; <span class="built_in">endl</span>;	<span class="comment">//Output: "ood"</span></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>Do not forget to use a cin.clear() after using a cin.getline() and cin.get(), because there may be a failbit when the input stream is bigger than the need.</li>
-<li>cin.get(): get a char, we can use it to ignore the ‘\n’.</li>
-</ul>
-<hr>
-<h3 id="String-class"><a href="#String-class" class="headerlink" title="String class"></a>String class</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="built_in">string</span> str;</div><div class="line">	getline(<span class="built_in">cin</span>, str); <span class="comment">//Read a line.</span></div><div class="line">	<span class="built_in">cout</span> &lt;&lt; str &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Simple-Variables&quot;&gt;&lt;a href=&quot;#Simple-Variables&quot; class=&quot;headerlink&quot; title=&quot;Simple Variables&quot;&gt;&lt;/a&gt;Simple Variables&lt;/h2&gt;&lt;hr&gt;
-&lt;h3 id=&quot;Byte
-    
-    </summary>
-    
-      <category term="C++" scheme="http://jinshendan.github.io/categories/C/"/>
-    
-    
-      <category term="C++" scheme="http://jinshendan.github.io/tags/C/"/>
     
   </entry>
   

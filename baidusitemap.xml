@@ -4,8 +4,28 @@
 
     
   <url>
+    <loc>http://jinshendan.github.io/StablePairsDiv1.html</loc>
+    <lastmod>2018-05-09T11:01:08.118Z</lastmod>
+    <data>
+        <display>
+        <title>Topcoder - StablePairsDiv1</title>
+        <pubTime>2018-05-09T10:51:33.000Z</pubTime>
+        
+        <tag>DP</tag>
+         
+         
+           
+             
+              <breadCrumb title="Topcoder" url="http://jinshendan.github.io/categories/Topcoder/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://jinshendan.github.io/LineOff.html</loc>
-    <lastmod>2018-05-09T09:57:15.228Z</lastmod>
+    <lastmod>2018-05-09T10:54:38.777Z</lastmod>
     <data>
         <display>
         <title>Topcoder - LineOff</title>
@@ -601,9 +621,9 @@
         <title>Age Sort - UVA 11462</title>
         <pubTime>2016-09-09T22:00:00.000Z</pubTime>
         
-        <tag>Greedy</tag>
-         
         <tag>Sort</tag>
+         
+        <tag>Greedy</tag>
          
          
            
