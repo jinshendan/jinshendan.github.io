@@ -75,7 +75,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="algorithm competition, operations research,computer science,machine learning" />
+  <meta name="keywords" content="Stack," />
 
 
 
@@ -93,12 +93,19 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Shendan's blog">
-<meta property="og:url" content="http://jinshendan.github.io/page/4/index.html">
+<meta name="description" content="Problem StatementYou are given a set of colored points on a straight line.
+You play a game with these points. The game is a sequence of moves. In each move you have to erase two points that are adjace">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Topcoder - LineOff">
+<meta property="og:url" content="http://jinshendan.github.io/LineOff.html">
 <meta property="og:site_name" content="Shendan's blog">
+<meta property="og:description" content="Problem StatementYou are given a set of colored points on a straight line.
+You play a game with these points. The game is a sequence of moves. In each move you have to erase two points that are adjace">
+<meta property="og:updated_time" content="2018-05-09T09:57:15.228Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Shendan's blog">
+<meta name="twitter:title" content="Topcoder - LineOff">
+<meta name="twitter:description" content="Problem StatementYou are given a set of colored points on a straight line.
+You play a game with these points. The game is a sequence of moves. In each move you have to erase two points that are adjace">
 
 
 
@@ -119,10 +126,10 @@
 
 
 
-  <link rel="canonical" href="http://jinshendan.github.io/page/4/"/>
+  <link rel="canonical" href="http://jinshendan.github.io/LineOff.html"/>
 
 
-  <title>Shendan's blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>Topcoder - LineOff | Shendan's blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
@@ -143,9 +150,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <a href="https://github.com/jinshendan"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/8b6b8ccc6da3aa5722903da7b58eb5ab1081adee/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_orange_ff7600.png"></a>
@@ -248,9 +253,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -270,10 +275,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/Age-sort.html" itemprop="url">
-                  Age Sort - UVA 11462
-                </a>
+                Topcoder - LineOff
               
             
           </h1>
@@ -285,8 +287,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-09-10T00:00:00+02:00" content="2016-09-10">
-              2016-09-10
+            <time itemprop="dateCreated" datetime="2018-05-09T11:16:54+02:00" content="2018-05-09">
+              2018-05-09
             </time>
           </span>
 
@@ -299,8 +301,8 @@
               <span class="post-meta-item-text">In</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/UVA/" itemprop="url" rel="index">
-                    <span itemprop="name">UVA</span>
+                  <a href="/categories/Topcoder/" itemprop="url" rel="index">
+                    <span itemprop="name">Topcoder</span>
                   </a>
                 </span>
 
@@ -319,8 +321,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/Age-sort.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Age-sort.html" itemprop="commentsCount"></span>
+                <a href="/LineOff.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="LineOff.html" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -343,167 +345,85 @@
       
 
       
-        
-          <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p><a href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;category=26&amp;page=show_problem&amp;problem=2457">Here</a>.</p>
-<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><ul>
-<li>Sort 2,000,000 integers between 1 and 100. </li>
+        <h2 id="Problem-Statement"><a href="#Problem-Statement" class="headerlink" title="Problem Statement"></a>Problem Statement</h2><p>You are given a set of colored points on a straight line.</p>
+<p>You play a game with these points. The game is a sequence of moves. In each move you have to erase two points that are adjacent and share the same color. (Two points are adjacent if there is no other point between them. Distances don’t matter.)</p>
+<p>You are given the String points. Each character of points describes the color of one point, in the order in which they are arranged on the line at the beginning of the game. (Different letters represent different colors.) Compute and return the maximum number of moves you can make.</p>
+<h2 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h2><p>Class:    LineOff<br>Method:    movesToDo<br>Parameters:    String<br>Returns:    int<br>Method signature:    int movesToDo(String points)<br>(be sure your method is public)</p>
+<h2 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h2><ul>
+<li>points will contain between 1 and 50 characters, inclusive.</li>
+<li>Each character in points will be a lowercase English letter (‘a’-‘z’).</li>
 </ul>
-<h2 id="Analyse"><a href="#Analyse" class="headerlink" title="Analyse"></a>Analyse</h2><ul>
-<li>First idea: fast sort, merge sort O(nlogn), TIMELIMIT!</li>
-<li>Use the counting sort algorithm!  </li>
-<li>Complexity: O(n).</li>
-</ul>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/Age-sort.html#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
+<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2><ol>
+<li><p>“abba”<br>Returns: 2<br>The only valid first move is to erase the two points of color ‘b’. After that move the points of color ‘a’ are now adjacent and they can be removed in our second move.</p>
+</li>
+<li><p>“zwwwzffw”<br>Returns: 2<br>You can remove two ‘w’ points and two ‘f’ points with your first two moves. After that the remaining points on the line will be arranged as follows: “zwzw”. In this situation you don’t have any adjacent points that share the same color, so there are no more moves.</p>
+</li>
+<li><p>“rrrrrrr”<br>Returns: 3<br>With an odd number of points, at least one of them will have no pair.</p>
+</li>
+<li><p>“dfghj”<br>Returns: 0<br>All colors are different so no points can be removed.</p>
+</li>
+<li><p>“wasitacarooracatisaw”<br>Returns: 10</p>
+</li>
+</ol>
+<a id="more"></a>
+<h2 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h2><ol>
+<li>Consider this problem as an Online Problem, the letters arrive online one after another from left to right. An optimal solution can be maintained by a “Stack” structure, in which we stock the current optimal remained letters. Because whenever a new letter arrives, it could only impact the last letter. </li>
+</ol>
+<h2 id="C-Implementation"><a href="#C-Implementation" class="headerlink" title="C++ Implementation"></a>C++ Implementation</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"> </div><div class="line"><span class="keyword">class</span> LineOff &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">movesToDo</span><span class="params">(<span class="built_in">string</span>)</span></span>;</div><div class="line">&#125;;</div><div class="line"> </div><div class="line"><span class="keyword">int</span> LineOff::movesToDo(<span class="built_in">string</span> points) &#123;</div><div class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</div><div class="line">    <span class="built_in">stack</span>&lt;<span class="keyword">char</span>&gt; s;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> c : points) &#123;</div><div class="line">    <span class="keyword">if</span> (!s.empty() &amp;&amp; c == s.top()) &#123;</div><div class="line">        s.pop();</div><div class="line">        ans++;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        s.push(c);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> ans;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
       
     </div>
 
     <div>
       
+        
+
+      
     </div>
 
     <div>
+      
+        
+
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/hello-world.html" itemprop="url">
-                  Hello World
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-09-09T00:16:02+02:00" content="2016-09-09">
-              2016-09-09
-            </time>
-          </span>
-
+        <div class="post-tags">
           
-
-		       <span id="busuanzi_container_page_pv">
-			          &nbsp; | &nbsp; Heat &nbsp; <span id="busuanzi_value_page_pv"></span>°C
-					         </span>
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/hello-world.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="hello-world.html" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
+            <a href="/tags/Stack/" rel="tag">#Stack</a>
           
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Learning-Tensorflow.html" rel="next" title="Google Tensorflow Tutorial 学习笔记(1) -- 安装">
+                <i class="fa fa-chevron-left"></i> Google Tensorflow Tutorial 学习笔记(1) -- 安装
+              </a>
+            
+          </div>
 
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
-  </nav>
-
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -511,6 +431,17 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -530,8 +461,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/shendan.png"
@@ -588,6 +528,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem-Statement"><span class="nav-number">1.</span> <span class="nav-text">Problem Statement</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Definition"><span class="nav-number">2.</span> <span class="nav-text">Definition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Constraints"><span class="nav-number">3.</span> <span class="nav-text">Constraints</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Examples"><span class="nav-number">4.</span> <span class="nav-text">Examples</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Analysis"><span class="nav-number">5.</span> <span class="nav-text">Analysis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-Implementation"><span class="nav-number">6.</span> <span class="nav-text">C++ Implementation</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -704,6 +655,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
@@ -720,9 +675,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'jinshendan';
-      var disqus_identifier = 'page/4/index.html';
-      var disqus_title = "";
-      var disqus_url = '';
+      var disqus_identifier = 'LineOff.html';
+      var disqus_title = "Topcoder - LineOff";
+      var disqus_url = 'http://jinshendan.github.io/LineOff.html';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
@@ -733,6 +688,8 @@
       }
 
       run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
       
     </script>
   

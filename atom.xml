@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jinshendan.github.io/"/>
-  <updated>2018-03-05T22:20:45.600Z</updated>
+  <updated>2018-05-09T09:57:15.228Z</updated>
   <id>http://jinshendan.github.io/</id>
   
   <author>
@@ -16,11 +16,77 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Tensorflow 学习笔记 -- Google Tutorial</title>
+    <title>Topcoder - LineOff</title>
+    <link href="http://jinshendan.github.io/LineOff.html"/>
+    <id>http://jinshendan.github.io/LineOff.html</id>
+    <published>2018-05-09T09:16:54.000Z</published>
+    <updated>2018-05-09T09:57:15.228Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Problem-Statement"><a href="#Problem-Statement" class="headerlink" title="Problem Statement"></a>Problem Statement</h2><p>You are given a set of colored points on a straight line.</p>
+<p>You play a game with these points. The game is a sequence of moves. In each move you have to erase two points that are adjacent and share the same color. (Two points are adjacent if there is no other point between them. Distances don’t matter.)</p>
+<p>You are given the String points. Each character of points describes the color of one point, in the order in which they are arranged on the line at the beginning of the game. (Different letters represent different colors.) Compute and return the maximum number of moves you can make.</p>
+<h2 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h2><p>Class:    LineOff<br>Method:    movesToDo<br>Parameters:    String<br>Returns:    int<br>Method signature:    int movesToDo(String points)<br>(be sure your method is public)</p>
+<h2 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h2><ul>
+<li>points will contain between 1 and 50 characters, inclusive.</li>
+<li>Each character in points will be a lowercase English letter (‘a’-‘z’).</li>
+</ul>
+<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2><ol>
+<li><p>“abba”<br>Returns: 2<br>The only valid first move is to erase the two points of color ‘b’. After that move the points of color ‘a’ are now adjacent and they can be removed in our second move.</p>
+</li>
+<li><p>“zwwwzffw”<br>Returns: 2<br>You can remove two ‘w’ points and two ‘f’ points with your first two moves. After that the remaining points on the line will be arranged as follows: “zwzw”. In this situation you don’t have any adjacent points that share the same color, so there are no more moves.</p>
+</li>
+<li><p>“rrrrrrr”<br>Returns: 3<br>With an odd number of points, at least one of them will have no pair.</p>
+</li>
+<li><p>“dfghj”<br>Returns: 0<br>All colors are different so no points can be removed.</p>
+</li>
+<li><p>“wasitacarooracatisaw”<br>Returns: 10</p>
+</li>
+</ol>
+<a id="more"></a>
+<h2 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h2><ol>
+<li>Consider this problem as an Online Problem, the letters arrive online one after another from left to right. An optimal solution can be maintained by a “Stack” structure, in which we stock the current optimal remained letters. Because whenever a new letter arrives, it could only impact the last letter. </li>
+</ol>
+<h2 id="C-Implementation"><a href="#C-Implementation" class="headerlink" title="C++ Implementation"></a>C++ Implementation</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"> </div><div class="line"><span class="keyword">class</span> LineOff &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">movesToDo</span><span class="params">(<span class="built_in">string</span>)</span></span>;</div><div class="line">&#125;;</div><div class="line"> </div><div class="line"><span class="keyword">int</span> LineOff::movesToDo(<span class="built_in">string</span> points) &#123;</div><div class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</div><div class="line">    <span class="built_in">stack</span>&lt;<span class="keyword">char</span>&gt; s;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> c : points) &#123;</div><div class="line">    <span class="keyword">if</span> (!s.empty() &amp;&amp; c == s.top()) &#123;</div><div class="line">        s.pop();</div><div class="line">        ans++;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        s.push(c);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> ans;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Problem-Statement&quot;&gt;&lt;a href=&quot;#Problem-Statement&quot; class=&quot;headerlink&quot; title=&quot;Problem Statement&quot;&gt;&lt;/a&gt;Problem Statement&lt;/h2&gt;&lt;p&gt;You are given a set of colored points on a straight line.&lt;/p&gt;
+&lt;p&gt;You play a game with these points. The game is a sequence of moves. In each move you have to erase two points that are adjacent and share the same color. (Two points are adjacent if there is no other point between them. Distances don’t matter.)&lt;/p&gt;
+&lt;p&gt;You are given the String points. Each character of points describes the color of one point, in the order in which they are arranged on the line at the beginning of the game. (Different letters represent different colors.) Compute and return the maximum number of moves you can make.&lt;/p&gt;
+&lt;h2 id=&quot;Definition&quot;&gt;&lt;a href=&quot;#Definition&quot; class=&quot;headerlink&quot; title=&quot;Definition&quot;&gt;&lt;/a&gt;Definition&lt;/h2&gt;&lt;p&gt;Class:    LineOff&lt;br&gt;Method:    movesToDo&lt;br&gt;Parameters:    String&lt;br&gt;Returns:    int&lt;br&gt;Method signature:    int movesToDo(String points)&lt;br&gt;(be sure your method is public)&lt;/p&gt;
+&lt;h2 id=&quot;Constraints&quot;&gt;&lt;a href=&quot;#Constraints&quot; class=&quot;headerlink&quot; title=&quot;Constraints&quot;&gt;&lt;/a&gt;Constraints&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;points will contain between 1 and 50 characters, inclusive.&lt;/li&gt;
+&lt;li&gt;Each character in points will be a lowercase English letter (‘a’-‘z’).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;Examples&quot;&gt;&lt;a href=&quot;#Examples&quot; class=&quot;headerlink&quot; title=&quot;Examples&quot;&gt;&lt;/a&gt;Examples&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;“abba”&lt;br&gt;Returns: 2&lt;br&gt;The only valid first move is to erase the two points of color ‘b’. After that move the points of color ‘a’ are now adjacent and they can be removed in our second move.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;“zwwwzffw”&lt;br&gt;Returns: 2&lt;br&gt;You can remove two ‘w’ points and two ‘f’ points with your first two moves. After that the remaining points on the line will be arranged as follows: “zwzw”. In this situation you don’t have any adjacent points that share the same color, so there are no more moves.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;“rrrrrrr”&lt;br&gt;Returns: 3&lt;br&gt;With an odd number of points, at least one of them will have no pair.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;“dfghj”&lt;br&gt;Returns: 0&lt;br&gt;All colors are different so no points can be removed.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;“wasitacarooracatisaw”&lt;br&gt;Returns: 10&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="Topcoder" scheme="http://jinshendan.github.io/categories/Topcoder/"/>
+    
+    
+      <category term="Stack" scheme="http://jinshendan.github.io/tags/Stack/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Google Tensorflow Tutorial 学习笔记(1) -- 安装</title>
     <link href="http://jinshendan.github.io/Learning-Tensorflow.html"/>
     <id>http://jinshendan.github.io/Learning-Tensorflow.html</id>
     <published>2018-03-05T21:51:13.000Z</published>
-    <updated>2018-03-05T22:20:45.600Z</updated>
+    <updated>2018-03-05T22:23:57.290Z</updated>
     
     <content type="html"><![CDATA[<h2 id="安装Tensorflow"><a href="#安装Tensorflow" class="headerlink" title="安装Tensorflow"></a>安装Tensorflow</h2><p>1). 安装Virtualenv<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ sudo easy_install pip</div><div class="line">$ pip install --upgrade virtualenv</div></pre></td></tr></table></figure></p>
 <p>2). 建立virtualenv<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">virtualenv --system-site-packages -p python3 ~/tensorflow</div></pre></td></tr></table></figure></p>
@@ -724,66 +790,6 @@ tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]]
     
     
       <category term="C++" scheme="http://jinshendan.github.io/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ProgSys(1) -- Process and Fork</title>
-    <link href="http://jinshendan.github.io/progsys-fork.html"/>
-    <id>http://jinshendan.github.io/progsys-fork.html</id>
-    <published>2016-11-18T16:01:51.000Z</published>
-    <updated>2016-11-20T13:46:49.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Process"><a href="#Process" class="headerlink" title="Process"></a>Process</h2><hr>
-<h3 id="Process-program-in-execution"><a href="#Process-program-in-execution" class="headerlink" title="Process = program in execution"></a>Process = program in execution</h3><ul>
-<li>One or more threads.</li>
-<li>Can communicate through pipes, signals, networks, files.</li>
-</ul>
-<hr>
-<h3 id="Process-descriptor"><a href="#Process-descriptor" class="headerlink" title="Process descriptor"></a>Process descriptor</h3><ul>
-<li>Each process has its Process Descriptor, which is used to keep track of the process in memory</li>
-<li>Stores PID, state, parent process, children, registers, address space information, open files</li>
-<li>Process information is usually stored in the so called Process Table, i.e. an array of PD</li>
-</ul>
-<hr>
-<h3 id="Three-states-model"><a href="#Three-states-model" class="headerlink" title="Three states model"></a>Three states model</h3><ul>
-<li>Running : execution, process is using the CPU.</li>
-<li>Ready : process can be executed but is temporarily waiting, CPU is used by another process.</li>
-<li>Waiting : process can’t be executed; it is either blocked because waiting for an external event (e.g. I/O, interrupt from another process) or because scheduler assigned CPU to others.</li>
-</ul>
-<hr>
-<h3 id="Code-in-C"><a href="#Code-in-C" class="headerlink" title="Code in C"></a>Code in C</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/types.h&gt;</span></span></div><div class="line"><span class="keyword">gid_t</span> getgid (<span class="keyword">void</span>);</div><div class="line"><span class="keyword">pid_t</span> getpid (<span class="keyword">void</span>);</div><div class="line"><span class="keyword">pid_t</span> getppid (<span class="keyword">void</span>);</div><div class="line"><span class="keyword">uid_t</span> getuid (<span class="keyword">void</span>);</div></pre></td></tr></table></figure>
-<ul>
-<li>getpid(): returns the process ID of the calling process.</li>
-<li>getppid() : returns the process ID of the parent of the calling process.</li>
-<li>getgid() : returns the group ID of the calling process</li>
-<li>getuid() : returns the user ID of the calling process</li>
-</ul>
-<hr>
-<h3 id="Creat"><a href="#Creat" class="headerlink" title="Creat"></a>Creat</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">pid_t</span> p = fork();</div></pre></td></tr></table></figure>
-<p>Remarks:</p>
-<ul>
-<li>p == 0 (Child process)</li>
-<li>p == -1 (Error)</li>
-<li>p &gt; 0 (Parent process)</li>
-</ul>
-<h3 id="Get-ID"><a href="#Get-ID" class="headerlink" title="Get ID"></a>Get ID</h3><hr>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> my_PID = getpid();</div><div class="line"><span class="keyword">int</span> my_parent_PID = getppid();</div><div class="line"><span class="keyword">int</span> my_UID = getuid();</div><div class="line"><span class="keyword">int</span> my_GID = getgid();</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Process&quot;&gt;&lt;a href=&quot;#Process&quot; class=&quot;headerlink&quot; title=&quot;Process&quot;&gt;&lt;/a&gt;Process&lt;/h2&gt;&lt;hr&gt;
-&lt;h3 id=&quot;Process-program-in-execution&quot;&gt;&lt;a href=&quot;#
-    
-    </summary>
-    
-      <category term="ProgSys" scheme="http://jinshendan.github.io/categories/ProgSys/"/>
-    
-    
-      <category term="Process" scheme="http://jinshendan.github.io/tags/Process/"/>
-    
-      <category term="Fork" scheme="http://jinshendan.github.io/tags/Fork/"/>
     
   </entry>
   
