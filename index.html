@@ -271,6 +271,145 @@
             
               
                 
+                <a class="post-title-link" href="/Handwritten-Digits-Classification-by-Keras.html" itemprop="url">
+                  Handwritten Digits Classification by Keras
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2018-06-05T23:37:53+02:00" content="2018-06-05">
+              2018-06-05
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Deep-Learning/" itemprop="url" rel="index">
+                    <span itemprop="name">Deep Learning</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+		       <span id="busuanzi_container_page_pv">
+			          &nbsp; | &nbsp; Heat &nbsp; <span id="busuanzi_value_page_pv"></span>°C
+					         </span>
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/Handwritten-Digits-Classification-by-Keras.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Handwritten-Digits-Classification-by-Keras.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Data-Processing"><a href="#Data-Processing" class="headerlink" title="Data Processing"></a>Data Processing</h2><p>First of all, we have to load the MNIST dataset in Keras. </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Loading the MNIST dataset</span></div><div class="line"><span class="keyword">from</span> keras.datasets <span class="keyword">import</span> mnist</div><div class="line"></div><div class="line">(train_images, train_labels), (test_images, test_labels) = mnist.load_data()</div></pre></td></tr></table></figure>
+<p>The dataset consists of <strong>training set</strong> and <strong>test set</strong>. The images are encoded as Numpy arrays, and the labels are an array of digits from 0 to 9. There is a one-to-one correspondence between images and labels.</p>
+<p>Let’s have a look of the training data.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>train_images.shape</div><div class="line">(<span class="number">60000</span>, <span class="number">28</span>, <span class="number">28</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>train_images[<span class="number">0</span>]</div><div class="line">array([[  <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,</div><div class="line">          <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,</div><div class="line">          <span class="number">0</span>,   <span class="number">0</span>],...,</div><div class="line">       [  <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">3</span>,</div><div class="line">         <span class="number">18</span>,  <span class="number">18</span>,  <span class="number">18</span>, <span class="number">126</span>, <span class="number">136</span>, <span class="number">175</span>,  <span class="number">26</span>, <span class="number">166</span>, <span class="number">255</span>, <span class="number">247</span>, <span class="number">127</span>,   <span class="number">0</span>,   <span class="number">0</span>,</div><div class="line">          <span class="number">0</span>,   <span class="number">0</span>],</div><div class="line">       [  <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,  <span class="number">30</span>,  <span class="number">36</span>,  <span class="number">94</span>, <span class="number">154</span>, <span class="number">170</span>,</div><div class="line">        <span class="number">253</span>, <span class="number">253</span>, <span class="number">253</span>, <span class="number">253</span>, <span class="number">253</span>, <span class="number">225</span>, <span class="number">172</span>, <span class="number">253</span>, <span class="number">242</span>, <span class="number">195</span>,  <span class="number">64</span>,   <span class="number">0</span>,   <span class="number">0</span>,</div><div class="line">          <span class="number">0</span>,   <span class="number">0</span>],</div><div class="line">       [  <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,  <span class="number">49</span>, <span class="number">238</span>, <span class="number">253</span>, <span class="number">253</span>, <span class="number">253</span>, <span class="number">253</span>,</div><div class="line">        <span class="number">253</span>, <span class="number">253</span>, <span class="number">253</span>, <span class="number">253</span>, <span class="number">251</span>,  <span class="number">93</span>,  <span class="number">82</span>,  <span class="number">82</span>,  <span class="number">56</span>,  <span class="number">39</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,</div><div class="line">          <span class="number">0</span>,   <span class="number">0</span>],</div><div class="line">       [  <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,  <span class="number">18</span>, <span class="number">219</span>, <span class="number">253</span>, <span class="number">253</span>, <span class="number">253</span>, <span class="number">253</span>,</div><div class="line">        <span class="number">253</span>, <span class="number">198</span>, <span class="number">182</span>, <span class="number">247</span>, <span class="number">241</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,</div><div class="line">          <span class="number">0</span>,   <span class="number">0</span>],</div><div class="line">       [  <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,  <span class="number">80</span>, <span class="number">156</span>, <span class="number">107</span>, <span class="number">253</span>, <span class="number">253</span>,</div><div class="line">        <span class="number">205</span>,  <span class="number">11</span>,   <span class="number">0</span>,  <span class="number">43</span>, <span class="number">154</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,   <span class="number">0</span>,</div><div class="line">          <span class="number">0</span>,   <span class="number">0</span>]...,], dtype=uint8)</div></pre></td></tr></table></figure>
+<p>The dataset <strong>train_images</strong> is an array of 60000 images, each image is decribed by 28*28 pixels ranging from 0 to 255. </p>
+<p>We can also visualize images in Python. Let’s display the first image in the dataset <strong>train_images</strong>.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">digit = train_images[<span class="number">0</span>]</div><div class="line"></div><div class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt </div><div class="line">plt.imshow(digit, cmap=plt.cm.binary)</div><div class="line">plt.show()</div></pre></td></tr></table></figure>
+<p>The training data is formatted as float32 tensors of shape (60000, 28<em>28), and the test data is formatted as float32 tensors of shape (10000, 28</em>28)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Preparing the image data</span></div><div class="line">train_images = train_images.reshape((<span class="number">60000</span>, <span class="number">28</span> * <span class="number">28</span>))</div><div class="line">train_images = train_images.astype(<span class="string">'float32'</span>) / <span class="number">255</span></div><div class="line"></div><div class="line">test_images = test_images.reshape((<span class="number">10000</span>, <span class="number">28</span> * <span class="number">28</span>))</div><div class="line">test_images = test_images.astype(<span class="string">'float32'</span>) / <span class="number">255</span></div><div class="line"></div><div class="line"><span class="comment"># Preparing the test_labels, one-hot representation </span></div><div class="line"><span class="keyword">from</span> keras.utils <span class="keyword">import</span> to_categorical</div><div class="line"></div><div class="line">train_labels = to_categorical(train_labels)</div><div class="line">test_labels = to_categorical(test_labels)</div></pre></td></tr></table></figure>
+<h2 id="The-network-architecture"><a href="#The-network-architecture" class="headerlink" title="The network architecture"></a>The network architecture</h2><p>We build a network consisting of a chain of two  <em>Dense</em>  layers.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># The network architecture</span></div><div class="line"><span class="keyword">from</span> keras <span class="keyword">import</span> models</div><div class="line"><span class="keyword">from</span> keras <span class="keyword">import</span> layers</div><div class="line"></div><div class="line">network = models.Sequential()</div><div class="line">network.add(layers.Dense(<span class="number">512</span>, activation = <span class="string">'relu'</span>, input_shape=(<span class="number">28</span>*<span class="number">28</span>,) ))</div><div class="line">network.add(layers.Dense(<span class="number">10</span>, activation = <span class="string">'softmax'</span>))</div></pre></td></tr></table></figure></p>
+<h2 id="The-compilation-step"><a href="#The-compilation-step" class="headerlink" title="The compilation step"></a>The compilation step</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># The compilation step</span></div><div class="line">network.compile(optimizer = <span class="string">'rmsprop'</span>, loss = <span class="string">'categorical_crossentropy'</span>, metrics=[<span class="string">'accuracy'</span>])</div></pre></td></tr></table></figure>
+<h2 id="The-training-step"><a href="#The-training-step" class="headerlink" title="The training step"></a>The training step</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Train the network</span></div><div class="line">network.fit(train_images, train_labels, epochs = <span class="number">5</span>, batch_size = <span class="number">128</span>)</div></pre></td></tr></table></figure>
+<p>Here is result of the training step.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">Epoch 1/5</div><div class="line">2018-06-06 12:13:26.244325: I tensorflow/core/platform/cpu_feature_guard.cc:140] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA</div><div class="line">60000/60000 [==============================] - 6s 104us/step - loss: 0.2598 - acc: 0.9248</div><div class="line">Epoch 2/5</div><div class="line">60000/60000 [==============================] - 5s 90us/step - loss: 0.1054 - acc: 0.9686</div><div class="line">Epoch 3/5</div><div class="line">60000/60000 [==============================] - 6s 100us/step - loss: 0.0702 - acc: 0.9787</div><div class="line">Epoch 4/5</div><div class="line">60000/60000 [==============================] - 6s 95us/step - loss: 0.0499 - acc: 0.9848</div><div class="line">Epoch 5/5</div><div class="line">60000/60000 [==============================] - 6s 93us/step - loss: 0.0381 - acc: 0.9884</div><div class="line">&lt;keras.callbacks.History object at 0x125d92198&gt;</div></pre></td></tr></table></figure></p>
+<h2 id="Evaluate-test-data"><a href="#Evaluate-test-data" class="headerlink" title="Evaluate test data"></a>Evaluate test data</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>test_loss, test_acc = network.evaluate(test_images, test_labels)</div><div class="line"><span class="number">10000</span>/<span class="number">10000</span> [==============================] - <span class="number">1</span>s <span class="number">82</span>us/step</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">'test_accuracy = '</span>, test_acc)</div><div class="line">test_accuracy =  <span class="number">0.9763</span></div></pre></td></tr></table></figure>
+<p>A little bit overfitting =. =</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/StablePairsDiv1.html" itemprop="url">
                   Topcoder - StablePairsDiv1
                 </a>
@@ -1417,133 +1556,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/Palindrome-Number.html" itemprop="url">
-                  Palindrome Number - Leetcode A9
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2017-12-21T22:11:36+01:00" content="2017-12-21">
-              2017-12-21
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Leetcode/" itemprop="url" rel="index">
-                    <span itemprop="name">Leetcode</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-		       <span id="busuanzi_container_page_pv">
-			          &nbsp; | &nbsp; Heat &nbsp; <span id="busuanzi_value_page_pv"></span>°C
-					         </span>
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/Palindrome-Number.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Palindrome-Number.html" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p><a href="https://leetcode.com/problems/palindrome-number/description/">Problem description</a></p>
-<p>Determine whether an integer is a palindrome. Do this without extra space.</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/Palindrome-Number.html#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1589,7 +1601,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">33</span>
+              <span class="site-state-item-count">34</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -1597,7 +1609,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -1606,7 +1618,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">28</span>
+                <span class="site-state-item-count">30</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>

@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>http://jinshendan.github.io/Handwritten-Digits-Classification-by-Keras.html</loc>
+    <lastmod>2018-06-06T10:17:13.173Z</lastmod>
+    <data>
+        <display>
+        <title>Handwritten Digits Classification by Keras</title>
+        <pubTime>2018-06-05T21:37:53.000Z</pubTime>
+        
+        <tag>Keras</tag>
+         
+        <tag>MNIST</tag>
+         
+         
+           
+             
+              <breadCrumb title="Deep Learning" url="http://jinshendan.github.io/categories/Deep-Learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://jinshendan.github.io/StablePairsDiv1.html</loc>
     <lastmod>2018-05-09T11:01:08.118Z</lastmod>
     <data>
@@ -621,9 +643,9 @@
         <title>Age Sort - UVA 11462</title>
         <pubTime>2016-09-09T22:00:00.000Z</pubTime>
         
-        <tag>Sort</tag>
-         
         <tag>Greedy</tag>
+         
+        <tag>Sort</tag>
          
          
            
