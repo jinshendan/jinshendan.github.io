@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jinshendan.github.io/"/>
-  <updated>2018-06-06T10:17:13.173Z</updated>
+  <updated>2018-06-25T23:29:51.800Z</updated>
   <id>http://jinshendan.github.io/</id>
   
   <author>
@@ -14,6 +14,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Shorter in Python - checking duplicate characters</title>
+    <link href="http://jinshendan.github.io/Shorter-in-Python-checking-duplicate-characters.html"/>
+    <id>http://jinshendan.github.io/Shorter-in-Python-checking-duplicate-characters.html</id>
+    <published>2018-06-25T23:26:56.000Z</published>
+    <updated>2018-06-25T23:29:51.800Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>Check if a string contains duplicate characters.</p>
+<a id="more"></a>
+<h2 id="Implementation"><a href="#Implementation" class="headerlink" title="Implementation"></a>Implementation</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">dup</span><span class="params">(s)</span>:</span></div><div class="line">	<span class="keyword">if</span> len(set(s)) &lt;= len(s) - <span class="number">1</span>:</div><div class="line">		<span class="keyword">return</span> <span class="keyword">True</span></div><div class="line">	<span class="keyword">return</span> <span class="keyword">False</span></div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;Check if a string contains duplicate characters.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="http://jinshendan.github.io/categories/Python/"/>
+    
+    
+      <category term="Python" scheme="http://jinshendan.github.io/tags/Python/"/>
+    
+  </entry>
   
   <entry>
     <title>Handwritten Digits Classification by Keras</title>
@@ -750,53 +775,6 @@ tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]]
       <category term="dp" scheme="http://jinshendan.github.io/tags/dp/"/>
     
       <category term="rounding" scheme="http://jinshendan.github.io/tags/rounding/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>generator - Regionals 2015 Asia-Hangzhou</title>
-    <link href="http://jinshendan.github.io/generator.html"/>
-    <id>http://jinshendan.github.io/generator.html</id>
-    <published>2017-04-18T20:00:12.000Z</published>
-    <updated>2017-04-18T20:10:03.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>We generate a random string by generating a sequence of random characters and concatenating them together. Each character is chosen independently from the first n letters in the English alphabet with equal probability. Only capital letters are used in this problem. The generation is stopped as soon as a specific pattern occurs in the random string. Your task is to predict the expected length of the generated string.</p>
-<h2 id="Limits"><a href="#Limits" class="headerlink" title="Limits"></a>Limits</h2><ul>
-<li>1 &lt;= T &lt;= 10.</li>
-<li>1 &lt;= n &lt;= 26.</li>
-<li>The length of any pattern will not exceed 12.</li>
-</ul>
-<a id="more"></a>
-<h2 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h2><ul>
-<li>For any string S, define the function state(S) as the maximal length of the prefix of pattern which is also a suffix of the current string at the same time.</li>
-<li>If the pattern has length L, then the state of any string is a number between 0 and L. </li>
-<li>We know that L is a final state. </li>
-<li>Let’s define f[i] as the expected number of steps from state i to state L. </li>
-<li>Then we have f[i] = 1+ 1/n(f[a(1,1)]+f[a(1,2)]+…+f[a(1,n)]), where a(i,j) is the state of the new string after concatenating the current string and the j-th letter together. </li>
-<li>Thus, the answer is f[0].</li>
-</ul>
-<h2 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h2><ul>
-<li>We can use brute-force to compute a(i,j).</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;We generate a random string by generating a sequence of random characters and concatenating them together. Each character is chosen independently from the first n letters in the English alphabet with equal probability. Only capital letters are used in this problem. The generation is stopped as soon as a specific pattern occurs in the random string. Your task is to predict the expected length of the generated string.&lt;/p&gt;
-&lt;h2 id=&quot;Limits&quot;&gt;&lt;a href=&quot;#Limits&quot; class=&quot;headerlink&quot; title=&quot;Limits&quot;&gt;&lt;/a&gt;Limits&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;1 &amp;lt;= T &amp;lt;= 10.&lt;/li&gt;
-&lt;li&gt;1 &amp;lt;= n &amp;lt;= 26.&lt;/li&gt;
-&lt;li&gt;The length of any pattern will not exceed 12.&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="LA" scheme="http://jinshendan.github.io/categories/LA/"/>
-    
-    
-      <category term="Probability" scheme="http://jinshendan.github.io/tags/Probability/"/>
-    
-      <category term="DP" scheme="http://jinshendan.github.io/tags/DP/"/>
     
   </entry>
   
